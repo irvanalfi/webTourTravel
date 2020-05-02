@@ -62,7 +62,7 @@ class Unit extends CI_Controller
             'page'      => 'add',
             'row'       =>  $unit,
             'category'  =>  $query_category,
-            'item'      =>  $item, 'selectedunit' => null,
+            'item'      =>  $item, 'selecteditem' => null,
         );
         $this->template->load('template', 'product/unit/unit_form', $data);
     }
@@ -82,7 +82,7 @@ class Unit extends CI_Controller
                 'page'      => 'edit',
                 'row'       =>  $unit,
                 'category'  =>  $query_category,
-                'unit'      =>  $item, 'selectedunit' => $unit->item_id,
+                'item'      =>  $item, 'selecteditem' => $unit->item_id,
             );
             $this->template->load('template', 'product/unit/unit_form', $data);
         } else {
