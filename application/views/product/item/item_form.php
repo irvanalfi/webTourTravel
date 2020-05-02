@@ -39,7 +39,7 @@
                             <?php if ($page == 'edit') {
                                 if ($row->image != null) { ?>
                                     <div style="margin-bottom:5px">
-                                        <img src="<?= base_url('uploads/item/' . $row->image) ?>" style="width:100%">
+                                        <img src="<?= base_url('uploads/item/' . $row->image) ?>" style="width:50%">
                                     </div>
                             <?php
                                 }
@@ -47,6 +47,8 @@
                             <input type="file" name="image" class="form-control">
                             <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
                         </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Item Duration *</label>
                             <input type="text" name="item_duration" class="form-control" value="<?= $row->duration; ?>">
@@ -59,8 +61,6 @@
                             <label for="">Item Overview *</label>
                             <input type="text" name="item_overview" class="form-control" value="<?= $row->overview; ?>">
                         </div>
-                    </div>
-                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Item Language *</label>
                             <input type="text" name="item_language" class="form-control" value="<?= $row->language; ?>">

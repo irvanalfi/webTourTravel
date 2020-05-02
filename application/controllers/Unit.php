@@ -51,10 +51,11 @@ class Unit extends CI_Controller
         $unit->name             = null;
         $unit->price            = null;
         $unit->category_id      = null;
+        $unit->stock            = null;
 
         $query_category = $this->category_m->get();
         $query_item     = $this->item_m->get();
-        $unit[null]     = '- Choose -';
+        $item[null]     = '- Choose -';
         foreach ($query_item->result() as $itm) {
             $item[$itm->item_id] = $itm->name;
         }
