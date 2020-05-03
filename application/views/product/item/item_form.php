@@ -48,22 +48,16 @@
                             <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="form-group col-md-3">
                         <div class="form-group">
                             <label for="">Item Duration *</label>
                             <input type="text" name="item_duration" class="form-control" value="<?= $row->duration; ?>">
                         </div>
+                    </div>
+                    <div class="form-group col-md-3">
                         <div class="form-group">
                             <label for="">Item Grup Size *</label>
                             <input type="text" name="item_grupsize" class="form-control" value="<?= $row->groupsize; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Item Overview *</label>
-                            <input type="text" name="item_overview" class="form-control" value="<?= $row->overview; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Item Language *</label>
-                            <input type="text" name="item_language" class="form-control" value="<?= $row->language; ?>">
                         </div>
                     </div>
                     <div class="form-group col-md-3">
@@ -78,6 +72,16 @@
                         <select name="item_categori" class="form-control">
                             <option value="">- Choose -</option>
                         </select>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Item Language *</label>
+                            <input type="text" name="item_language" class="form-control" value="<?= $row->language; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Item Overview *</label>
+                            <textarea name="item_overview" class="form-control" required><?= $row->overview; ?></textarea>
+                        </div>
                     </div>
                     <div class="from-group col-md-6">
                         <button type="submit" name="<?= $page; ?>" class="btn btn-success"><i class="fa fa-paper-plane"></i> Save</button>
