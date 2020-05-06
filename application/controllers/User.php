@@ -71,6 +71,13 @@ class User extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $this->template->load('template', 'user/user_form', $data);
+        } else {
+            $post = $this->input->post(null, TRUE);
+            $this->user_m->add($post);
+            if ($this->db->affected_rows() > 0) {
+                echo "<script>alert('Data Berhasil di Tambahkan')</script>";
+            }
+            echo "<script>window.location='" . site_url('user') . "'</script>";
         }
     }
 
@@ -104,7 +111,7 @@ class User extends CI_Controller
         }
         $this->form_validation->set_rules('address', 'Address', 'required');
         $this->form_validation->set_rules('level', 'Level', 'required');
-        $this->form_validation->set_rules('status', 'Status', 'required');
+        // $this->form_validation->set_rules('status', 'Status', 'required');
         $this->form_validation->set_message('required', 'The %s has not been filled');
         $this->form_validation->set_message('is_unique', 'This %s has already been used');
 
@@ -121,6 +128,13 @@ class User extends CI_Controller
                 echo "<script>alert('Data tidak ditemukan');";
                 echo "window.location='" . site_url('user') . "'</script>";
             }
+        } else {
+            $post = $this->input->post(null, TRUE);
+            $this->user_m->edit($post);
+            if ($this->db->affected_rows() > 0) {
+                echo "<script>alert('Data Berhasil diupdate')</script>";
+            }
+            echo "<script>window.location='" . site_url('user') . "'</script>";
         }
     }
 

@@ -23,9 +23,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <form action="" method="POST">
+                        <?php if ($page == 'edit') : ?>
+                            <input type="hidden" name="id" value="<?= $row->user_id; ?>">
+                        <?php endif ?>
                         <div class="form-group <?= form_error('fullname') ? 'has-error' : null; ?>">
                             <label for="">Name *</label>
-                            <input type="hidden" name="id" value="<?= $row->user_id; ?>">
                             <input type="text" name="fullname" class="form-control" value="<?= $row->name; ?>">
                             <span class="help-block"><?= form_error('fullname'); ?></span>
                         </div>
