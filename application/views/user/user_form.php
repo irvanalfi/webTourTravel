@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group <?= form_error('gender') ? 'has-error' : null; ?>">
                             <label for="">Customer Gender *</label>
-                            <select name="gender" class="form-control" id="" required>
+                            <select name="gender" class="form-control" required>
                                 <option value="">- Pilih -</option>
                                 <option value="L" <?= $row->gender == 'L' ? 'selected' : '' ?>>Male</option>
                                 <option value="P" <?= $row->gender == 'P' ? 'selected' : '' ?>>female</option>
@@ -50,12 +50,12 @@
                         </div>
                         <div class="form-group <?= form_error('password') ? 'has-error' : null; ?>">
                             <label for="">Password *</label>
-                            <input type="password" name="password" class="form-control" value="<?= $row->password; ?>">
+                            <input type="password" name="password" class="form-control" value="<?= $this->input->post('password') ?>">
                             <span class="help-block"><?= form_error('password'); ?></span>
                         </div>
                         <div class="form-group <?= form_error('passconf') ? 'has-error' : null; ?>">
                             <label for="">Password Confirmation *</label>
-                            <input type="password" name="passconf" class="form-control" value="<?= $row->passconf; ?>">
+                            <input type="password" name="passconf" class="form-control" value="<?= $this->input->post('passconf') ?>">
                             <span class="help-block"><?= form_error('passconf'); ?></span>
                         </div>
                         <div class="form-group <?= form_error('address') ? 'has-error' : null; ?>">
@@ -65,11 +65,10 @@
                         </div>
                         <div class="form-group <?= form_error('level') ? 'has-error' : null; ?>">
                             <label for="">Level *</label>
-                            <select name="level" class="form-control" id="">
-                                <?php $level = set_value('level') ?>
+                            <select name="level" class="form-control" required>
                                 <option value="">- Pilih -</option>
-                                <option value="1" <?= $row->$level == 1 ? "selected" : null; ?>>Admin</option>
-                                <option value="2" <?= $row->$level == 2 ? "selected" : null; ?>>Kasir</option>
+                                <option value="1" <?= $row->level == 1 ? 'selected' : '' ?>>Admin</option>
+                                <option value="2" <?= $row->level == 2 ? 'selected' : '' ?>>Accounting</option>
                             </select>
                             <span class="help-block"><?= form_error('level'); ?></span>
                         </div>

@@ -47,7 +47,7 @@ class User extends CI_Controller
         $user->address      = null;
         $user->level        = null;
 
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('fullname', 'Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[user.username]');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required');
@@ -60,7 +60,7 @@ class User extends CI_Controller
             Confirm password does not match with password']
         );
         $this->form_validation->set_rules('address', 'Address', 'required');
-        $this->form_validation->set_rules('level', 'Lavel', 'required');
+        $this->form_validation->set_rules('level', 'Level', 'required');
         $this->form_validation->set_message('required', 'The %s has not been filled');
         $this->form_validation->set_message('is_unique', 'This %s has already been used');
 
@@ -77,7 +77,7 @@ class User extends CI_Controller
     public function edit($id)
     {
         $this->load->helper('security');
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('fullname', 'Name', 'required');
         $uname1 = $this->input->post['username'];
         $this->form_validation->set_rules('username', 'username', 'required|min_length[5]|callback_user_check[' . $uname1 . ']');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
@@ -103,7 +103,7 @@ class User extends CI_Controller
             );
         }
         $this->form_validation->set_rules('address', 'Address', 'required');
-        $this->form_validation->set_rules('level', 'Lavel', 'required');
+        $this->form_validation->set_rules('level', 'Level', 'required');
         $this->form_validation->set_rules('status', 'Status', 'required');
         $this->form_validation->set_message('required', 'The %s has not been filled');
         $this->form_validation->set_message('is_unique', 'This %s has already been used');
