@@ -56,16 +56,16 @@ class User_m extends CI_Model
 
     public function edit($post)
     {
-        $params['name'] = $post['fullname'];
+        $params['name']     = $post['fullname'];
         $params['username'] = $post['username'];
         $params['gender']   = $post['gender'];
-        $params['email'] = $post['email'];
+        $params['email']    = $post['email'];
         if (!empty($post['password'])) {
             $params['password'] = sha1($post['password']);
         }
-        $params['address'] = $post['address'];
-        $params['level'] = $post['level'];
-        $params['status'] = $post['status'];
+        $params['address']  = $post['address'];
+        $params['level']    = $post['level'];
+        $params['status']   = $post['status'];
         $this->db->where('user_id', $post['user_id']);
         $this->db->update('user', $params);
     }

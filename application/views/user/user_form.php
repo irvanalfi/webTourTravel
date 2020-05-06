@@ -24,7 +24,7 @@
                 <div class="col-md-6">
                     <form action="" method="POST">
                         <?php if ($page == 'edit') : ?>
-                            <input type="hidden" name="id" value="<?= $row->user_id; ?>">
+                            <input type="hidden" name="user_id" value="<?= $row->user_id; ?>">
                         <?php endif ?>
                         <div class="form-group <?= form_error('fullname') ? 'has-error' : null; ?>">
                             <label for="">Name *</label>
