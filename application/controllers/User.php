@@ -138,10 +138,10 @@ class User extends CI_Controller
         }
     }
 
-    function user_check($uname)
+    function user_check($uname1)
     {
         $post = $this->input->post(null, TRUE);
-        $query = $this->db->query("SELECT * FROM user WHERE username ='$uname' AND user_id !='$post[user_id]'");
+        $query = $this->db->query("SELECT * FROM user WHERE username ='$uname1' AND user_id !='$post[user_id]'");
         if ($query->num_rows() > 0) {
             $this->form_validation->set_message('user_check', 'This %s has already been used, please change!');
             return FALSE;
