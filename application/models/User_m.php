@@ -65,7 +65,7 @@ class User_m extends CI_Model
         }
         $params['address']  = $post['address'];
         $params['level']    = $post['level'];
-        $params['status']   = $post['status'];
+        $params['status']   = 'Y';
         $this->db->where('user_id', $post['user_id']);
         $this->db->update('user', $params);
     }

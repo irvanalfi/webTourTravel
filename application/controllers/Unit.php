@@ -8,7 +8,7 @@ class Unit extends CI_Controller
     {
         parent::__construct();
         check_not_login();
-        $this->load->model(['Unit_m', 'category_m', 'item_m']);
+        $this->load->model(['Unit_m']);
         $this->load->model('Cetak_m');
     }
 
@@ -22,23 +22,13 @@ class Unit extends CI_Controller
     {
         $post = $this->input->post(null, TRUE);
         if (isset($_POST['add'])) {
-            if ($this->Unit_m->check_barcode($post['barcode'])->num_rows() > 0) {
-                $this->session->set_flashdata('error', "Barcode $post[barcode] already used!!");
-                redirect('unit/add');
-            } else {
-                $this->Unit_m->add($post);
-            }
+            $this->Unit_m->add($post);
         } else if (isset($_POST['edit'])) {
-            if ($this->Unit_m->check_barcode($post['barcode'], $post['id'])->num_rows() > 0) {
-                $this->session->set_flashdata('error', "Barcode $post[barcode] already used!!");
-                redirect('unit/edit/' . $post['id']);
-            } else {
-                $this->Unit_m->edit($post);
-            }
+            $this->Unit_m->edit($post);
         }
 
         if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+            $this->session->set_flashdata('success', 'data has been successfully saved');
         }
         redirect('unit');
     }
