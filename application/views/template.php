@@ -253,7 +253,7 @@
                 $('#category_name').val(category_name);
                 $('#stock').val(stock);
                 $('#price').val(price);
-                $('#modal-item').val('hide');
+                $('#modal-item').modal('hide');
             });
         })
     </script>
