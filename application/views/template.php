@@ -202,6 +202,7 @@
                         <li class="header">SETTING</li>
                         <li><a href="<?= site_url('user'); ?>"><i class="fa fa-user"></i><span>User Aktif</span></a></li>
                         <li><a href="<?= site_url('userNonAktif'); ?>"><i class="fa fa-user"></i><span>User Non Active</span></a></li>
+                        <li><a href="<?= site_url('akun'); ?>"><i class="fa fa-object-group"></i><span>Akun Website</span></a></li>
                     <?php endif; ?>
             </section>
         </aside>
