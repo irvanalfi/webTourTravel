@@ -41,14 +41,14 @@
                         <tr>
                             <td style="width: 5%;"><?= $no++; ?>.</td>
                             <td><?= $data->barcode ?></td>
-                            <td><?= $data->supplier_name ?></td>
+                            <td><?= $data->item_name ?></td>
                             <td><?= $data->qty ?></td>
                             <td><?= indo_date($data->date) ?></td>
                             <td class="text-center" width="160px">
                                 <a href="" class="btn btn-default btn-xs">
                                     <i class="fa fa-eye"></i> Detail
                                 </a>
-                                <a href="<?= site_url('stock/in/del/' . $data->stock_id); ?>" class="btn btn-danger btn-xs">
+                                <a href="<?= site_url('stock/in/del/' . $data->stock_id . '/' . $data->item_id); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Yakin ingin menghapus data ini?')">
                                     <i class="fa fa-Trash"></i> Delete
                                 </a>
                             </td>

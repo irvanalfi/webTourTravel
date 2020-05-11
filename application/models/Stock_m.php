@@ -2,6 +2,16 @@
 
 class Stock_m extends CI_Model
 {
+    public function get($id = null)
+    {
+        $this->db->from('t_stock');
+        if ($id != null) {
+            $this->db->where('stock_id', $id);
+        }
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function get_stock_in($id = null)
     {
         $this->db->select('t_stock.stock_id, p_item.barcode, p_item.item_id, p_item.name as item_name,
@@ -29,22 +39,9 @@ class Stock_m extends CI_Model
         $this->db->insert('t_stock', $params);
     }
 
-    public function edit($post)
-    {
-        $params = [
-            'name' => $post['supplier_name'],
-            'phone' => $post['phone'],
-            'address' => $post['addr'],
-            'description' => empty($post['descript']) ? null : $post['descript'],
-            'updated ' => date('Y-m-d  H:i:s')
-        ];
-        $this->db->where('supplier_id', $post['id']);
-        $this->db->update('supplier', $params);
-    }
-
     public function del($id)
     {
-        $this->db->where('supplier_id', $id);
-        $this->db->delete('supplier');
+        $this->db->where('stock_id', $id);
+        $this->db->delete('t_stock');
     }
 }
