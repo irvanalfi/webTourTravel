@@ -71,12 +71,13 @@ class Supplier extends CI_Controller
         $error = $this->db->error();
 
         if ($error['code'] != 0) {
-            echo "<script>alert('Data Tidak dapat di Hapus ( Sudah berelasi dengan tabel lain )')</script>";
+            echo "<script>alert('Data Tidak dapat di Hapus ( Sudah berelasi dengan tabel lain )');</script>";
         } else {
-            echo "<script>alert('Data Berhasil di Hapus')</script>";
+            echo "<script>alert('Data Berhasil di Hapus');</script>";
         }
-        echo "<script>window.location='" . site_url('supplier') . "'</script>";
+        echo "<script>window.location='" . site_url('supplier') . "';</script>";
     }
+
     public function laporan_pdf()
     {
         $data['title'] = 'Report Supplier';
