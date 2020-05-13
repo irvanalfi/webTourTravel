@@ -261,10 +261,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#dtable').DataTable()
-            $("dtl").click(function(e) {
-                e.preventDefault();
-                console.log("aa");
+            $(document).on('click', '#set_dtl', function() {
                 var barcode = $(this).data('barcode');
                 var itemname = $(this).data('itemname');
                 var detail = $(this).data('detail');
@@ -277,13 +274,17 @@
                 $('#supplier_name').text(suppliername);
                 $('#qty').text(qty);
                 $('#date').text(date);
-            });
+            })
         })
     </script>
 
     <script>
-        $(document).on('click', '#select', function() {
-            $('#item_id').val($(this).data('id'));
+        $(document).on('click', '#slct', function() {
+            // var item_id = $(this).data('itemid');
+            // var barcode = $(this).data('barcode');
+            // var price = $(this).data('price');
+            // var stock = $(this).data('stock');
+            $('#item_id').val($(this).data('itemid'));
             $('#barcode').val($(this).data('barcode'));
             $('#price').val($(this).data('price'));
             $('#stock').val($(this).data('stock'));
