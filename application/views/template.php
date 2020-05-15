@@ -279,25 +279,28 @@
     </script>
 
     <script>
-        // masukkan data ke inputan cart hasil search
-        $(document).on('click', '#select', function() {
-            $('#item_id').val($(this).data('id'));
+        $(document).on('click', '#slct', function() {
+            // var item_id = $(this).data('itemid');
+            // var barcode = $(this).data('barcode');
+            // var price = $(this).data('price');
+            // var stock = $(this).data('stock');
+            $('#item_id').val($(this).data('itemid'));
             $('#barcode').val($(this).data('barcode'));
             $('#price').val($(this).data('price'));
             $('#stock').val($(this).data('stock'));
             $('#modal-item').modal('hide');
         })
-        // memasukkan data pada cart di halaman sale. 
+
         $(document).on('click', '#add_cart', function() {
             var item_id = $('#item_id').val()
             var price = $('#price').val()
             var stock = $('#stock').val()
             var qty = $('#qty').val()
             if (item_id == '') {
-                alert('Product not selected!!')
+                alert('Product belum dipilih')
                 $('#barcode').focus()
             } else if (stock < 1) {
-                alert('Insufficient stock!!')
+                alert('Stock tidak mencukupi')
                 $('#item_id').val('')
                 $('#barcode').val('')
                 $('#barcode').focus()
@@ -311,194 +314,15 @@
                         'price': price,
                         'qty': qty
                     },
-                    dataType: 'json',
+                    datatype: 'json',
                     success: function(result) {
                         if (result.success == true) {
-                            $('#cart_table').load('<?= site_url('sale/cart_data') ?>', function() {
-                                calculate()
-                            })
-                            $('#item_id').val('')
-                            $('#barcode').val('')
-                            $('#qty').val(1)
-                            $('#barcode').focus()
+                            alert('Berhasil tambah cart ke db')
                         } else {
-                            alert('Failed to add item cart!!')
+                            alert('Gagal tambah item cart')
                         }
                     }
                 })
-            }
-        })
-        // delete chart list
-        $(document).on('click', '#del_cart', function() {
-            if (confirm('Are you sure you want to delete this data??')) {
-                var cart_id = $(this).data('cartid')
-                $.ajax({
-                    type: 'POST',
-                    url: '<?= site_url('sale/cart_del') ?>',
-                    dataType: 'json',
-                    data: {
-                        'cart_id': cart_id
-                    },
-                    success: function(result) {
-                        if (result.success == true) {
-                            $('#cart_table').load('<?= site_url('sale/cart_data') ?>', function() {
-                                calculate()
-                            })
-                        } else {
-                            alert('Failed to delete item cart!!');
-                        }
-                    }
-                })
-            }
-        })
-
-        $(document).on('click', '#update_cart', function() {
-            $('#cartid_item').val($(this).data('cartid'));
-            $('#barcode_item').val($(this).data('barcode'));
-            $('#product_item').val($(this).data('product'));
-            $('#price_item').val($(this).data('price'));
-            $('#qty_item').val($(this).data('qty'));
-            $('#total_before').val($(this).data('price') * $(this).data('qty'));
-            $('#discount_item').val($(this).data('discount'));
-            $('#total_item').val($(this).data('total'));
-        })
-
-        //fungsi count
-        function count_edit_modal() {
-            var price = $('#price_item').val()
-            var qty = $('#qty_item').val()
-            var discount = $('#discount_item').val()
-
-            total_before = price * qty
-            $('#total_before').val(total_before)
-
-            total = (price - discount) * qty
-            $('#total_item').val(total)
-
-            if (discount == '') {
-                $('#discount_item').val(0)
-            }
-        }
-
-        $(document).on('keyup mouseup', '#price_item, #qty_item, #discount_item', function() {
-            count_edit_modal()
-        })
-        // merubah data yang sudah masuk pada list cart
-        $(document).on('click', '#edit_cart', function() {
-            var cart_id = $('#cartid_item').val()
-            var price = $('#price_item').val()
-            var qty = $('#qty_item').val()
-            var discount = $('#discount_item').val()
-            var total = $('#total_item').val()
-            if (price == '' || price < 1) {
-                alert('Price cannot be empty!!')
-                $('#price_item').focus()
-            } else if (qty == '' || qty < 1) {
-                alert('Qty cannot be empty!!')
-                $('#qty_item').focus()
-            } else {
-                $.ajax({
-                    type: 'POST',
-                    url: '<?= site_url('sale/process') ?>',
-                    data: {
-                        'edit_cart': true,
-                        'cart_id': cart_id,
-                        'price': price,
-                        'qty': qty,
-                        'discount': discount,
-                        'total': total
-                    },
-                    dataType: 'json',
-                    success: function(result) {
-                        if (result.success == true) {
-                            $('#cart_table').load('<?= site_url('sale/cart_data') ?>', function() {
-                                calculate()
-                            })
-                            alert('Item cart successfully updated!!')
-                            $('#modal-item-edit').modal('hide')
-                        } else {
-                            alert('Item cart data is not updated!!')
-                        }
-                    }
-                })
-            }
-        })
-
-        // Kalkulasi
-        function calculate() {
-            var subtotal = 0;
-            $('#cart_table tr').each(function() {
-                subtotal += parseInt($(this).find('#total').text())
-            })
-            isNaN(subtotal) ? $('#sub_total').val(0) : $('#sub_total').val(subtotal)
-
-            var discount = $('#discount').val()
-            var grand_total = subtotal - discount
-            if (isNaN(grand_total)) {
-                $('#grand_total').val(0)
-                $('#grand_total2').text(0)
-            } else {
-                $('#grand_total').val(grand_total)
-                $('#grand_total2').text(grand_total)
-            }
-            var cash = $('#cash').val()
-            cash != 0 ? $('#change').val(cash - grand_total) : $('#change').val(0)
-
-            if (discount == '') {
-                $('#discount').val(0)
-            }
-        }
-        $(document).on('keyup mouse', '#discount, #cash', function() {
-            calculate()
-        })
-        $(document).ready(function() {
-            calculate()
-        })
-
-        //proses payment
-        $(document).on('click', '#process_payment', function() {
-            var customer_id = $('#customer').val()
-            var subtotal = $('#sub_total').val()
-            var discount = $('#discount').val()
-            var grandtotal = $('#grand_total').val()
-            var cash = $('#cash').val()
-            var change = $('#change').val()
-            var note = $('#note').val()
-            var date = $('#date').val()
-            if (subtotal < 1) {
-                alert('No Products selected!!')
-                $('#barcode').focus()
-            } else if (cash < 1) {
-                alert('The amount of cash have not been inputted!!')
-                $('#cash').focus()
-            } else {
-                if (confirm('Are you sure about this transaction proces??')) {
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?= site_url('sale/process') ?>',
-                        data: {
-                            'process_payment': true,
-                            'customer_id': customer_id,
-                            'subtotal': subtotal,
-                            'discount': discount,
-                            'grandtotal': grandtotal,
-                            'cash': cash,
-                            'change': change,
-                            'note': note,
-                            'date': date
-                        },
-                        dataType: 'json',
-                        success: function(result) {
-                            if (result.success) {
-                                alert('Transaction success!!');
-                                window.open('<?= site_url('sale/cetak/') ?>' + result.sale_id, '_blank');
-                            } else {
-                                alert('Transaction failed!!');
-                            }
-                            location.href = '<?= site_url('sale') ?>'
-                        }
-                    })
-                }
             }
         })
     </script>
