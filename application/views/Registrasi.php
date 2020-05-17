@@ -25,50 +25,61 @@
                             </div>
                             <form class="user" method="POST" action="<?php echo base_url('Registrasi') ?>">
                                 <div class="form-group <?= form_error('fullname') ? 'has-error' : null; ?>">
+                                    <label for="">Full Name</label>
                                     <input type="text" name="fullname" class="form-control" value="<?= set_value('fullname'); ?>" placeholder="Fullname">
                                     <span class="help-block"><?= form_error('fullname'); ?></span>
                                 </div>
                                 <div class="form-group <?= form_error('email') ? 'has-error' : null; ?>">
+                                    <label for="">Email</label>
                                     <input type="text" name="email" class="form-control" value="<?= set_value('email'); ?>" placeholder="Email">
                                     <span class="help-block"><?= form_error('email'); ?></span>
                                 </div>
                                 <div class="form-group <?= form_error('gender') ? 'has-error' : null; ?>">
-                                    <input type="text" name="gender" class="form-control" value="<?= set_value('gender'); ?>" placeholder="Gender">
-                                    <span class="help-block"><?= form_error('gender'); ?></span>
+                                    <label for="">Gender</label>
+                                    <select name="gender" class="form-control" id="">
+                                        <?php $level = set_value('gender') ?>
+                                        <option value="L" <?= $level == 'L' ? "selected" : null; ?>>Male</option>
+                                        <option value="P" <?= $level == 'P' ? "selected" : null; ?>>Female</option>
+                                    </select>
+                                    <span class="help-block"><?= form_error('level'); ?></span>
                                 </div>
                                 <div class="form-group <?= form_error('username') ? 'has-error' : null; ?>">
+                                    <label for="">Username</label>
                                     <input type="text" name="username" class="form-control" value="<?= set_value('username'); ?>" placeholder="Username">
                                     <span class="help-block"><?= form_error('username'); ?></span>
                                 </div>
                                 <div class="form-group row">
-
                                     <div class="col-sm-6 mb-3 mb-sm-0 <?= form_error('password') ? 'has-error' : null; ?>">
+                                        <label for="">Password</label>
                                         <input type="password" name="password" class="form-control" value="<?= set_value('password'); ?>" placeholder="Password">
                                         <span class="help-block"><?= form_error('password'); ?></span>
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0 <?= form_error('passconf') ? 'has-error' : null; ?>">
+                                        <label for="">Password Confirm</label>
                                         <input type="password" name="passconf" class="form-control" value="<?= set_value('passconf'); ?>" placeholder="Password Confirmation">
                                         <span class="help-block"><?= form_error('passconf'); ?></span>
                                     </div>
                                 </div>
                                 <div class="form-group <?= form_error('address') ? 'has-error' : null; ?>">
+                                    <label for="">Address</label>
                                     <textarea name="address" class="form-control" placeholder="Address"><?= set_value('address'); ?></textarea>
                                     <span class="help-block"><?= form_error('address'); ?></span>
                                 </div>
-                                <div class="form-group <?= form_error('level') ? 'has-error' : null; ?>">
+                                <!-- <div class="form-group <?= form_error('level') ? 'has-error' : null; ?>">
                                     <label for="">Level</label>
                                     <select name="level" class="form-control" id="">
                                         <?php $level = set_value('level') ?>
                                         <option value="2" <?= $level == 2 ? "selected" : null; ?>>Kasir</option>
                                     </select>
                                     <span class="help-block"><?= form_error('level'); ?></span>
-                                </div>
-                                
+                                </div> -->
+
                                 <button type="submit" name="login.php" class="btn btn-warning btn-block">Register</button>
                                 <hr>
                             </form>
                             <div class="text-center">
-                                <a class="small" href="<?php echo base_url('Auth/login') ?>">Already have an account? Please Login!!</a>
+                                Already have an account?
+                                <a class="small" href="<?php echo base_url('Auth/login') ?>">Please Login!!</a>
                             </div>
                         </div>
                     </div>
