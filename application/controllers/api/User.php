@@ -6,29 +6,29 @@ require APPPATH . '/libraries/REST_Controller.php';
 require APPPATH . '/libraries/Format.php';
 use Restserver\Libraries\REST_Controller;
 
-class Item extends REST_Controller 
+class User extends REST_Controller 
 {
 
 	public function __construct($config = 'rest') 
 	{
         parent::__construct($config);
-        $this->load->model('ItemApi_model', 'p_item');
+        $this->load->model('UserApi_model', 'user');
     }
 
 	public function index_get() 
 	{
-        $id = $this->get('item_id');
+        $id = $this->get('user_id');
         if ($id === null) {
-            $p_item = $this->p_item->getItem();
+            $user = $this->user->getUser();
         } else {
-            $this->db->where('item_id', $id);
-            $p_item = $this->p_item->getItem($id);
+            $this->db->where('user_id', $id);
+            $user = $this->user->getUser($id);
 		}
 		
-        if ($p_item) {
+        if ($user) {
 			$this->response([
 				'status' => true,
-				'data' => $p_item
+				'data' => $user
 			], REST_Controller::HTTP_OK);
 		} else {
 			$this->response([
@@ -41,17 +41,17 @@ class Item extends REST_Controller
 	// Delete
 	public function index_delete() 
 	{
-        $id = $this->delete('item_id');
+        $id = $this->delete('user_id');
         if ($id === null) {
 			$this->response([
 				'status' => false,
 				'message' => 'provide an id'
 			], REST_Controller::HTTP_BAD_REQUEST);
         } else {
-            if ($this->p_item->deleteItem($id) > 0) {
+            if ($this->user->deleteUser($id) > 0) {
 				$this->response([
 					'status' => true,
-					'item_id' => $id,
+					'user_id' => $id,
 					'message' => 'deleted'
 				], REST_Controller::HTTP_OK);	
 			} else {
@@ -67,27 +67,23 @@ class Item extends REST_Controller
 	public function index_post()
 	{
 		$data = [
-            'item_id' => $this->post('item_id'),
-            'barcode' => $this->post('barcode'),
+            'user_id' => $this->post('user_id'),
             'name' => $this->post('name'),
+            'username' => $this->post('username'),
+            'gender' => $this->post('gender'),
+            'email' => $this->post('email'),
+            'password' => $this->post('password'),
             'address' => $this->post('address'),
-            'image' => $this->post('image'),
-            'duration' => $this->post('duration'),
-            'groupsize' => $this->post('groupsize'),
-            'language' => $this->post('language'),
-            'overview' => $this->post('overview'),
-            'type_id' => $this->post('type_id'),
-            'category_id' => $this->post('category_id'),
-            'stock' => $this->post('stock'),
-            'price' => $this->post('price'),
+            'level' => $this->post('level'),
+            'status' => $this->post('status'),
             'created' => $this->post('created'),
             'updated' => $this->post('updated'),
 		];
 
-		if ($this->p_item->createItem($data) > 0) {
+		if ($this->user->createUser($data) > 0) {
 			$this->response([
 				'status' => true,
-				'message' => 'new Item has been created'
+				'message' => 'new Useer has been created'
 			], REST_Controller::HTTP_CREATED);	
 		} else {
 			$this->response([
@@ -100,28 +96,24 @@ class Item extends REST_Controller
 	// Put
 	public function index_put()
 	{
-		$id = $this->put('item_id');
+		$id = $this->put('user_id');
 		$data = [
-			'item_id' => $this->post('item_id'),
-            'barcode' => $this->post('barcode'),
+			'user_id' => $this->post('user_id'),
             'name' => $this->post('name'),
+            'username' => $this->post('username'),
+            'gender' => $this->post('gender'),
+            'email' => $this->post('email'),
+            'password' => $this->post('password'),
             'address' => $this->post('address'),
-            'image' => $this->post('image'),
-            'duration' => $this->post('duration'),
-            'groupsize' => $this->post('groupsize'),
-            'language' => $this->post('language'),
-            'overview' => $this->post('overview'),
-            'type_id' => $this->post('type_id'),
-            'category_id' => $this->post('category_id'),
-            'stock' => $this->post('stock'),
-            'price' => $this->post('price'),
+            'level' => $this->post('level'),
+            'status' => $this->post('status'),
             'created' => $this->post('created'),
             'updated' => $this->post('updated'),
 		];
-		if ($this->p_item->updateItem($data, $id) > 0) {
+		if ($this->user->updateUser($data, $id) > 0) {
 			$this->response([
 				'status' => true,
-				'message' => 'new item has been updated'
+				'message' => 'new User has been updated'
 			], REST_Controller::HTTP_OK);	
 		} else {
 			$this->response([
