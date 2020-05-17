@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Bulan Mei 2020 pada 05.24
+-- Waktu pembuatan: 17 Bulan Mei 2020 pada 16.56
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -21,6 +21,58 @@ SET time_zone = "+00:00";
 --
 -- Database: `pos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `blog`
+--
+
+CREATE TABLE `blog` (
+  `blog_id` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `isi` longtext DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL,
+  `writer` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `blog`
+--
+
+INSERT INTO `blog` (`blog_id`, `title`, `isi`, `image`, `writer`, `created`, `updated`) VALUES
+(1, 'Blue Fire Phenomenon on Ijen Crater', 'Ijen Volcano or known as ‘Ijen Crater’ or ‘Kawah Ijen’ has elevation 2,769m (9,085 ft) which located in East Java, Indonesia. Highly recommended for mountain buffs and hikers. Ijen is a quiet but active volcano, and the landscape is dominated by the volcanic cones.', 'Sulfur_mining_in_Kawah_Ijen_Indonesia.jpg', 'admintraviora', '2020-05-17 21:47:50', NULL),
+(2, 'Corona in Bali – Is it safe to travel?', 'The World Health Organization (WHO) has declared COVID-19 a pandemic. The risk of transmission around the world is increasing, especially the spread of corona in Bali', 'corona-1.jpg', 'admintraviora', '2020-05-17 21:48:44', NULL),
+(3, 'Disinfectant Spraying On Three Gilis', 'When Gili islands closed, dozens of officers from the West Nusa Tenggara Government Office sprayed disinfectants and conducted counseling related to the coronavirus today. The first step is spraying disinfectant liquid in the Bangsal area which is the main entrance for the three of Gilis. Subsequently, hundreds of officers from the Police, The Indonesian National Armed Forces, and Health Office spread to three Gili Islands to spray disinfectants, counseling, and examinations for residents of Gilis. This disinfecting activity was carried out until 3:00 PM.', 'gili-1.jpg', 'admintraviora', '2020-05-17 21:50:39', NULL),
+(4, 'NYEPI 2020 – What you can do in Bali', 'Bali has a big day called Nyepi Day. In 2020, preparations for the Nyepi celebration ritual begin a few weeks before the actual date with the large Ogoh-ogoh craft. If you travel around the island, maybe you will see some that are being made.', 'asia_balinese_belief_indonesia_man_person_pray_prayer-1524171-1.jpg', 'admintraviora', '2020-05-17 21:51:47', NULL),
+(5, 'Tourist Attractions In Bali Began To Be Closed', 'The Indonesian government has appealed to the public to implement social distancing along with the increasing number of positive cases of corona in Indonesia. Most companies and government agencies have also adopted work from home policies for their employees.', 'Karang-Dawa-Manta-Bay-or-Kelingking-Beach-on-Nusa-Penida.jpg', 'Irvan Alfi', '2020-05-17 21:53:25', NULL),
+(6, 'Bali Status and Prevention Spread of Covid-19', 'Bali Update Covid-19. Until May 4, 2020, the cumulative number of positive patients is 271 people. The number of patients who had recovered was 159 people. Meanwhile, the number of patients who died remained 4 people (2 local and 2 foreign). The number of positive patients in medical care 108 people in 9 hospitals and in quarantine (Bapelkesmas).', 'bali-covid-update.jpg', 'Irvan Alfi', '2020-05-17 21:54:30', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `contact`
+--
+
+CREATE TABLE `contact` (
+  `contact_id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `pesan` text DEFAULT NULL,
+  `answer` text DEFAULT NULL,
+  `created` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `contact`
+--
+
+INSERT INTO `contact` (`contact_id`, `name`, `email`, `subject`, `pesan`, `answer`, `created`, `updated`) VALUES
+(1, 'M. Irvan Alfi Hidayat', 'irvanhidayat0623@gmail.com', 'Saran', 'Mohon di tingkatkan lagi fitur fiturnya. masih banyak yang kurang smoth', NULL, '2020-05-17 21:33:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -112,7 +164,22 @@ INSERT INTO `p_item` (`item_id`, `barcode`, `name`, `address`, `image`, `duratio
 (19, 'A003', 'Gili ', 'West Nusa Tenggara, Indonesia', 'item-070520-3f2dc55bc9.jpg', '8 hours', 'Unlimited', 'English', 'Gili Bali', 1, 2, 12, 1200000, '2020-05-15 06:02:10', '2020-05-07 18:41:30'),
 (21, 'A006', 'Sendang Gile', 'West Nusa Tenggara, Indonesia', 'item-070520-02437c1d16.jpg', '8 hours', 'Unlimited', 'English', 'Waterfall', 1, 3, 15, 950000, '2020-05-15 06:03:28', '2020-05-07 19:04:06'),
 (23, 'A004', 'Bentar', 'Probolinggo', 'item-070520-1d8df7e34e.jpg', '8 hours', 'Unlimited', 'English', 'Bentar Beach', 1, 1, 12, 150000, '2020-05-15 06:04:22', '2020-05-07 19:07:08'),
-(24, 'A008', 'Matos', 'Malang', 'item-070520-91d4f9302d.jpg', '3 Hours', 'Unlimited', 'English', 'Matos Mall', 1, 1, 6, 450000, '2020-05-15 06:03:48', NULL);
+(24, 'A008', 'Matos', 'Malang', 'item-070520-91d4f9302d.jpg', '3 Hours', 'Unlimited', 'English', 'Matos Mall', 1, 1, 6, 450000, '2020-05-15 06:03:48', NULL),
+(25, 'A009', 'Africa of Java & Staycation', 'Baluran', 'item-160520-cd506846e3.jpg', '2 Days', 'Unlimited', 'English', 'Explore National Park and enjoy the panorama of savanna and mount Baluran', 2, 1, 10, 1098000, '2020-05-17 00:38:24', NULL),
+(26, 'A010', 'Day Trip Lembongan by Sugriwa Express', 'Mangrove forest, Jungutbatu, Klungkung Regency, Bali, Indonesia', 'item-160520-8764349a32.jpg', '5 Hours', 'Unlimited', 'English', 'Explore Lembongan and all its magic. We will take you to see the Mangrove Forest.', 1, 2, 15, 800000, '2020-05-17 21:34:36', '2020-05-17 16:34:36'),
+(27, 'A011', 'Amazing Malang Batu – 2Days 1Night', 'Malang, Malang City, East Java, Indonesia', 'item-160520-eaf9bcfb9d.jpg', '2 Days', 'Unlimited', 'English', 'Omah Kayu (Wooden House) near enough from other tourist destinations in Batu', 1, 1, 15, 1935000, '2020-05-17 01:04:50', NULL),
+(28, 'A012', 'Beautiful Malang Batu – 3Days 2Nights', 'Malang, Malang City, East Java, Indonesia', 'item-160520-d479f33fde.jpg', '3 Days', 'Unlimited', 'English', 'Museum Angkut is a transport museum located in Batu, East Java, Indonesia', 1, 1, 15, 2775000, '2020-05-17 01:08:45', NULL),
+(29, 'A013', 'Beautiful Malang Batu Bromo – 3Days 2Nights', 'Malang, Malang City, East Java, Indonesia', 'item-160520-5a816a2aa6.jpg', '3 Days', 'Unlimited', 'English', 'And Mount Bromo is a part of the Bromo Tengger Semeru National Park that covers a massive area of 800 square km. ', 1, 1, 20, 3290000, '2020-05-17 01:10:49', NULL),
+(30, 'A014', 'Jogjakarta Golf Tours', 'Yogyakarta, Yogyakarta City, Special Region of Yogyakarta, Indonesia', 'item-160520-5325c264ac.jpg', '3 Days', 'Unlimited', 'English', 'Yogyakarta (some people call it Jogja, Jogjakarta, or Yogya) is a city with outstanding historical and cultural heritage. ', 1, 1, 15, 4710000, '2020-05-17 01:12:01', NULL),
+(31, 'A015', 'Ramayana Ballet Performance Entrance Ticket (Performance Only)', 'Ramayana Ballet Purawisata, Jalan Brigjen Katamso, Keparakan, Yogyakarta City, Special Region of Yogyakarta, Indonesia', 'item-160520-30a8212bde.jpg', '1 hours 30 minutes', 'Unlimited', 'English', 'Mandira Baruga was formerly known as PURAWISATA, Travel Destinations that are well known and visited by millions of tourists from various foreign countries', 3, 1, 10, 250000, '2020-05-17 01:13:16', NULL),
+(32, 'A016', 'Cycling and Rafting with Bahama', ' Ayung River Rafting Ubud Bali, Jalan Raya Ubud, Ubud, Gianyar, Bali, Indonesia', 'item-160520-ef08b3fcde.jpg', '5 Hours', 'Unlimited', 'English', 'Bahama rafting adventure located in the Ayung River which is one of the best selected adventure companies in Bali', 1, 2, 20, 550000, '2020-05-17 01:15:43', NULL),
+(33, 'A017', 'Taman Sari Buwana – Balinese Traditional Farming (Village Life & Traditional farming)', ' Taman Sari Buwana - Balinese Traditional Farming, Tunjuk, Tabanan Regency, Bali, Indonesia', 'item-160520-70b527dfeb.jpg', ' 2,5 hours - 3 hours', 'Unlimited', 'English', 'Taman Sari Buwana is a semi-social activity which is developed related to sustainable tourism concept', 1, 2, 15, 540000, '2020-05-17 01:17:20', NULL),
+(34, 'A018', 'Bali Treetop Adventure Park – Treetop Activity (Foreigners Only)', ' Bali Treetop Adventure Park, Candikuning, Tabanan Regency, Bali, Indonesia', 'item-160520-744ce0b33b.jpg', ' 2 hours 30 minutes (approx.)', 'Unlimited', 'English', 'Bali Treetop Adventure Park is a fun activity set in an open air environment for group and family in Indonesia.', 1, 2, 15, 345000, '2020-05-17 01:20:25', NULL),
+(35, 'A019', '3 Points Snorkeling Package with Bali Funtasea', ' Nusa Penida, Klungkung Regency, Bali, Indonesia', 'item-160520-2b0c8d0f0d.jpg', '8 Hours', 'Unlimited', 'English', 'Bali Funtasea has varieties of day cruises and land tours in Nusa Penida and Nusa Lembongan Island. ', 4, 2, 15, 630000, '2020-05-17 01:22:32', NULL),
+(36, 'A020', 'Exotic Sasak Daily Tour', ' Rambitan village, Rembitan, Central Lombok Regency, West Nusa Tenggara, Indonesia', 'item-160520-7743b0ecc1.jpg', '8 Hours', 'Unlimited', 'English', 'Discover the exotic of Lombok by visiting some villages with its unique culture. Firstly, visit Banyumelek village', 8, 3, 15, 900000, '2020-05-17 01:25:41', NULL),
+(37, 'A021', 'West Nusa Tenggara City Tour', ' Mataram City, West Nusa Tenggara, Indonesia', 'item-160520-2ae1fe8586.jpg', '8 Hours', 'Unlimited', 'English', 'Your trip starts with visiting the Islamic Center. Located in Mataram, the Islamic Center is a Mosque with a magnificent and artistic design.', 8, 3, 10, 875000, '2020-05-17 01:28:45', NULL),
+(38, 'A022', 'Lombok Land Cruise', ' Lombok Island, West Nusa Tenggara, Indonesia', 'item-160520-2a9352dc46.jpg', 'Full Day', 'Unlimited', 'English', 'Lombok land cruise will start by picking up and meeting services at your hotel, directly drive to Malimbu Hill to see the scenic view of Lombok Coast', 1, 3, 15, 1480000, '2020-05-17 01:31:05', NULL),
+(39, 'A023', 'Gili 3 Island Snorkeling', ' Gili Islands, Gili Indah, North Lombok Regency, West Nusa Tenggara, Indonesia', 'item-160520-7eb17c3a3a.jpg', '12 Hours', 'Unlimited', 'English', 'You’ll enjoy snorkeling at the best snorkeling points of Gili Trawangan, Gili Meno and Gili Air. Specifically designed to see all three Island in one day.', 4, 3, 20, 1100000, '2020-05-17 01:32:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -153,8 +220,8 @@ CREATE TABLE `p_unit` (
   `unit_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `stock` int(11) NOT NULL DEFAULT 0,
-  `created` date NOT NULL DEFAULT current_timestamp(),
-  `updated` date NOT NULL
+  `created` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -162,16 +229,16 @@ CREATE TABLE `p_unit` (
 --
 
 INSERT INTO `p_unit` (`unit_id`, `name`, `stock`, `created`, `updated`) VALUES
-(1, 'Mout Bromo Tours', 12, '2020-05-07', '0000-00-00'),
-(2, 'Banyuwangi', 10, '2020-05-07', '0000-00-00'),
-(3, 'Malang', 4, '2020-05-07', '0000-00-00'),
-(4, 'Yogyakarta', 2, '2020-05-07', '0000-00-00'),
-(5, 'Bali Island Tour', 3, '2020-05-07', '0000-00-00'),
-(6, 'Nusa Penida Tour', 6, '2020-05-07', '0000-00-00'),
-(7, 'Nusa Lembongan Tour', 5, '2020-05-07', '0000-00-00'),
-(8, 'Lombok Island  Tour', 9, '2020-05-07', '0000-00-00'),
-(9, 'Mount Rinjani Trekking', 7, '2020-05-07', '0000-00-00'),
-(10, 'Gili Islands Tour', 1, '2020-05-07', '0000-00-00');
+(1, 'Mout Bromo Tours', 12, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(2, 'Banyuwangi', 10, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(3, 'Malang', 4, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(4, 'Yogyakarta', 2, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(5, 'Bali Island Tour', 3, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(6, 'Nusa Penida Tour', 6, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(7, 'Nusa Lembongan Tour', 5, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(8, 'Lombok Island  Tour', 9, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(9, 'Mount Rinjani Trekking', 7, '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
+(10, 'Gili Islands Tour', 1, '2020-05-07 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -337,13 +404,24 @@ INSERT INTO `user` (`user_id`, `name`, `username`, `gender`, `email`, `password`
 (1, 'M. Irvan Alfi Hidayat', 'Admin', 'L', 'irvanhidayat0623@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Banyuwangi', '1', 'Y', '2020-05-04 05:25:59', NULL),
 (2, 'Septianda Reza Maulana', 'septiandareza', 'L', 'septiandareza07@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Perumahan Jati Asri Blok A3', '1', 'Y', '2020-05-04 05:30:52', NULL),
 (3, 'Mirza Zarqani Rayhan', 'mirza', 'L', 'mirza@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Malang', '1', 'Y', '2020-05-07 05:11:38', NULL),
-(4, 'Miftahul Huda', 'huda123', 'L', 'miftahkonae95@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Banyuwangi', '2', 'Y', '2020-05-07 20:37:41', NULL),
 (5, 'Sifa Safira', 'safira', 'P', 'safira14@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'Malang Jawa Timur', '2', 'Y', '2020-05-07 21:34:28', NULL),
 (6, 'Febri Alia Anggreini', 'febri', 'P', 'febrialia_anggreini@rocketmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Probolinggo', '2', 'N', '2020-05-07 20:46:48', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`blog_id`);
+
+--
+-- Indeks untuk tabel `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`contact_id`);
 
 --
 -- Indeks untuk tabel `customer`
@@ -425,6 +503,18 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
@@ -434,13 +524,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT untuk tabel `p_category`
 --
 ALTER TABLE `p_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `p_item`
 --
 ALTER TABLE `p_item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT untuk tabel `p_type`
