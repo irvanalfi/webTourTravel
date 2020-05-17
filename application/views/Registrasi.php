@@ -65,15 +65,6 @@
                                     <textarea name="address" class="form-control" placeholder="Address"><?= set_value('address'); ?></textarea>
                                     <span class="help-block"><?= form_error('address'); ?></span>
                                 </div>
-                                <!-- <div class="form-group <?= form_error('level') ? 'has-error' : null; ?>">
-                                    <label for="">Level</label>
-                                    <select name="level" class="form-control" id="">
-                                        <?php $level = set_value('level') ?>
-                                        <option value="2" <?= $level == 2 ? "selected" : null; ?>>Kasir</option>
-                                    </select>
-                                    <span class="help-block"><?= form_error('level'); ?></span>
-                                </div> -->
-
                                 <button type="submit" name="login.php" class="btn btn-warning btn-block">Register</button>
                                 <hr>
                             </form>
