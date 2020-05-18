@@ -29,6 +29,10 @@ class UserApi_model extends CI_Model {
 		return $this->db->affected_rows();
 		
 	}
+	public function login($uname, $pass)
+    {
+        return $this->db->get_where('user', ['username' => $uname, 'password' => $pass, 'status' => 'Y'])->result();
+    }
 
 }
 

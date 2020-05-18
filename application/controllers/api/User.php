@@ -122,5 +122,29 @@ class User extends REST_Controller
 			], REST_Controller::HTTP_BAD_REQUEST);
 		}
 	}
+	public function login_post()
+    {
+        $uname = $this->post('username');
+        $pass = $this->post('password');
+        if (!empty($uname) && !empty($pass)) {
+            $user = $this->user->login($uname, $pass);
+            if ($user) {
+                $this->response([
+                    'status' => true,
+                    'data' => $user
+                ], REST_Controller::HTTP_OK);
+            } else {
+                $this->response([
+                    'status' => false,
+                    'data' => 'id not found'
+                ], REST_Controller::HTTP_NOT_FOUND);
+            }
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'provide a data'
+            ], REST_Controller::HTTP_BAD_REQUEST);
+        }
+    }
 }
 ?>
