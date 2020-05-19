@@ -76,8 +76,7 @@ class User extends REST_Controller
             'address' => $this->post('address'),
             'level' => $this->post('level'),
             'status' => $this->post('status'),
-            'created' => $this->post('created'),
-            'updated' => $this->post('updated'),
+
 		];
 
 		if ($this->user->createUser($data) > 0) {
@@ -107,8 +106,7 @@ class User extends REST_Controller
             'address' => $this->post('address'),
             'level' => $this->post('level'),
             'status' => $this->post('status'),
-            'created' => $this->post('created'),
-            'updated' => $this->post('updated'),
+
 		];
 		if ($this->user->updateUser($data, $id) > 0) {
 			$this->response([
