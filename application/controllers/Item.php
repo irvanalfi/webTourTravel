@@ -21,7 +21,7 @@ class Item extends CI_Controller
 
     public function proses()
     {
-        $config['upload_path']      = './uploads/item/';
+        $config['upload_path']      = './assets/img/item/';
         $config['allowed_types']    = 'gif|jpg|jpeg|png';
         $config['max_size']         = 5120;
         $config['file_name']        = 'item-' . date('dmy') . '-' . substr(md5(rand()), 0, 10);
@@ -69,7 +69,7 @@ class Item extends CI_Controller
                     if ($this->upload->do_upload('image')) {
                         $item = $this->Item_m->get($post['id'])->row();
                         if ($item->image != null) {
-                            $target_file = './uploads/item/' . $item->image;
+                            $target_file = './assets/img/item/' . $item->image;
                             unlink($target_file);
                         }
                         $post['image']  =   $this->upload->data('file_name');

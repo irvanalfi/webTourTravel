@@ -43,7 +43,7 @@
                             <?php if ($page == 'edit') {
                                 if ($row->image != null) { ?>
                                     <div style="margin-bottom:5px">
-                                        <img src="<?= base_url('uploads/item/' . $row->image) ?>" style="width:50%">
+                                        <img src="<?= base_url('assets/img/item/' . $row->image) ?>" style="width:50%">
                                     </div>
                             <?php
                                 }

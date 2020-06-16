@@ -186,6 +186,12 @@
                             </li>
                         </ul>
                     </li>
+                    <li <?= $this->uri->segment(1) == 'contact' ? 'class="active"' : ''; ?>>
+                        <a href="<?= site_url('contact'); ?>"><i class="fa fa-comments"></i><span>Contact</span></a>
+                    </li>
+                    <li <?= $this->uri->segment(1) == 'blog' ? 'class="active"' : ''; ?>>
+                        <a href="<?= site_url('blog'); ?>"><i class="fa fa-globe"></i><span>Blog</span></a>
+                    </li>
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-pie-chart"></i> <span>Reports</span>
@@ -200,9 +206,24 @@
                     </li>
                     <?php if ($this->fungsi->user_login()->level == 1) : ?>
                         <li class="header">SETTING</li>
-                        <li><a href="<?= site_url('user'); ?>"><i class="fa fa-user"></i><span>User Aktif</span></a></li>
-                        <li><a href="<?= site_url('userNonAktif'); ?>"><i class="fa fa-user"></i><span>User Non Active</span></a></li>
-                        <li><a href="<?= site_url('akun'); ?>"><i class="fa fa-object-group"></i><span>Akun Website</span></a></li>
+                        <li class="treeview <?= $this->uri->segment(1) == 'user' ||
+                                                $this->uri->segment(1) == 'userNonAktif' ? 'active' : ''; ?>">
+                            <a href="#">
+                                <i class="fa fa-user"></i> <span>User</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li <?= $this->uri->segment(1) == 'user' ? 'class="active"' : ''; ?>>
+                                    <a href="<?= site_url('user'); ?>"><i class="fa fa-check"></i> User Active</a>
+                                </li>
+                                <li <?= $this->uri->segment(1) == 'userNonAktif' ? 'class="active"' : ''; ?>>
+                                    <a href="<?= site_url('userNonAktif'); ?>"><i class="fa fa-close"></i> User Non Active</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="<?= site_url('profil'); ?>"><i class="fa fa-object-group"></i><span>Profil Website</span></a></li>
                     <?php endif; ?>
             </section>
         </aside>
@@ -256,6 +277,23 @@
                 $('#price').val(price);
                 $('#modal-item').modal('hide');
             });
+        })
+    </script>
+    <!-- item detail -->
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '#item_detail', function() {
+                var duration = $(this).data('duration');
+                var groupsize = $(this).data('groupsize');
+                var language = $(this).data('language');
+                var tourtype = $(this).data('tourtype');
+                var overview = $(this).data('overview');
+                $('#duration').text(duration);
+                $('#groupsize').text(groupsize);
+                $('#language').text(language);
+                $('#tour_type').text(tourtype);
+                $('#overview').text(overview);
+            })
         })
     </script>
 
@@ -502,15 +540,17 @@
             }
         })
         $(document).on('click', '#cancel_payment', function() {
-            if(confirm('Are you sure want to cancel this transaction?')) {
+            if (confirm('Are you sure want to cancel this transaction?')) {
                 $.ajax({
                     type: 'POST',
-                    url: '<?=site_url('sale/cart_del')?>',
-                    dataType : 'json',
-                    data: {'cancel_payment' : true},
+                    url: '<?= site_url('sale/cart_del') ?>',
+                    dataType: 'json',
+                    data: {
+                        'cancel_payment': true
+                    },
                     success: function(result) {
-                        if(result.success == true) {
-                            $('#cart_table').load('<?=site_url('sale/cart_data')?>', function() {
+                        if (result.success == true) {
+                            $('#cart_table').load('<?= site_url('sale/cart_data') ?>', function() {
                                 calculate()
                             })
                         }
@@ -522,6 +562,16 @@
                 $('#barcode').val('')
                 $('#barcode').focus()
             }
+        })
+    </script>
+
+    <!-- detail konten pada blog -->
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '#blog_content', function() {
+                var content = $(this).data('content');
+                $('#content').text(content);
+            })
         })
     </script>
 </body>

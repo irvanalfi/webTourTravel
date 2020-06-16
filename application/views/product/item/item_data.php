@@ -23,19 +23,14 @@
         </div>
 
         <div class="box-body table-responsive">
-            <table class="table table-bordered table-striped" id="dtable" style="font-size: 11px">
+            <table class="table table-bordered table-striped" id="dtable">
                 <thead>
                     <tr>
                         <th style="width: 5%;">#</th>
                         <th>Barcode</th>
-                        <th>Name / Title</th>
-                        <th>Address</th>
+                        <th style="width:140px">Name / Title</th>
                         <th>Image</th>
-                        <th>Duration</th>
-                        <th>Group Size</th>
-                        <th>Overview</th>
-                        <th>Language</th>
-                        <th>Tour Type</th>
+                        <th style="width:140px">Address</th>
                         <th>Tour Category</th>
                         <th>Stock</th>
                         <th>Price</th>
@@ -53,28 +48,26 @@
                                     Generate<i class="fa fa-barcode"></i>
                                 </a>
                             </td>
-                            <td><?= $data->name ?></td>
-                            <td><?= $data->address ?></td>
+                            <td style="width:140px"><?= $data->name ?></td>
                             <td>
                                 <?php if ($data->image != null) { ?>
-                                    <img src="<?= base_url('uploads/item/' . $data->image) ?>" style="width:100px">
+                                    <img src="<?= base_url('assets/img/item/' . $data->image) ?>" style="width:100px">
                                 <?php } ?>
                             </td>
-                            <td><?= $data->duration ?></td>
-                            <td><?= $data->groupsize ?></td>
-                            <td><?= $data->overview ?></td>
-                            <td><?= $data->language ?></td>
-                            <td><?= $data->type_name ?></td>
+                            <td style="width:140px"><?= $data->address ?></td>
                             <td><?= $data->category_name ?></td>
                             <td><?= $data->stock ?></td>
-                            <td><?= $data->price ?></td>
+                            <td><?= indo_currency($data->price); ?></td>
                             <td class="text-center" width="160px">
+                                <a id="item_detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#itm-detail" data-duration="<?= $data->duration ?>" data-groupsize="<?= $data->groupsize ?>" data-language="<?= $data->language ?>" data-tourtype="<?= $data->type_name ?>" data-overview="<?= $data->overview ?>">
+                                    <i class="fa fa-eye"></i> Detail
+                                </a>
                                 <a href="<?= site_url('item/edit/' . $data->item_id); ?>" class="btn btn-warning btn-xs">
                                     <i class="fa fa-pencil"></i> Edit
-                                </a><br>
+                                </a>
                                 <form action="<?= site_url('item/delete'); ?>" method="POST" class="">
                                     <input type="hidden" name="item_id" value="<?= $data->item_id ?>">
-                                    <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this data?')">
+                                    <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this data?')" style="margin-top:4px">
                                         <i class="fa fa-trash"></i> Delete</button>
                                 </form>
                             </td>
@@ -85,3 +78,42 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="itm-detail">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Item Details</h4>
+            </div>
+            <div class="modal-body table-responsive">
+                <table class="table table-bordered no-margin">
+                    <tbody>
+                        <tr>
+                            <td>Duration</td>
+                            <td><span id="duration"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Group Size</td>
+                            <td><span id="groupsize"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Language</td>
+                            <td><span id="language"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Tour Type</td>
+                            <td><span id="tour_type"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Overview</td>
+                            <td><span id="overview"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
