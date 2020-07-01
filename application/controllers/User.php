@@ -21,17 +21,73 @@ class User extends CI_Controller
 
     public function proses()
     {
+        $config['upload_path']      = './assets/img/user/';
+        $config['allowed_types']    = 'gif|jpg|jpeg|png';
+        $config['max_size']         = 5120;
+        $config['file_name']        = 'user-' . date('dmy') . '-' . substr(md5(rand()), 0, 10);
+        $this->load->library('upload', $config);
+
         $post = $this->input->post(null, TRUE);
         if (isset($_POST['add'])) {
-            $this->user_m->add($post);
+            if (@$_FILES['image']['name'] != null) {
+                if ($this->upload->do_upload('image')) {
+                    $post['image']  =   $this->upload->data('file_name');
+                    $this->user_m->add($post);
+                    if ($this->db->affected_rows() > 0) {
+                        $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                    }
+                    redirect('user');
+                } else {
+                    $error = $this->upload->display_errors();
+                    $this->session->set_flashdata('error', $error);
+                    redirect('user/add');
+                }
+            } else {
+                $post['image']  = null;
+                $this->user_m->add($post);
+                if ($this->db->affected_rows() > 0) {
+                    $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                }
+                redirect('user');
+            }
         } else if (isset($_POST['edit'])) {
-            $this->user_m->edit($post);
+            if (@$_FILES['image']['name'] != null) {
+                if ($this->upload->do_upload('image')) {
+                    $user = $this->user_m->get($post['id'])->row();
+                    if ($user->image != null) {
+                        $target_file = './assets/img/user/' . $user->image;
+                        unlink($target_file);
+                    }
+                    $post['image']  =   $this->upload->data('file_name');
+                    $this->user_m->edit($post);
+                    if ($this->db->affected_rows() > 0) {
+                        $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                    }
+                    redirect('user');
+                } else {
+                    $error = $this->upload->display_errors();
+                    $this->session->set_flashdata('error', $error);
+                    redirect('user/edit');
+                }
+            } else {
+                $post['image']  = null;
+                $this->Item_m->edit($post);
+                if ($this->db->affected_rows() > 0) {
+                    $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                }
+                redirect('user');
+            }
         }
+        // if (isset($_POST['add'])) {
+        //     $this->user_m->add($post);
+        // } else if (isset($_POST['edit'])) {
+        //     $this->user_m->edit($post);
+        // }
 
-        if ($this->db->affected_rows() > 0) {
-            echo "<script>alert('Data Berhasil disimpan');</script>";
-        }
-        echo "<script>window.location='" . site_url('user') . "'</script>";
+        // if ($this->db->affected_rows() > 0) {
+        //     echo "<script>alert('Data Berhasil disimpan');</script>";
+        // }
+        // echo "<script>window.location='" . site_url('user') . "'</script>";
     }
 
     public function add()
@@ -46,6 +102,7 @@ class User extends CI_Controller
         $user->passconf     = null;
         $user->address      = null;
         $user->level        = null;
+        $user->image        = null;
 
         $this->form_validation->set_rules('fullname', 'Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[user.username]');

@@ -78,16 +78,6 @@ class Blog extends CI_Controller
                 redirect('blog');
             }
         }
-        // if (isset($_POST['add'])) {
-        //     $this->Blog_m->add($post);
-        // } else if (isset($_POST['edit'])) {
-        //     $this->Blog_m->edit($post);
-        // }
-
-        // if ($this->db->affected_rows() > 0) {
-        //     echo "<script>alert('Data Berhasil disimpan');</script>";
-        // }
-        // echo "<script>window.location='" . site_url('blog') . "'</script>";
     }
 
     public function add()
@@ -124,6 +114,12 @@ class Blog extends CI_Controller
     public function delete()
     {
         $id = $this->input->post('blog_id');
+        $blog = $this->Blog_m->get($id)->row();
+        if ($blog->image != null) {
+            $target_file = './assets/img/blog/' . $blog->image;
+            unlink($target_file);
+        }
+
         $this->Blog_m->del($id);
 
         if ($this->db->affected_rows() > 0) {

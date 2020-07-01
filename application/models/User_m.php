@@ -33,6 +33,7 @@ class User_m extends CI_Model
         $params['address']  = $post['address'];
         $params['level']    = $post['level'];
         $params['status']   = "N";
+        $params['avatar']   = $post['image'];
         $this->db->insert('user', $params);
     }
 
@@ -45,6 +46,7 @@ class User_m extends CI_Model
         $params['address']  = $post['address'];
         $params['level']    = 2;
         $params['status']   = "N";
+        $params['avatar']   = $post['image'];
         $this->db->insert('user', $params);
     }
 
@@ -66,6 +68,7 @@ class User_m extends CI_Model
         $params['address']  = $post['address'];
         $params['level']    = $post['level'];
         $params['status']   = 'Y';
+        $params['image']   = $post['avatar'];
         $this->db->where('user_id', $post['user_id']);
         $this->db->update('user', $params);
     }

@@ -40,7 +40,7 @@
                             <td style="width: 5%;"><?= $no++; ?>.</td>
                             <td>
                                 <?php if ($data->image != null) { ?>
-                                    <img src="<?= base_url('assets/img/blog/' . $data->image) ?>" style="width:100px">
+                                    <img src="<?= base_url('assets/img/blog/' . $data->image) ?>" style="width:100px;">
                                 <?php } else {
                                     echo "No Image";
                                 } ?>

@@ -156,7 +156,7 @@ class Item extends CI_Controller
         $id = $this->input->post('item_id');
         $item = $this->Item_m->get($id)->row();
         if ($item->image != null) {
-            $target_file = './uploads/item/' . $item->image;
+            $target_file = '../assets/img/item/' . $item->image;
             unlink($target_file);
         }
         $this->Item_m->del($id);

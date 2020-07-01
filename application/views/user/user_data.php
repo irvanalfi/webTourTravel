@@ -26,6 +26,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Avatar</th>
                         <th>Username</th>
                         <th>Name</th>
                         <th>Gender</th>
@@ -41,6 +42,13 @@
                     <?php foreach ($row->result() as $key => $data) : ?>
                         <tr>
                             <td style="width: 5%;"><?= $no++; ?>.</td>
+                            <td>
+                                <?php if ($data->avatar != null) { ?>
+                                    <img src="<?= base_url('assets/img/user/' . $data->avatar) ?>" style="width:50px; height: 50px; border-radius:50%; overflow:hidden">
+                                <?php } else {
+                                    echo "No Image";
+                                } ?>
+                            </td>
                             <td><?= $data->username ?></td>
                             <td><?= $data->name ?></td>
                             <td><?= $data->gender == 'L' ? 'Male' : 'Female' ?></td>
