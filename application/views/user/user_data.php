@@ -55,7 +55,14 @@
                             <td><?= $data->email ?></td>
                             <td><?= $data->address ?></td>
                             <td><?= $data->level == 1 ? "Admin" : "Kasir" ?></td>
-                            <td><?= $data->status == "Y" ? "Active" : "Non Active" ?></td>
+                            <td><?= $data->status == "Y" ? "Active" : "Non Active" ?>
+                                <br>
+                                <form action="<?= site_url('user/editStatus/'); ?>" method="POST" class="">
+                                    <input type="hidden" name="user_id" value="<?= $data->user_id ?>">
+                                    <button class="btn btn-warning btn-xs" onclick="return confirm('Are you sure you want to make Non Activate this user?')">
+                                        <i class="fa fa-close"></i> Decline</button>
+                                </form>
+                            </td>
                             <td class="text-center" width="160px">
                                 <a href="<?= site_url('user/edit/' . $data->user_id); ?>" class="btn btn-warning btn-xs">
                                     <i class="fa fa-pencil"></i> Edit</a>

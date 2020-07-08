@@ -72,4 +72,15 @@ class User_m extends CI_Model
     $this->db->where('user_id', $post['user_id']);
     $this->db->update('user', $params);
   }
+
+  public function editStatus($id)
+  {
+    $params = [
+      'status' => 'N'
+      // ,
+      // 'updated ' => date('Y-m-d  H:i:s')
+    ];
+    $this->db->where('user_id', $id);
+    $this->db->update('user', $params);
+  }
 }
