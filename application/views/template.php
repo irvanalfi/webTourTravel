@@ -192,7 +192,7 @@
                     <li <?= $this->uri->segment(1) == 'blog' ? 'class="active"' : ''; ?>>
                         <a href="<?= site_url('blog'); ?>"><i class="fa fa-globe"></i><span>Blog</span></a>
                     </li>
-                    <li class="treeview">
+                    <li class="treeview <?= $this->uri->segment(1) == 'report' ? 'active' : ''; ?>">
                         <a href="#">
                             <i class="fa fa-pie-chart"></i> <span>Reports</span>
                             <span class="pull-right-container">
@@ -200,7 +200,9 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Sales</a></li>
+                            <li <?= $this->uri->segment(1) == 'report' && $this->uri->segment(2) == 'sale' ? 'class="active"' : ''; ?>>
+                                <a href="<?= site_url('report/sale'); ?>"><i class="fa fa-circle-o"></i> Sales</a>
+                            </li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Stock</a></li>
                         </ul>
                     </li>
@@ -236,7 +238,7 @@
             <div class="pull-right hidden-xs">
                 <b>Version</b> 1.0
             </div>
-            <strong>Copyright &copy; 2020 <a href="https://github.com/SeptiandaRezaMaulana">Project1</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2020 <a href="">Project1</a>.</strong> All rights reserved.
         </footer>
     </div>
 
