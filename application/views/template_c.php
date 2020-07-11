@@ -8,7 +8,6 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.css">
@@ -65,21 +64,11 @@
     <script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?= base_url() ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-
-    <script src="<?= base_url() ?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-
     <script src="<?= base_url() ?>assets/dist/js/adminlte.min.js"></script>
     <script src="<?= base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
     <script src="<?= base_url() ?>assets/js/bootstrap.js"></script>
     <script src="<?= base_url() ?>assets/js/all.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $('#dtable').DataTable()
-        })
-    </script>
 </body>
 
 </html>

@@ -21,16 +21,16 @@
         </div>
 
         <div class="box-body table-responsive">
-            <table class="table table-bordered table-striped" id="dtable">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Invoice</th>
                         <th>Date</th>
                         <th>Customer</th>
-                        <th>Total</th>
-                        <th>Discount</th>
-                        <th>Grand Total</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Discount</th>
+                        <th class="text-center">Grand Total</th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -39,15 +39,17 @@
                     <?php foreach ($row->result() as $key => $data) : ?>
                         <tr>
                             <td style="width: 5%;"><?= $no++; ?>.</td>
-                            <td><?= $data->invoice ?></td>
-                            <td><?= $data->date ?></td>
-                            <td><?= $data->customer_id ?></td>
-                            <td><?= $data->total_price ?></td>
-                            <td><?= $data->discount ?></td>
-                            <td><?= $data->final_price ?></td>
-                            <td class="text-center" width="160px">
-
-                                <a href="<?= site_url('sale/cetak/' . $data->sale_id); ?>" class="btn btn-warning btn-xs">
+                            <td>
+                                <?= $data->invoice ?><br>
+                                <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i>Detail</button>
+                            </td>
+                            <td><?= indo_date($data->date) ?></td>
+                            <td><?= $data->customer_id == null ? "Umum" : $data->customer_name ?></td>
+                            <td class="text-right"><?= indo_currency($data->total_price) ?></td>
+                            <td class="text-right"><?= indo_currency($data->discount) ?></td>
+                            <td class="text-right"><?= indo_currency($data->final_price) ?></td>
+                            <td style="width: 130px;">
+                                <a href="<?= site_url('sale/cetak/' . $data->sale_id); ?>" target="_blank" class="btn btn-warning btn-xs">
                                     <i class="fa fa-print"></i> print
                                 </a>
                                 <form action="<?= site_url('customer/delete'); ?>" method="POST" class="pull-right">
