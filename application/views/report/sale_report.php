@@ -41,7 +41,7 @@
                             <td style="width: 5%;"><?= $no++; ?>.</td>
                             <td>
                                 <?= $data->invoice ?><br>
-                                <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i>Detail</button>
+                                <button id="sr-detail" class="btn btn-primary btn-xs" data-target="#sr-detail" data-toggle="modal"><i class="fa fa-eye"></i>Detail</button>
                             </td>
                             <td><?= indo_date($data->date) ?></td>
                             <td><?= $data->customer_id == null ? "Umum" : $data->customer_name ?></td>
@@ -65,3 +65,57 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="sr-detail">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Sales Report Detail</h4>
+            </div>
+            <div class="modal-body table-responsive">
+                <table class="table table-bordered no-margin">
+                    <tbody>
+                        <tr>
+
+                            <th style="width:20%">Invoice</th>
+                            <td style="width:30%"><span id="invoice"></span></td>
+                            <th style="width:20%">Customer</th>
+                            <td style="width:30%"><span id="customer"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Date Time</th>
+                            <th><span id="datetime"></span></th>
+                            <th>Cashier</th>
+                            <th><span id="cashier"></span></th>
+                        </tr>
+                        <tr>
+                            <th>Total</th>
+                            <th><span id="total"></span></th>
+                            <th>Cash</th>
+                            <th><span id="cash"></span></th>
+                        </tr>
+                        <tr>
+                            <th>Discount</th>
+                            <th><span id="discount"></span></th>
+                            <th>Change</th>
+                            <th><span id="change"></span></th>
+                        </tr>
+                        <tr>
+                            <th>Grand Total</th>
+                            <th><span id="grandtotal"></span></th>
+                            <th>Note</th>
+                            <th><span id="note"></span></th>
+                        </tr>
+                        <tr>
+                            <th>Product</th>
+                            <td colspan="3"><span id="product"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

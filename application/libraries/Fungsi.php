@@ -15,27 +15,38 @@ class Fungsi
         $user_data = $this->CI->user_m->get($user_id)->row();
         return $user_data;
     }
-    public function count_supplier() {
+    public function count_supplier()
+    {
         $this->CI->load->model('Supplier_m');
         return $this->CI->Supplier_m->get()->num_rows();
     }
-    public function count_customer() {
+    public function count_customer()
+    {
         $this->CI->load->model('Customer_m');
         return $this->CI->Customer_m->get()->num_rows();
     }
-    public function count_item() {
+    public function count_item()
+    {
         $this->CI->load->model('Item_m');
         return $this->CI->Item_m->get()->num_rows();
     }
-    public function count_user() {
+    public function count_user()
+    {
         $this->CI->load->model('User_m');
         return $this->CI->User_m->get()->num_rows();
     }
-    public function count_user2() {
-        $this->CI->load->model('UserNonAktif_m');
-        return $this->CI->User_m->get()->num_rows();
+    public function count_sale()
+    {
+        $this->CI->load->model('Sale_m');
+        return $this->CI->Sale_m->get_sale()->num_rows();
     }
-    public function PdfGenerator($html, $filename, $paper, $orientatiton) {
+    public function count_user2()
+    {
+        $this->CI->load->model('UserNonAktif_m');
+        return $this->CI->UserNonAktif_m->get()->num_rows();
+    }
+    public function PdfGenerator($html, $filename, $paper, $orientatiton)
+    {
         // instantiate and use the dompdf class
         $dompdf = new Dompdf\Dompdf();
         $dompdf->loadHtml($html);

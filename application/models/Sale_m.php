@@ -42,6 +42,7 @@ class Sale_m extends CI_Model
         if ($id != null) {
             $this->db->where('sale_id', $id);
         }
+        $this->db->order_by('date', 'desc');
         $query = $this->db->get();
         return $query;
     }
