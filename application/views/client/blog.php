@@ -9,9 +9,7 @@
             </div>
             <div class="col">
                 <h4>Cerita utama judule iki</h4>
-                <p>kgjkajd djfka kjdsfjk ghjshdaj akdjkfj Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officia cum error iste unde maxime laborum corporis itaque? Praesentium recusandae soluta
-                    excepturi neque molestiae omnis, asperiores officiis? Enim voluptatum nihil iste!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam distinctio quisquam esse? Consequatur eius sed eos dicta laborum ipsa laboriosam deserunt non, explicabo asperiores quibusdam nam, iste esse culpa magni.</p>
             </div>
         </div>
     </div>
