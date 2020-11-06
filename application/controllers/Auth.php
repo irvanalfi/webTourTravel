@@ -29,9 +29,9 @@ class Auth extends CI_Controller
                 </script>";
             } else {
                 echo "<script>
-                alert('Maaf, Anda belum terdaftar!')
-                window.location='" . site_url('auth/login') . "';
-            </script>";
+                    alert('Maaf,  belum terkonfirmasi Admin Atau belum terdaftar! ')
+                    window.location='" . site_url('auth/login') . "';
+                </script>";
             }
         }
     }
