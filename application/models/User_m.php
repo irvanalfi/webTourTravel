@@ -46,7 +46,6 @@ class User_m extends CI_Model
     $params['address']  = $post['address'];
     $params['level']    = 2;
     $params['status']   = "N";
-    $params['avatar']   = $post['image'];
     $this->db->insert('user', $params);
   }
 

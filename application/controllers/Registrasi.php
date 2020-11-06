@@ -23,7 +23,7 @@ class Registrasi extends CI_Controller
             Confirm password does not match with password']
         );
         $this->form_validation->set_rules('address', 'Address', 'required');
-        $this->form_validation->set_rules('level', 'Lavel', 'required');
+        // $this->form_validation->set_rules('level', 'Lavel', 'required');
         $this->form_validation->set_message('required', 'The %s has not been filled');
         $this->form_validation->set_message('is_unique', 'This %s has already been used');
 
@@ -34,7 +34,7 @@ class Registrasi extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $post = $this->input->post(null, TRUE);
-            $this->user_m->add($post);
+            $this->user_m->addRegister($post);
             if ($this->db->affected_rows() > 0) {
                 echo "<script>alert('Registration is successfull, Please wait for confirmation from Admin via email to login :)')</script>";
             }
