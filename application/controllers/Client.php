@@ -8,13 +8,13 @@ class Client extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('category_m');
+
         $this->load->model('Cetak_m');
     }
 
     public function index()
     {
-        $this->template->load('template_c', 'client/home');
+        $this->template->load('template_c', 'client/katalog');
     }
 }
 
