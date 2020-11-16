@@ -83,8 +83,8 @@
             <label for="">Level *</label>
             <select name="level" class="form-control" required>
               <option value="">- Pilih -</option>
-              <option value="1" <?= $row->level == 1 ? 'selected' : '' ?>>Admin</option>
-              <option value="2" <?= $row->level == 2 ? 'selected' : '' ?>>Accounting</option>
+              <option value="1" <?= $row->level == 1 ? 'selected' : '' ?>>Super Admin</option>
+              <option value="2" <?= $row->level == 2 ? 'selected' : '' ?>>Admin</option>
             </select>
             <span class="help-block"><?= form_error('level'); ?></span>
           </div>

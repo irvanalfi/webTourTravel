@@ -86,7 +86,8 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header">
-                                    <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                    <img src="<?= base_url() ?>assets/img/user/<?= $this->fungsi->user_login()->avatar ?>" class="img-circle" alt="User Image">
                                     <p>
                                         <?= ucfirst($this->fungsi->user_login()->name) ?>
                                         <small><?= $this->fungsi->user_login()->address ?></small>
