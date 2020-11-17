@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2020 at 03:39 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Waktu pembuatan: 17 Nov 2020 pada 01.57
+-- Versi server: 10.4.8-MariaDB
+-- Versi PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pos`
+-- Database: `traviora`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `armada`
+-- Struktur dari tabel `armada`
 --
 
 CREATE TABLE `armada` (
@@ -42,7 +42,7 @@ CREATE TABLE `armada` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Struktur dari tabel `blog`
 --
 
 CREATE TABLE `blog` (
@@ -56,7 +56,7 @@ CREATE TABLE `blog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `blog`
+-- Dumping data untuk tabel `blog`
 --
 
 INSERT INTO `blog` (`blog_id`, `title`, `image`, `content`, `writer`, `created`, `updated`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `blog` (`blog_id`, `title`, `image`, `content`, `writer`, `created`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Struktur dari tabel `contact`
 --
 
 CREATE TABLE `contact` (
@@ -85,7 +85,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `contact`
+-- Dumping data untuk tabel `contact`
 --
 
 INSERT INTO `contact` (`contact_id`, `name`, `email`, `subject`, `pesan`, `answer`, `created`, `updated`) VALUES
@@ -95,7 +95,7 @@ INSERT INTO `contact` (`contact_id`, `name`, `email`, `subject`, `pesan`, `answe
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Struktur dari tabel `customer`
 --
 
 CREATE TABLE `customer` (
@@ -109,7 +109,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `customer`
+-- Dumping data untuk tabel `customer`
 --
 
 INSERT INTO `customer` (`customer_id`, `name`, `gender`, `phone`, `address`, `created`, `updated`) VALUES
@@ -128,7 +128,7 @@ INSERT INTO `customer` (`customer_id`, `name`, `gender`, `phone`, `address`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profil`
+-- Struktur dari tabel `profil`
 --
 
 CREATE TABLE `profil` (
@@ -151,7 +151,7 @@ CREATE TABLE `profil` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `p_category`
+-- Struktur dari tabel `p_category`
 --
 
 CREATE TABLE `p_category` (
@@ -163,7 +163,7 @@ CREATE TABLE `p_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `p_category`
+-- Dumping data untuk tabel `p_category`
 --
 
 INSERT INTO `p_category` (`category_id`, `name`, `created`, `updated`, `status`) VALUES
@@ -174,7 +174,7 @@ INSERT INTO `p_category` (`category_id`, `name`, `created`, `updated`, `status`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `p_item`
+-- Struktur dari tabel `p_item`
 --
 
 CREATE TABLE `p_item` (
@@ -196,7 +196,7 @@ CREATE TABLE `p_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `p_item`
+-- Dumping data untuk tabel `p_item`
 --
 
 INSERT INTO `p_item` (`item_id`, `barcode`, `name`, `address`, `image`, `duration`, `groupsize`, `language`, `overview`, `type_id`, `category_id`, `stock`, `price`, `created`, `updated`) VALUES
@@ -225,7 +225,7 @@ INSERT INTO `p_item` (`item_id`, `barcode`, `name`, `address`, `image`, `duratio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `p_type`
+-- Struktur dari tabel `p_type`
 --
 
 CREATE TABLE `p_type` (
@@ -237,7 +237,7 @@ CREATE TABLE `p_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `p_type`
+-- Dumping data untuk tabel `p_type`
 --
 
 INSERT INTO `p_type` (`type_id`, `name`, `created`, `updated`, `status`) VALUES
@@ -254,7 +254,7 @@ INSERT INTO `p_type` (`type_id`, `name`, `created`, `updated`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `p_unit`
+-- Struktur dari tabel `p_unit`
 --
 
 CREATE TABLE `p_unit` (
@@ -266,7 +266,7 @@ CREATE TABLE `p_unit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `p_unit`
+-- Dumping data untuk tabel `p_unit`
 --
 
 INSERT INTO `p_unit` (`unit_id`, `name`, `stock`, `created`, `updated`) VALUES
@@ -284,7 +284,7 @@ INSERT INTO `p_unit` (`unit_id`, `name`, `stock`, `created`, `updated`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
+-- Struktur dari tabel `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -298,7 +298,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `supplier`
+-- Dumping data untuk tabel `supplier`
 --
 
 INSERT INTO `supplier` (`supplier_id`, `name`, `phone`, `address`, `description`, `created`, `updated`) VALUES
@@ -310,7 +310,7 @@ INSERT INTO `supplier` (`supplier_id`, `name`, `phone`, `address`, `description`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_cart`
+-- Struktur dari tabel `t_cart`
 --
 
 CREATE TABLE `t_cart` (
@@ -326,7 +326,7 @@ CREATE TABLE `t_cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_sale`
+-- Struktur dari tabel `t_sale`
 --
 
 CREATE TABLE `t_sale` (
@@ -345,7 +345,7 @@ CREATE TABLE `t_sale` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `t_sale`
+-- Dumping data untuk tabel `t_sale`
 --
 
 INSERT INTO `t_sale` (`sale_id`, `invoice`, `customer_id`, `total_price`, `discount`, `final_price`, `cash`, `remaining`, `note`, `date`, `user_id`, `created`) VALUES
@@ -355,7 +355,7 @@ INSERT INTO `t_sale` (`sale_id`, `invoice`, `customer_id`, `total_price`, `disco
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_sale_detail`
+-- Struktur dari tabel `t_sale_detail`
 --
 
 CREATE TABLE `t_sale_detail` (
@@ -369,7 +369,7 @@ CREATE TABLE `t_sale_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `t_sale_detail`
+-- Dumping data untuk tabel `t_sale_detail`
 --
 
 INSERT INTO `t_sale_detail` (`detail_id`, `sale_id`, `item_id`, `price`, `qty`, `discount_item`, `total`) VALUES
@@ -377,7 +377,7 @@ INSERT INTO `t_sale_detail` (`detail_id`, `sale_id`, `item_id`, `price`, `qty`, 
 (2, 2, 28, 2775000, 1, 0, 2775000);
 
 --
--- Triggers `t_sale_detail`
+-- Trigger `t_sale_detail`
 --
 DELIMITER $$
 CREATE TRIGGER `stock_min` AFTER INSERT ON `t_sale_detail` FOR EACH ROW BEGIN
@@ -390,7 +390,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_stock`
+-- Struktur dari tabel `t_stock`
 --
 
 CREATE TABLE `t_stock` (
@@ -406,7 +406,7 @@ CREATE TABLE `t_stock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `t_stock`
+-- Dumping data untuk tabel `t_stock`
 --
 
 INSERT INTO `t_stock` (`stock_id`, `item_id`, `type`, `detail`, `supplier_id`, `qty`, `date`, `created`, `user_id`) VALUES
@@ -422,7 +422,7 @@ INSERT INTO `t_stock` (`stock_id`, `item_id`, `type`, `detail`, `supplier_id`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -441,54 +441,56 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`user_id`, `name`, `username`, `gender`, `email`, `password`, `address`, `level`, `status`, `avatar`, `created`, `updated`) VALUES
-(1, 'M. Irvan Alfi Hidayat', 'Admin', 'L', 'irvanhidayat0623@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Banyuwangi', '1', 'Y', '1.jpg', '2020-06-21 22:03:31', NULL),
+(1, 'M. Irvan Alfi Hidayat', 'Super Admin', 'L', 'irvanhidayat0623@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Banyuwangi', '1', 'Y', 'user-131120-0799900a6d.jpg', '2020-11-13 11:04:22', NULL),
 (2, 'Septianda Reza Maulana', 'septiandareza', 'L', 'septiandareza07@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Perumahan Jati Asri Blok A3', '1', 'Y', '2.jpg', '2020-06-21 22:03:35', NULL),
-(3, 'Mirza Zarqani Rayhan', 'mirza', 'L', 'mirza@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Malang', '2', 'Y', 'user-010720-512f579d37.JPG', '2020-09-12 11:10:19', NULL),
-(5, 'Sifa Safira', 'safira', 'P', 'safira14@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'Malang Jawa Timur', '2', 'N', 'user-010720-1042121050.JPG', '2020-07-01 20:51:16', NULL),
+(3, 'Mirza Zarqani Rayhan', 'mirza', 'L', 'mirza@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Malang', '2', 'Y', 'user-131120-67e6ce3384.jpg', '2020-11-13 10:05:12', NULL),
+(5, 'Sifa Safira', 'safira', 'P', 'safira14@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'Malang Jawa Timur', '2', 'Y', 'user-151120-49f57a7e07.jpg', '2020-11-15 18:31:03', NULL),
 (6, 'Febri Alia Anggreini', 'febri', 'P', 'febrialia_anggreini@rocketmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Probolinggo', '2', 'N', '5.jpg', '2020-06-21 22:03:54', NULL),
 (7, 'alan perdana', 'alanWalker', 'L', 'alan@gmail.com', '12345678', 'mojokerto Jawa Timur', '2', 'N', 'user-010720-1bf9f2796b.JPG', '2020-07-01 20:50:17', NULL),
-(8, 'Wildanul Irham', 'danu123', 'L', 'wildanulirham26@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'padang, singojuruh, banyuwangi', '2', 'N', 'user-210620-314affbfb3.jpg', '2020-07-01 20:57:15', NULL);
+(8, 'Wildanul Irham', 'danu123', 'L', 'wildanulirham26@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'padang, singojuruh, banyuwangi', '2', 'N', 'user-131120-4356aa0c67.jpg', '2020-11-15 18:29:24', NULL),
+(9, 'Nida Futwiyatul Fatma', 'NidaFutwi', 'L', 'Nida123@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'nghjfjgkgh', '2', 'Y', 'user-151120-80b7ca2869.jpg', '2020-11-15 18:30:13', NULL),
+(10, 'Siti Hajar', 'hajar', 'L', 'sitihajar03@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'lkdfg;lkdf;lgk;d', '2', 'N', '', '2020-11-06 08:55:49', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `armada`
+-- Indeks untuk tabel `armada`
 --
 ALTER TABLE `armada`
   ADD PRIMARY KEY (`id_armada`);
 
 --
--- Indexes for table `blog`
+-- Indeks untuk tabel `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`blog_id`);
 
 --
--- Indexes for table `contact`
+-- Indeks untuk tabel `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`contact_id`);
 
 --
--- Indexes for table `customer`
+-- Indeks untuk tabel `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `p_category`
+-- Indeks untuk tabel `p_category`
 --
 ALTER TABLE `p_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `p_item`
+-- Indeks untuk tabel `p_item`
 --
 ALTER TABLE `p_item`
   ADD PRIMARY KEY (`item_id`),
@@ -497,25 +499,25 @@ ALTER TABLE `p_item`
   ADD KEY `FK_p_item_p_category` (`category_id`);
 
 --
--- Indexes for table `p_type`
+-- Indeks untuk tabel `p_type`
 --
 ALTER TABLE `p_type`
   ADD PRIMARY KEY (`type_id`);
 
 --
--- Indexes for table `p_unit`
+-- Indeks untuk tabel `p_unit`
 --
 ALTER TABLE `p_unit`
   ADD PRIMARY KEY (`unit_id`);
 
 --
--- Indexes for table `supplier`
+-- Indeks untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`supplier_id`);
 
 --
--- Indexes for table `t_cart`
+-- Indeks untuk tabel `t_cart`
 --
 ALTER TABLE `t_cart`
   ADD PRIMARY KEY (`cart_id`),
@@ -523,20 +525,20 @@ ALTER TABLE `t_cart`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `t_sale`
+-- Indeks untuk tabel `t_sale`
 --
 ALTER TABLE `t_sale`
   ADD PRIMARY KEY (`sale_id`);
 
 --
--- Indexes for table `t_sale_detail`
+-- Indeks untuk tabel `t_sale_detail`
 --
 ALTER TABLE `t_sale_detail`
   ADD PRIMARY KEY (`detail_id`),
   ADD KEY `item_id` (`item_id`);
 
 --
--- Indexes for table `t_stock`
+-- Indeks untuk tabel `t_stock`
 --
 ALTER TABLE `t_stock`
   ADD PRIMARY KEY (`stock_id`),
@@ -545,113 +547,113 @@ ALTER TABLE `t_stock`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `blog`
+-- AUTO_INCREMENT untuk tabel `blog`
 --
 ALTER TABLE `blog`
   MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT untuk tabel `contact`
 --
 ALTER TABLE `contact`
   MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `customer`
+-- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `p_category`
+-- AUTO_INCREMENT untuk tabel `p_category`
 --
 ALTER TABLE `p_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `p_item`
+-- AUTO_INCREMENT untuk tabel `p_item`
 --
 ALTER TABLE `p_item`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT for table `p_type`
+-- AUTO_INCREMENT untuk tabel `p_type`
 --
 ALTER TABLE `p_type`
   MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `p_unit`
+-- AUTO_INCREMENT untuk tabel `p_unit`
 --
 ALTER TABLE `p_unit`
   MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `supplier`
+-- AUTO_INCREMENT untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
   MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `t_sale`
+-- AUTO_INCREMENT untuk tabel `t_sale`
 --
 ALTER TABLE `t_sale`
   MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `t_sale_detail`
+-- AUTO_INCREMENT untuk tabel `t_sale_detail`
 --
 ALTER TABLE `t_sale_detail`
   MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `t_stock`
+-- AUTO_INCREMENT untuk tabel `t_stock`
 --
 ALTER TABLE `t_stock`
   MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `p_item`
+-- Ketidakleluasaan untuk tabel `p_item`
 --
 ALTER TABLE `p_item`
   ADD CONSTRAINT `FK_p_item_p_category` FOREIGN KEY (`category_id`) REFERENCES `p_category` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_p_item_p_item` FOREIGN KEY (`type_id`) REFERENCES `p_type` (`type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `t_cart`
+-- Ketidakleluasaan untuk tabel `t_cart`
 --
 ALTER TABLE `t_cart`
   ADD CONSTRAINT `t_cart_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `p_item` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `t_cart_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `t_sale_detail`
+-- Ketidakleluasaan untuk tabel `t_sale_detail`
 --
 ALTER TABLE `t_sale_detail`
   ADD CONSTRAINT `t_sale_detail_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `p_item` (`item_id`);
 
 --
--- Constraints for table `t_stock`
+-- Ketidakleluasaan untuk tabel `t_stock`
 --
 ALTER TABLE `t_stock`
   ADD CONSTRAINT `t_stock_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `p_item` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE,

@@ -16,91 +16,176 @@
     <!-- fix for small devices only -->
     <div class="clearfix visible-sm-block"></div>
 
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-green">
+        <div class="inner">
+          <h3><?= $this->fungsi->count_user() ?></h3>
 
-        <div class="info-box-content">
-          <span class="info-box-text">User Activ</span>
-          <span class="info-box-number"> <?= $this->fungsi->count_user() ?> </span>
+          <p>User Activ</p>
         </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-user-times"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">User Non Active</span>
-          <span class="info-box-number"> <?= $this->fungsi->count_user2() ?> </span>
+        <div class="icon">
+          <i class="ion ion-person"></i>
         </div>
-        <!-- /.info-box-content -->
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
-      <!-- /.info-box -->
     </div>
-    <!-- /.col -->
 
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-blue"><i class="fa fa-truck"></i></span>
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-red">
+        <div class="inner">
+          <h3><?= $this->fungsi->count_user2() ?></h3>
 
-        <div class="info-box-content">
-          <span class="info-box-text">Supplier</span>
-          <span class="info-box-number"> <?= $this->fungsi->count_supplier() ?> </span>
+          <p>User Non Activ</p>
         </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">Customers</span>
-          <span class="info-box-number"> <?= $this->fungsi->count_customer() ?> </span>
+        <div class="icon">
+          <i class="ion ion-person"></i>
         </div>
-        <!-- /.info-box-content -->
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
-      <!-- /.info-box -->
     </div>
-    <!-- /.col -->
 
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-orange"><i class="fa fa-cart-plus"></i></span>
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner">
+          <h3><?= $this->fungsi->count_customer() ?></h3>
 
-        <div class="info-box-content">
-          <span class="info-box-text">Tour Items</span>
-          <span class="info-box-number"> <?= $this->fungsi->count_item() ?> </span>
+          <p>Customers</p>
         </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-yellow"><i class="fa fa-area-chart"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">Tour Sales</span>
-          <span class="info-box-number"> <?= $this->fungsi->count_sale() ?> </span>
+        <div class="icon">
+          <i class="ion ion-person-stalker"></i>
         </div>
-        <!-- /.info-box-content -->
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
-      <!-- /.info-box -->
     </div>
-    <!-- /.col -->
 
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner">
+          <h3>150</h3>
+
+          <p>New Orders</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-bag"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-orange">
+        <div class="inner">
+          <h3><?= $this->fungsi->count_item() ?></h3>
+
+          <p>Tour Items</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-grid"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-yellow">
+        <div class="inner">
+          <h3><?= $this->fungsi->count_sale() ?></h3>
+
+          <p>Tour Sales</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-pie-chart"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-blue">
+        <div class="inner">
+          <h3><?= $this->fungsi->count_supplier() ?></h3>
+
+          <p>Suppliers</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-truck"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <?php
+    foreach ($row->result() as $key => $data) {
+      $nama_produk[] = $data->name;
+      $stock_produk[] = intval($data->stock);
+    }
+    ?>
+    <div class="col-lg-12">
+      <figure class="highcharts-figure">
+        <div id="data-produk-item"></div>
+      </figure>
+    </div>
   </div>
   <!-- /.row -->
+  <script src="<?= base_url() ?>assets/HightCharts/highcharts.js"></script>
+  <script src="<?= base_url() ?>assets/HightCharts/exporting.js"></script>
+  <script src="<?= base_url() ?>assets/HightCharts/export-data.js"></script>
+  <script src="<?= base_url() ?>assets/HightCharts/accessibility.js"></script>
+  <script type="text/javascript">
+    Highcharts.chart('data-produk-item', {
+      chart: {
+        type: 'area'
+      },
+      title: {
+        text: 'Data Stock Produk Item'
+      },
+      subtitle: {
+        text: 'www.traviora.com'
+      },
+      xAxis: {
+        categories: <?= json_encode($nama_produk); ?>,
+        tickmarkPlacement: 'on',
+        title: {
+          enabled: false
+        }
+      },
+      yAxis: {
+        title: {
+          text: 'QTY'
+        },
+        labels: {
+          formatter: function() {
+            return this.value;
+          }
+        }
+      },
+      tooltip: {
+        split: false,
+        valueSuffix: ''
+      },
+      plotOptions: {
+        area: {
+          stacking: 'normal',
+          lineColor: '#666666',
+          lineWidth: 1,
+          marker: {
+            lineWidth: 1,
+            lineColor: '#666666'
+          }
+        }
+      },
+      series: [{
+        name: 'Stock',
+        data: <?= json_encode($stock_produk); ?>
+      }]
 
+    });
+  </script>
 </section>
