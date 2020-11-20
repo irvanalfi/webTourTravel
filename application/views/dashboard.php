@@ -123,7 +123,7 @@
 
     <?php
     foreach ($row->result() as $key => $data) {
-      $nama_produk[] = $data->name;
+      $nama_produk[]  = $data->name;
       $stock_produk[] = intval($data->stock);
     }
     ?>

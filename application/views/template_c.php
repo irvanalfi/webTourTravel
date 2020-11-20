@@ -14,19 +14,21 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:200,400,600&display=swap">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/style2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
 </head>
 
 <body>
     <!-- navbar start -->
     <div class="fixed-top">
-        <div class="p-4 header">
+        <div class="p-4 header shadow">
             <div class="container text-white" style="font-size: 15px">
                 <a href="#" class="text-white" style="font-size: 13px">+62-81353304990 </a><b>|</b>
                 <a href="#" class="text-white" style="font-size: 13px">booking@traviora.com</a>
             </div>
         </div>
-        <nav class="navbar navbar-expand-md navbar-light rounded rounded-0">
+        <nav class="navbar navbar-expand-md navbar-light rounded rounded-0 shadow">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="<?= base_url() ?>assets/img/Logo.png" alt="Logo Traviora" height="70%">

@@ -10,11 +10,14 @@ class Client extends CI_Controller
         parent::__construct();
 
         $this->load->model('Cetak_m');
+        $this->load->model(['Item_m', 'category_m', 'type_m']);
+        $this->load->helper('text');
     }
 
     public function index()
     {
-        $this->template->load('template_c', 'client/katalog');
+        $data['row'] = $this->Item_m->get();
+        $this->template->load('template_c', 'client/home', $data);
     }
 }
 
