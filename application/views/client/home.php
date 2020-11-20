@@ -1,11 +1,11 @@
     <!-- TITLE -->
     <section>
-        <div class="container" style="padding-top: 115px">
+        <div class="" style="padding-top: 115px">
             <img class="img-fluid shadow" src="<?= base_url() ?>assets/img/elements/banner.jpg" alt="banner">
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="">
             <div class="sections">
                 <div class="section-title">
                     <div class="custom-title-cont">
@@ -21,7 +21,7 @@
     </section>
 
     <section class="content">
-        <div class="container">
+        <div class="">
             <div class="row justify-content-center">
                 <?php $no = 1; ?>
                 <?php foreach ($row->result() as $key => $data) : ?>
