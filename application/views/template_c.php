@@ -70,7 +70,7 @@
         <div class="container mb-5">
             <div class="row justify-content-center primary">
                 <div class="col-lg-4 py-4 px-3 footer-map">
-                    <h2 class="store pt-4 mb-3"><b>Need Help?</b></h2>
+                    <h2 class="pt-4 mb-3"><b>Need Help?</b></h2>
                     <div class="pl-4 mt-4" style="border-left-width: 3px;  border-left-color: #0098c7; border-left-style: solid;">
                         <h4 class="mt-5" style="color: darkgray;">Call Us</h4>
                         <h4 class="mt-3" style="color: darkslategrey;">+62-81353304990</h4>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 pt-4">
-                    <h2 class="store pt-4 mb-3"><b>Related Links</b></h2>
+                    <h2 class="pt-4 mb-3"><b>Related Links</b></h2>
                     <li class="mt-5" style="display: block;">
                         <h4><a href="#" class="stretched-link" id="aboutus" style="color: darkslategrey;">About Us</a></h4>
                     </li>
@@ -110,13 +110,13 @@
                     </li>
                 </div>
                 <div class="col-lg-3 pt-4">
-                    <h2 class="store pt-4 mb-3"><b>Destination</b></h2>
+                    <h2 class="pt-4 mb-3"><b>Destination</b></h2>
                     <h4 class="mt-5"><a href="<?= site_url('client/java'); ?>" class="stretched-link" style="color: darkslategrey;">Java Island</a></h4>
                     <h4 class="mt-3"><a href="<?= site_url('client/bali'); ?>" class="stretched-link" style="color: darkslategrey;">Bali Island</a></h4>
                     <h4 class="mt-3"><a href="<?= site_url('client/lombok'); ?>" class="stretched-link" style="color: darkslategrey;">Lombok Island</a></h4>
                 </div>
                 <div class="col-lg-2 pt-4">
-                    <h2 class="store pt-4 mb-3"><b>Settings</b></h2>
+                    <h2 class="pt-4 mb-3"><b>Settings</b></h2>
                     <h4 class="mt-5">Currency</h4>
                     <button class="btn btn-primary pl-5 pr-5">IDR</button>
                 </div>
