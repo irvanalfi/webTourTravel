@@ -15,7 +15,7 @@ class Type_m extends CI_Model
     public function dropdownList()
     {
         $results = $this->db->select('id, name')
-            ->where('status', 'aktif')
+            ->where('status', 'E')
             ->get('p_type')
             ->result_array();
 

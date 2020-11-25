@@ -24,13 +24,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <form action="<?= site_url('unit/proses'); ?>" method="POST">
-                        <div class="form-group">
-                            <label for="product_name">Product Name *</label>
-                            <input type="text" name="product_name" id="product_name" value="<?= $row->name; ?>" class="form-control" required>
+                        <div class="form-group <?= form_error('unit_name') ? 'has-error' : null; ?>">
+                            <label for="">Unit Name *</label>
+                            <input type="hidden" name="id" value="<?= $row->unit_id; ?>">
+                            <input type="text" name="unit_name" class="form-control" value="<?= $row->name; ?>" required>
+                            <span class="help-block"><?= form_error('unit_name'); ?></span>
                         </div>
-                        <div class="form-group">
-                            <label for="">Stock *</label>
-                            <input type="number" name="stock" value="<?= $row->stock; ?>" class="form-control" required>
+                        <div class="form-group <?= form_error('unit_status') ? 'has-error' : null; ?>">
+                            <label for="">Unit Status *</label>
+                            <select name="unit_status" class="form-control" id="" required>
+                                <option value="">- Pilih -</option>
+                                <option value="E" <?= $row->status == 'E' ? 'selected' : '' ?>>Enable</option>
+                                <option value="D" <?= $row->status == 'D' ? 'selected' : '' ?>>Disable</option>
+                            </select>
+                            <span class="help-block"><?= form_error('unit_status'); ?></span>
                         </div>
                         <div class="from-group">
                             <button type="submit" name="<?= $page; ?>" class="btn btn-success"><i class="fa fa-paper-plane"></i> Save</button>

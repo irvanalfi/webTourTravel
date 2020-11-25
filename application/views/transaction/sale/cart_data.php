@@ -5,7 +5,7 @@ if ($cart->num_rows() > 0) {
             <td><?= $no++ ?>.</td>
             <td><?= $data->barcode ?></td>
             <td><?= $data->item_name ?></td>
-            <td class="text-right"><?= $data->cart_price ?></td>
+            <td class="text-right"><?= indo_currency($data->cart_price) ?></td>
             <td class="text-center"><?= $data->qty ?></td>
             <td class="text-right"><?= $data->discount_item ?></td>
             <td class="text-right" id="total"><?= $data->total ?></td>

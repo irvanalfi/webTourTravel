@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class supplier_m extends CI_Model
+class Supplier_m extends CI_Model
 {
     public function get($id = null)
     {

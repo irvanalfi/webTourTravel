@@ -15,10 +15,10 @@ class Fungsi
         $user_data = $this->CI->user_m->get($user_id)->row();
         return $user_data;
     }
-    public function count_supplier()
+    public function count_armada()
     {
-        $this->CI->load->model('Supplier_m');
-        return $this->CI->Supplier_m->get()->num_rows();
+        $this->CI->load->model('Armada_m');
+        return $this->CI->Armada_m->get()->num_rows();
     }
     public function count_customer()
     {
@@ -39,6 +39,11 @@ class Fungsi
     {
         $this->CI->load->model('Sale_m');
         return $this->CI->Sale_m->get_sale()->num_rows();
+    }
+    public function count_sale_new()
+    {
+        $this->CI->load->model('Sale_m');
+        return $this->CI->Sale_m->get_sale_new()->num_rows();
     }
     public function count_user2()
     {

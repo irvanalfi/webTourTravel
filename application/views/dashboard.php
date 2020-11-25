@@ -25,7 +25,7 @@
           <p>User Activ</p>
         </div>
         <div class="icon">
-          <i class="ion ion-person"></i>
+          <i class="ion ion-person" style="color: #ffffffcb;"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
@@ -40,7 +40,7 @@
           <p>User Non Activ</p>
         </div>
         <div class="icon">
-          <i class="ion ion-person"></i>
+          <i class="ion ion-person" style="color: #ffffffcb;"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
@@ -55,7 +55,7 @@
           <p>Customers</p>
         </div>
         <div class="icon">
-          <i class="ion ion-person-stalker"></i>
+          <i class="ion ion-person-stalker" style="color: #ffffffcb;"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
@@ -65,12 +65,12 @@
       <!-- small box -->
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>150</h3>
+          <h3><?= $this->fungsi->count_sale_new() ?></h3>
 
           <p>New Orders</p>
         </div>
         <div class="icon">
-          <i class="ion ion-bag"></i>
+          <i class="ion ion-bag" style="color: #ffffffcb;"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
@@ -85,7 +85,7 @@
           <p>Tour Items</p>
         </div>
         <div class="icon">
-          <i class="ion ion-grid"></i>
+          <i class="ion ion-grid" style="color: #ffffffcb;"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
@@ -100,7 +100,7 @@
           <p>Tour Sales</p>
         </div>
         <div class="icon">
-          <i class="fa fa-pie-chart"></i>
+          <i class="fa fa-pie-chart" style="color: #ffffffcb;"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
@@ -110,12 +110,12 @@
       <!-- small box -->
       <div class="small-box bg-blue">
         <div class="inner">
-          <h3><?= $this->fungsi->count_supplier() ?></h3>
+          <h3><?= $this->fungsi->count_armada() ?></h3>
 
-          <p>Suppliers</p>
+          <p>Armada</p>
         </div>
         <div class="icon">
-          <i class="fa fa-truck"></i>
+          <i class="fa fa-truck" style="color: #ffffffcb;"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>

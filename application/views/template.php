@@ -139,8 +139,8 @@
                     <li <?= $this->uri->segment(1) == 'customer' ? 'class="active"' : ''; ?>>
                         <a href="<?= site_url('customer'); ?>"><i class="fa fa-user"></i><span>Customers</span></a>
                     </li>
-                    <li <?= $this->uri->segment(1) == 'supplier' ? 'class="active"' : ''; ?>>
-                        <a href="<?= site_url('supplier'); ?>"><i class="fa fa-truck"></i><span>Suppliers</span></a>
+                    <li <?= $this->uri->segment(1) == 'armada' ? 'class="active"' : ''; ?>>
+                        <a href="<?= site_url('armada'); ?>"><i class="fa fa-truck"></i><span>Armada</span></a>
                     </li>
                     <li class="treeview <?= $this->uri->segment(1) == 'category' ||
                                             $this->uri->segment(1) == 'item' ||

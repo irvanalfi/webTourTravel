@@ -38,7 +38,7 @@ class Unit extends CI_Controller
         $unit           = new stdClass();
         $unit->unit_id  = null;
         $unit->name     = null;
-        $unit->stock    = null;
+        $unit->status     = null;
 
         $data = array(
             'page'      => 'add',

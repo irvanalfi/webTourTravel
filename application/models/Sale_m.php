@@ -3,6 +3,12 @@
 class Sale_m extends CI_Model
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
     public function get_cart($params = null)
     {
         $this->db->select(
@@ -43,6 +49,17 @@ class Sale_m extends CI_Model
             $this->db->where('sale_id', $id);
         }
         $this->db->order_by('date', 'desc');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function get_sale_new()
+    {
+        $date = date('Y-m-d');
+        $this->db->from('t_sale');
+        if ($date != null) {
+            $this->db->where('date', $date);
+        }
         $query = $this->db->get();
         return $query;
     }
@@ -131,7 +148,7 @@ class Sale_m extends CI_Model
     {
         $params = array(
             'invoice'       => $this->invoice_no(),
-            'customer_id'   => $post['customer_id'] == "" ? null : $data['customer_id'],
+            'customer_id'   => $post['customer_id'] == "" ? null : $post['customer_id'],
             'total_price'   => $post['subtotal'],
             'discount'      => $post['discount'],
             'final_price'   => $post['grandtotal'],

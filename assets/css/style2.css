@@ -56,11 +56,6 @@
 
 /* CONTENT 1 */
 
-.content .contents h5 {
-	font-family: 'Assistant', sans-serif;
-	font-weight: 300;
-	font-size: 22px;
-}
 
 .content .contents p {
 	font-family: 'Assistant', sans-serif;
@@ -94,4 +89,13 @@ strike {
 	font-weight: bold;
 	font-size: 18px;
 	color: #A2A2A2;
+}
+
+.store {
+	color: #EEEEEE;
+	font-family: 'Assistant', sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	border-bottom: 1px solid #EEEEEE;
+	padding-bottom: 10px;
 }

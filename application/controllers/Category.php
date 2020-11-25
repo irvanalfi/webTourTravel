@@ -12,7 +12,6 @@ class Category extends CI_Controller
         $this->load->model('Cetak_m');
     }
 
-
     public function index()
     {
         $data['row'] = $this->category_m->get();
