@@ -82,38 +82,38 @@
                     <div class="pl-4 mt-4" style="border-left-width: 3px;  border-left-color: #0098c7; border-left-style: solid;">
                         <h4 class="mt-3" style="color: darkgray;">Follow Us</h4>
                         <div class="mt-3">
-                            <a href="#"><i class="fab fa-facebook" style="height: 25px; width: 25px;"></i>&nbsp;&nbsp;&nbsp;</a>
-                            <a href="#"><i class="fab fa-twitter" style="height: 25px; width: 25px;"> </i>&nbsp;&nbsp;&nbsp;</a>
-                            <a href="#"><i class="fab fa-instagram" style="height: 25px; width: 25px;"> </i>&nbsp;&nbsp;&nbsp;</a>
+                            <a href="https://www.facebook.com/Traviora-1938737826385397/"><i class="fab fa-facebook" style="height: 25px; width: 25px;"></i>&nbsp;&nbsp;&nbsp;</a>
+                            <a href="https://twitter.com/traviora"><i class="fab fa-twitter" style="height: 25px; width: 25px;"> </i>&nbsp;&nbsp;&nbsp;</a>
+                            <a href="https://www.instagram.com/travioracom/"><i class="fab fa-instagram" style="height: 25px; width: 25px;"> </i>&nbsp;&nbsp;&nbsp;</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 pt-4">
                     <h2 class="pt-4 mb-3"><b>Related Links</b></h2>
                     <li class="mt-5" style="display: block;">
-                        <h4><a href="#" class="stretched-link" id="aboutus" style="color: darkslategrey;">About Us</a></h4>
+                        <h4><a href="#" class="" id="aboutus" style="color: darkslategrey;">About Us</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="stretched-link" id="contactus" style="color: darkslategrey;">Contact us</a></h4>
+                        <h4><a href="#" class="" id="contactus" style="color: darkslategrey;">Contact us</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="stretched-link" id="howtobook" style="color: darkslategrey;">How To Book</a></h4>
+                        <h4><a href="#" class="" id="howtobook" style="color: darkslategrey;">How To Book</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="stretched-link" id="privacypolice" style="color: darkslategrey;">Privacy Policy</a></h4>
+                        <h4><a href="#" class="" id="privacypolice" style="color: darkslategrey;">Privacy Policy</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="stretched-link" id="becomeapartner" style="color: darkslategrey;">Become a Partner</a></h4>
+                        <h4><a href="#" class="" id="becomeapartner" style="color: darkslategrey;">Become a Partner</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="stretched-link" id="termsandconditions" style="color: darkslategrey;">Terms and Conditions</a></h4>
+                        <h4><a href="#" class="" id="termsandconditions" style="color: darkslategrey;">Terms and Conditions</a></h4>
                     </li>
                 </div>
                 <div class="col-lg-3 pt-4">
                     <h2 class="pt-4 mb-3"><b>Destination</b></h2>
-                    <h4 class="mt-5"><a href="<?= site_url('client/java'); ?>" class="stretched-link" style="color: darkslategrey;">Java Island</a></h4>
-                    <h4 class="mt-3"><a href="<?= site_url('client/bali'); ?>" class="stretched-link" style="color: darkslategrey;">Bali Island</a></h4>
-                    <h4 class="mt-3"><a href="<?= site_url('client/lombok'); ?>" class="stretched-link" style="color: darkslategrey;">Lombok Island</a></h4>
+                    <h4 class="mt-5"><a href="<?= site_url('client/java'); ?>" class="" style="color: darkslategrey;">Java Island</a></h4>
+                    <h4 class="mt-3"><a href="<?= site_url('client/bali'); ?>" class="" style="color: darkslategrey;">Bali Island</a></h4>
+                    <h4 class="mt-3"><a href="<?= site_url('client/lombok'); ?>" class="" style="color: darkslategrey;">Lombok Island</a></h4>
                 </div>
                 <div class="col-lg-2 pt-4">
                     <h2 class="pt-4 mb-3"><b>Settings</b></h2>
@@ -130,7 +130,7 @@
             <div class="pull-right ">
                 <h4><b>Version</b> 1.0.0</h4>
             </div>
-            <h4><strong class="pull-left">Copyright © 2020 <a href="#">Traviora</a>.</strong>&nbsp; All rights
+            <h4><strong class="pull-left">Copyright © 2020 <a href="<?= site_url('client/home'); ?>">Traviora</a>.</strong>&nbsp; All rights
                 reserved.</h4>
         </div>
         <!-- /.container -->

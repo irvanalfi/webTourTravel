@@ -1,13 +1,37 @@
-<section class="content">
+<section>
+    <div class="container" style="padding-left: 0px; padding-right: 0px;">
+        <div class="" style="margin-top: 135px">
+            <img class="img-fluid shadow" src="<?= base_url() ?>assets/img/elements/bannerTipis.jpg" alt="banner">
+        </div>
+    </div>
+</section>
+</div>
+<section style="margin-top:-230px; margin-bottom:80px;">
     <div class="container">
-        <h1 style="padding-top: 30px;">BALI TOUR</h1>
+        <div class="sections">
+            <div class="section-title">
+                <div class="custom-title-cont">
+                    <div class="belakang" style="background: rgba(255, 255, 255, 0); border-color: white;"></div>
+                    <div class="depan" style="background: rgba(255, 255, 255, 0); color: white; text-shadow: 2px 2px 5px #0000006e;">
+                        <b>BALI TOUR PACKETS</b> </div>
+                </div>
+            </div>
+            <!-- <div class="section-subtitle">
+                Find your own favorite destination. Let’s get it!</div> -->
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container" style="padding-left: 0px; padding-right: 0px;">
+        <hr>
     </div>
     <div class="row justify-content-center">
         <?php $no = 1; ?>
         <?php foreach ($row->result() as $key => $data) :
             if ($data->category_id == 2) { ?>
-                <div class="col-lg-2 my-2 mx-2 shadow">
-                    <div class="contents py-3">
+                <div class="col-lg-2 my-3 mx-2 shadow">
+                    <div class="contents pt-3 pb-3 ">
                         <?php if ($data->image != null) { ?>
                             <img style="margin-top: 5px;" src="<?= base_url('assets/img/item/' . $data->image) ?>" class="card-img-top" alt="...">
                         <?php } ?>
