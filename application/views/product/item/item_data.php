@@ -59,7 +59,7 @@
                             <td><?= $data->stock ?></td>
                             <td><?= indo_currency($data->price); ?></td>
                             <td class="text-center" width="160px">
-                                <a id="item_detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#itm-detail" data-duration="<?= $data->duration ?>" data-groupsize="<?= $data->groupsize ?>" data-language="<?= $data->language ?>" data-tourtype="<?= $data->type_name ?>" data-overview="<?= $data->overview ?>">
+                                <a id="item_detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#itm-detail" data-duration="<?= $data->duration ?>" data-groupsize="<?= $data->groupsize ?>" data-language="<?= $data->language ?>" data-tourtype="<?= $data->type_name ?>" data-tourunit="<?= $data->unit_name ?>" data-overview="<?= $data->overview ?>">
                                     <i class="fa fa-eye"></i> Detail
                                 </a>
                                 <a href="<?= site_url('item/edit/' . $data->item_id); ?>" class="btn btn-warning btn-xs">
@@ -106,6 +106,10 @@
                         <tr>
                             <td>Tour Type</td>
                             <td><span id="tour_type"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Tour Unit</td>
+                            <td><span id="tour_unit"></span></td>
                         </tr>
                         <tr>
                             <td>Overview</td>

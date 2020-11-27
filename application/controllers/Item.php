@@ -8,7 +8,7 @@ class Item extends CI_Controller
     {
         parent::__construct();
         check_not_login();
-        $this->load->model(['Item_m', 'category_m', 'type_m']);
+        $this->load->model(['Item_m', 'category_m', 'type_m', 'unit_m']);
         $this->load->model('Cetak_m');
     }
 
@@ -108,11 +108,13 @@ class Item extends CI_Controller
         $item->language     = null;
         $item->type_id      = null;
         $item->category_id  = null;
+        $item->unit_id      = null;
         $item->price        = null;
         $item->stock        = null;
 
         $query_category     = $this->category_m->get();
         $query_type         = $this->type_m->get();
+        $query_unit         = $this->unit_m->get();
         $type[null]         = '- Choose -';
         foreach ($query_type->result() as $typ) {
             $type[$typ->type_id] = $typ->name;
@@ -121,6 +123,7 @@ class Item extends CI_Controller
             'page'          => 'add',
             'row'           => $item,
             'category'      =>  $query_category,
+            'unit'          =>  $query_unit,
             'type'          =>  $type, 'selectedtype' => null
         ];
         $this->template->load('template', 'product/item/item_form', $data);
@@ -133,6 +136,7 @@ class Item extends CI_Controller
             $item = $query->row();
             $query_category = $this->category_m->get();
             $query_type     = $this->type_m->get();
+            $query_unit     = $this->unit_m->get();
             $type[null]     = '- Choose -';
             foreach ($query_type->result() as $typ) {
                 $type[$typ->type_id] = $typ->name;
@@ -141,6 +145,7 @@ class Item extends CI_Controller
                 'page'      => 'edit',
                 'row'       => $item,
                 'category'  =>  $query_category,
+                'unit'      =>  $query_unit,
                 'type'      =>  $type, 'selectedtype' => $item->type_id
             ];
             $this->template->load('template', 'product/item/item_form', $data);

@@ -7,7 +7,6 @@
         <li class="active">Item Table</li>
     </ol>
 </section>
-
 <!-- Main content -->
 <section class="content">
     <?php $this->view('messages'); ?>
@@ -19,7 +18,6 @@
                     <i class="fa fa-arrow-left"></i> Back</a>
             </div>
         </div>
-
         <div class="box-body table-responsive">
             <div class="row">
                 <div>
@@ -82,11 +80,20 @@
                             <?php } ?>
                         </select>
                     </div>
+                    <div class="form-group col-md-3">
+                        <label>item Unit *</label>
+                        <select name="unit" class="form-control" required>
+                            <option value="">- Choose -</option>
+                            <?php foreach ($unit->result() as $key => $data) { ?>
+                                <option value="<?= $data->unit_id ?>" <?= $data->unit_id == $row->unit_id ? "selected" : null ?>> <?= $data->name ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-grup col-md-3">
+                        <label for="">Item Language *</label>
+                        <input type="text" name="item_language" class="form-control" value="<?= $row->language; ?>">
+                    </div>
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="">Item Language *</label>
-                            <input type="text" name="item_language" class="form-control" value="<?= $row->language; ?>">
-                        </div>
                         <div class="form-group">
                             <label for="">Item Overview *</label>
                             <textarea name="item_overview" class="form-control" required><?= $row->overview; ?></textarea>

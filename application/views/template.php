@@ -291,11 +291,13 @@
                 var groupsize = $(this).data('groupsize');
                 var language = $(this).data('language');
                 var tourtype = $(this).data('tourtype');
+                var tourunit = $(this).data('tourunit');
                 var overview = $(this).data('overview');
                 $('#duration').text(duration);
                 $('#groupsize').text(groupsize);
                 $('#language').text(language);
                 $('#tour_type').text(tourtype);
+                $('#tour_unit').text(tourunit);
                 $('#overview').text(overview);
             })
         })
