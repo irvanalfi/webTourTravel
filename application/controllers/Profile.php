@@ -16,7 +16,7 @@ class Profile extends CI_Controller
     public function index()
     {
         $data['row'] = $this->profil_m->get();
-        $this->template->load('template', 'tampilan/tampilan_data', $data);
+        $this->template->load('template', 'profil/profil_data', $data);
     }
 
     public function proses()
