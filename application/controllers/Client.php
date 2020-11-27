@@ -43,6 +43,18 @@ class Client extends CI_Controller
         $data['row'] = $this->Blog_m->get();
         $this->template->load('template_c', 'client/blog', $data);
     }
+
+    public function privacyPolicy()
+    {
+        $this->template->load('template_c', 'client/privacy_policy');
+    }
+
+    public function termsAndCondition()
+    {
+        $this->template->load('template_c', 'client/terms_and_condition');
+    }
+    
+    
 }
 
 /* End of file Controllername.php */

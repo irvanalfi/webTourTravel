@@ -100,14 +100,15 @@
                         <h4><a href="#" class="" id="howtobook" style="color: darkslategrey;">How To Book</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="" id="privacypolice" style="color: darkslategrey;">Privacy Policy</a></h4>
+                        <h4><a href="<?= site_url('client/privacyPolicy'); ?>" class="" id="privacypolicy" style="color: darkslategrey;">Privacy Policy</a></h4>
+                    </li>
+                    <li class="mt-3" style="display: block;">
+                        <h4><a href="<?= site_url('client/termsAndCondition'); ?>" class="" id="termsandconditions" style="color: darkslategrey;">Terms and Conditions</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
                         <h4><a href="#" class="" id="becomeapartner" style="color: darkslategrey;">Become a Partner</a></h4>
                     </li>
-                    <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="" id="termsandconditions" style="color: darkslategrey;">Terms and Conditions</a></h4>
-                    </li>
+                    
                 </div>
                 <div class="col-lg-3 pt-4">
                     <h2 class="pt-4 mb-3"><b>Destination</b></h2>
