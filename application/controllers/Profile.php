@@ -8,23 +8,23 @@ class Profile extends CI_Controller
         parent::__construct();
         check_not_login();
         check_admin();
-        $this->load->model('profil_m');
+        $this->load->model('profile_m');
         $this->load->library('form_validation');
         $this->load->model('Cetak_m');
     }
 
     public function index()
     {
-        $data['row'] = $this->profil_m->get();
-        $this->template->load('template', 'profil/profil_data', $data);
+        $data['row'] = $this->profile_m->get();
+        $this->template->load('template', 'profile/profile_data', $data);
     }
 
     public function proses()
     {
-        $config['upload_path']      = './assets/img/profil/';
+        $config['upload_path']      = './assets/img/profile/';
         $config['allowed_types']    = 'gif|jpg|jpeg|png';
         $config['max_size']         = 5120;
-        $config['file_name']        = 'profil-' . date('dmy') . '-' . substr(md5(rand()), 0, 10);
+        $config['file_name']        = 'profile-' . date('dmy') . '-' . substr(md5(rand()), 0, 10);
         $this->load->library('upload', $config);
 
         $post = $this->input->post(null, TRUE);
@@ -32,73 +32,73 @@ class Profile extends CI_Controller
             if (@$_FILES['image']['name'] != null) {
                 if ($this->upload->do_upload('image')) {
                     $post['image']  =   $this->upload->data('file_name');
-                    $this->profil_m->add($post);
+                    $this->profile_m->add($post);
                     if ($this->db->affected_rows() > 0) {
                         $this->session->set_flashdata('success', 'Data has been successfully saved!!');
                     }
-                    redirect('profil');
+                    redirect('profile');
                 } else {
                     $error = $this->upload->display_errors();
                     $this->session->set_flashdata('error', $error);
-                    redirect('profil/add');
+                    redirect('profile/add');
                 }
             } else {
                 $post['image']  = null;
-                $this->profil_m->add($post);
+                $this->profile_m->add($post);
                 if ($this->db->affected_rows() > 0) {
                     $this->session->set_flashdata('success', 'Data has been successfully saved!!');
                 }
-                redirect('profil');
+                redirect('profile');
             }
         } else if (isset($_POST['edit'])) {
             if (@$_FILES['image']['name'] != null) {
                 if ($this->upload->do_upload('image')) {
-                    $profil = $this->profil_m->get($post['profil_id'])->row();
-                    if ($profil->avatar != null) {
-                        $target_file = './assets/img/profil/' . $profil->avatar;
+                    $profile = $this->profile_m->get($post['profile_id'])->row();
+                    if ($profile->avatar != null) {
+                        $target_file = './assets/img/profile/' . $profile->avatar;
                         unlink($target_file);
                     }
                     $post['image']  =   $this->upload->data('file_name');
-                    $this->profil_m->edit($post);
+                    $this->profile_m->edit($post);
                     if ($this->db->affected_rows() > 0) {
                         $this->session->set_flashdata('success', 'Data has been successfully saved!!');
                     }
-                    redirect('profil');
+                    redirect('profile');
                 } else {
                     $error = $this->upload->display_errors();
                     $this->session->set_flashdata('error', $error);
-                    redirect('profil/edit');
+                    redirect('profile/edit');
                 }
             } else {
                 $post['image']  = $post['oldImage'];
-                $this->profil_m->edit($post);
+                $this->profile_m->edit($post);
                 if ($this->db->affected_rows() > 0) {
                     $this->session->set_flashdata('success', 'Data has been successfully saved!!');
                 }
-                redirect('profil');
+                redirect('profile');
             }
         }
     }
 
     public function add()
     {
-        $profil = new stdClass();
-        $profil->profil_id      = null;
-        $profil->webName       = null;
-        $profil->statusName    = null;
-        $profil->about          = null;
-        $profil->address1       = null;
-        $profil->address2       = null;
-        $profil->email1         = null;
-        $profil->email2         = null;
-        $profil->facebook       = null;
-        $profil->instagram      = null;
-        $profil->twitter        = null;
-        $profil->phone          = null;
-        $profil->whatsapp       = null;
-        $profil->logo           = null;
-        $profil->bannerUtama   = null;
-        $profil->bannerUmum    = null;
+        $profile = new stdClass();
+        $profile->profile_id      = null;
+        $profile->webName       = null;
+        $profile->statusName    = null;
+        $profile->about          = null;
+        $profile->address1       = null;
+        $profile->address2       = null;
+        $profile->email1         = null;
+        $profile->email2         = null;
+        $profile->facebook       = null;
+        $profile->instagram      = null;
+        $profile->twitter        = null;
+        $profile->phone          = null;
+        $profile->whatsapp       = null;
+        $profile->logo           = null;
+        $profile->bannerUtama   = null;
+        $profile->bannerUmum    = null;
 
         $this->form_validation->set_rules('webName', 'WebName', 'required');
         $this->form_validation->set_rules('statusName', 'StatusName', 'required');
@@ -115,18 +115,18 @@ class Profile extends CI_Controller
 
         $data = [
             'page' => 'add',
-            'row' => $profil
+            'row' => $profile
         ];
 
         if ($this->form_validation->run() == FALSE) {
-            $this->template->load('template', 'profil/profil_form', $data);
+            $this->template->load('template', 'profile/profile_form', $data);
         } else {
             $post = $this->input->post(null, TRUE);
-            $this->profil_m->add($post);
+            $this->profile_m->add($post);
             if ($this->db->affected_rows() > 0) {
                 echo "<script>alert('Data Berhasil di Tambahkan')</script>";
             }
-            echo "<script>window.location='" . site_url('profil') . "'</script>";
+            echo "<script>window.location='" . site_url('profile') . "'</script>";
         }
     }
 
@@ -146,25 +146,25 @@ class Profile extends CI_Controller
         $this->form_validation->set_message('required', 'The %s has not been filled');
 
         if ($this->form_validation->run() == FALSE) {
-            $query = $this->profil_m->get($id);
+            $query = $this->profile_m->get($id);
             if ($query->num_rows() > 0) {
-                $profil = $query->row();
+                $profile = $query->row();
                 $data = [
                     'page' => 'edit',
-                    'row' => $profil
+                    'row' => $profile
                 ];
-                $this->template->load('template', 'profil/profil_form', $data);
+                $this->template->load('template', 'profile/profile_form', $data);
             } else {
                 echo "<script>alert('Data tidak ditemukan');";
-                echo "window.location='" . site_url('profil') . "'</script>";
+                echo "window.location='" . site_url('profile') . "'</script>";
             }
         } else {
             $post = $this->input->post(null, TRUE);
-            $this->profil_m->edit($post);
+            $this->profile_m->edit($post);
             if ($this->db->affected_rows() > 0) {
                 echo "<script>alert('Data Berhasil diupdate')</script>";
             }
-            echo "<script>window.location='" . site_url('profil') . "'</script>";
+            echo "<script>window.location='" . site_url('profile') . "'</script>";
         }
     }
 }

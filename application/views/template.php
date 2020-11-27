@@ -227,7 +227,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="<?= site_url('profil'); ?>"><i class="fa fa-object-group"></i><span>Profil Website</span></a></li>
+                        <li><a href="<?= site_url('profile'); ?>"><i class="fa fa-object-group"></i><span>Profil Website</span></a></li>
                     <?php endif; ?>
             </section>
         </aside>
