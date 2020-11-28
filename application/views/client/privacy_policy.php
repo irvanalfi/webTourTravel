@@ -32,7 +32,7 @@
         <div class="row mb-5">
             <div class="col-md-6 col-lg-6">
                 <div class="single_works wow fadeInUp pr-5">
-                    <h1 class="mt-2 mb-5" style="color: #0098c7;">Privacy Policy Coverage</h1>
+                    <h1 class="jdl">Privacy Policy Coverage</h1>
                     <h4 class="mb-3" style="text-align: justify;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         The Privacy Policy covers our treatment of personally identifiable information that we
@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="single_works wow fadeInUp pl-5">
-                    <h1 class="mt-2 mb-5" style="color: #0098c7;">Information Sharing and Disclosure by us</h1>
+                    <h1 class="jdl">Information Sharing and Disclosure by us</h1>
                     <h4 class="mb-3" style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         We will not sell or rent your personally identifiable information to anyone.
                         We will send personally identifiable information about you to other companies or people when:
@@ -63,13 +63,14 @@
                             <li>We respond to subpoenas, court orders or legal process. or</li>
                             <li>We find that your actions on our web sites violate our Terms of Service, or any of our usage guidelines for specific products or services.</li>
                         </ol>
+                    </h4>
                 </div>
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-md-6 col-lg-6">
                 <div class="single_works wow fadeInUp pr-5">
-                    <h1 class="mt-4 mb-5 " style="color: #0098c7;">Information Collection and Use by Traviora.com</h1>
+                    <h1 class="jdl">Information Collection and Use by Traviora.com</h1>
                     <h4 class="mb-3" style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         We collect personally identifiable information when you register for our service. We automatically receive and record information on our server logs from your browser including your IP address, the page you requested, and the personally identifiable information you entered.</h4>
                     <h4 class="mb-3" style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -78,7 +79,7 @@
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="single_works wow fadeInUp pl-5">
-                    <h1 class="mt-4 mb-5" style="color: #0098c7;">Changes to this Privacy Policy</h1>
+                    <h1 class="jdl">Changes to this Privacy Policy</h1>
                     <h4 class="mb-3" style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         We may amend this policy from time to time. If we make any substantial changes in the way we use your personal information we will notify you by posting a prominent announcement on our pages.
                     </h4>

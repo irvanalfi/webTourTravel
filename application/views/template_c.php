@@ -16,7 +16,16 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/style2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+    <style>
+        .jdl {
+            color: #0098c7;
+            font-weight: 500;
+            font-size: 28px;
+            font-family: inherit;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+    </style>
 </head>
 
 <body>
@@ -108,7 +117,7 @@
                     <li class="mt-3" style="display: block;">
                         <h4><a href="#" class="" id="becomeapartner" style="color: darkslategrey;">Become a Partner</a></h4>
                     </li>
-                    
+
                 </div>
                 <div class="col-lg-3 pt-4">
                     <h2 class="pt-4 mb-3"><b>Destination</b></h2>
