@@ -44,6 +44,21 @@ class Client extends CI_Controller
         $this->template->load('template_c', 'client/blog', $data);
     }
 
+    public function blog_detail($id)
+    {
+        $query = $this->Blog_m->get($id);
+        if ($query->num_rows() > 0) {
+            $blog = $query->row();
+            $data = [
+                'row' => $blog
+            ];
+            $this->template->load('template_c', 'client/blog_detail', $data);
+        } else {
+            echo "<script>alert('Data tidak ditemukan');";
+            echo "window.location='" . site_url('client/blog') . "'</script>";
+        }
+    }
+
     public function privacyPolicy()
     {
         $this->template->load('template_c', 'client/privacy_policy');
@@ -53,8 +68,6 @@ class Client extends CI_Controller
     {
         $this->template->load('template_c', 'client/terms_and_condition');
     }
-    
-    
 }
 
 /* End of file Controllername.php */

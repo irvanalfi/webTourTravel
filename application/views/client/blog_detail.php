@@ -28,6 +28,25 @@
         <div class="container">
             <hr>
             <div class="row pt-3">
+                <div class="col-md-9">
+                    <img src="<?= base_url('assets/img/blog/' . $row->image) ?>" class="card-img" alt="gambar content">
+                    <div class="mt-4">
+                        <hr>
+                    </div>
+                    <h1><?= $row->title ?></h1>
+                    <hr>
+                    <h4 class="mb-5"><?= $row->created ?></h4>
+                    <h4 class="pb-5"><?= $row->content ?></h4>
+                    <div class="mt-5" style="border: 1px solid #D7DCE3; border-radius: 5px;">
+                        <div class="row mt-4 mb-4 ml-3">
+                            <div class="col-md-1"><i class="fa fa-user-circle" aria-hidden="true" style="height: 45px; width: 45px;"></i></div>
+                            <div class="col-md-11 ">
+                                <h5>Created by:</h5>
+                                <h2><b><?= $row->writer ?></b></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-3">
                     <div class=" pt-3 mb-3">
                         <a class="navbar-brand" href="<?= site_url('client/home'); ?>">
@@ -72,32 +91,8 @@
                         </h4>
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <?php $no = 1; ?>
-                    <?php foreach ($row->result() as $key => $data) : ?>
-                        <div class="card mb-3" style="max-width: 720px;">
-                            <div class="no-gutters">
-                                <div class="col-md-5">
-                                    <img src="<?= base_url('assets/img/blog/' . $data->image) ?>" class="card-img" alt="gambar content">
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?= $data->title ?></h5>
-                                        <?php
-                                        $fullContent = $data->content;
-                                        $content = character_limiter($fullContent, 200);
-                                        ?>
-                                        <p class="card-text"><?= $content ?></p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        <a href="<?= site_url('client/blog_detail/' . $data->blog_id); ?>" class="btn btn-primary btn-xs pl-4 pr-4">READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
