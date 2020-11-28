@@ -15,37 +15,37 @@
 
     <!-- fix for small devices only -->
     <div class="clearfix visible-sm-block"></div>
+    <?php if ($this->fungsi->user_login()->level == 1) : ?>
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3><?= $this->fungsi->count_user() ?></h3>
 
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-green">
-        <div class="inner">
-          <h3><?= $this->fungsi->count_user() ?></h3>
-
-          <p>User Activ</p>
+            <p>User Activ</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person" style="color: #ffffffcb;"></i>
+          </div>
+          <a href="<?= site_url('user'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-        <div class="icon">
-          <i class="ion ion-person" style="color: #ffffffcb;"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
-    </div>
 
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-red">
-        <div class="inner">
-          <h3><?= $this->fungsi->count_user2() ?></h3>
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3><?= $this->fungsi->count_user2() ?></h3>
 
-          <p>User Non Activ</p>
+            <p>User Non Activ</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person" style="color: #ffffffcb;"></i>
+          </div>
+          <a href="<?= site_url('userNonAktif'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-        <div class="icon">
-          <i class="ion ion-person" style="color: #ffffffcb;"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
-    </div>
-
+    <?php endif; ?>
     <div class="col-lg-3 col-xs-6">
       <!-- small box -->
       <div class="small-box bg-aqua">
@@ -57,7 +57,7 @@
         <div class="icon">
           <i class="ion ion-person-stalker" style="color: #ffffffcb;"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?= site_url('customer'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
 
@@ -72,7 +72,7 @@
         <div class="icon">
           <i class="ion ion-bag" style="color: #ffffffcb;"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?= site_url('report/sale'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
 
@@ -87,7 +87,7 @@
         <div class="icon">
           <i class="ion ion-grid" style="color: #ffffffcb;"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?= site_url('item'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
 
@@ -102,7 +102,7 @@
         <div class="icon">
           <i class="fa fa-pie-chart" style="color: #ffffffcb;"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?= site_url('report/sale'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
 
@@ -117,7 +117,7 @@
         <div class="icon">
           <i class="fa fa-truck" style="color: #ffffffcb;"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?= site_url('armada'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
 

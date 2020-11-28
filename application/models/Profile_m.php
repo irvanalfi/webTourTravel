@@ -5,11 +5,11 @@ class Profile_m extends CI_Model
 
     public function get($id = null)
     {
-        $this->db->from('profil');
+        $this->db->from('profile_web');
         if ($id != null) {
-            $this->db->where('profil_id', $id);
+            $this->db->where('profile_id', $id);
         }
-        $query = $this->db->where('status', 'Y')->get();
+        $query = $this->db->get();
         return $query;
     }
 
@@ -25,12 +25,13 @@ class Profile_m extends CI_Model
         $params['facebook']     = $post['facebook'];
         $params['instagram']    = $post['instagram'];
         $params['twitter']      = $post['twitter'];
+        $params['youtube']      = $post['youtube'];
         $params['phone']        = $post['phone'];
         $params['whatsapp']     = $post['whatsapp'];
         $params['logo']         = $post['logo'];
         $params['banner_utama'] = $post['banner_utama'];
         $params['banner_umum']  = $post['banner_umum'];
-        $this->db->insert('profil', $params);
+        $this->db->insert('profile_web', $params);
     }
 
     public function edit($post)
@@ -45,12 +46,13 @@ class Profile_m extends CI_Model
         $params['facebook']     = $post['facebook'];
         $params['instagram']    = $post['instagram'];
         $params['twitter']      = $post['twitter'];
+        $params['youtube']      = $post['youtube'];
         $params['phone']        = $post['phone'];
         $params['whatsapp']     = $post['whatsapp'];
         $params['logo']         = $post['logo'];
         $params['banner_utama'] = $post['banner_utama'];
         $params['banner_umum']  = $post['banner_umum'];
-        $this->db->where('profil_id', $post['profil_id']);
-        $this->db->update('profil', $params);
+        $this->db->where('profile_id', $post['profile_id']);
+        $this->db->update('profile_web', $params);
     }
 }

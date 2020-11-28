@@ -240,7 +240,7 @@
             <div class="pull-right hidden-xs">
                 <b>Version</b> 1.0
             </div>
-            <strong>Copyright &copy; 2020 <a href="">Project1</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2020 <a href="<?= site_url('dashboard'); ?>">Traviora</a>.</strong> All rights reserved.
         </footer>
     </div>
 

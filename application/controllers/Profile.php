@@ -8,14 +8,14 @@ class Profile extends CI_Controller
         parent::__construct();
         check_not_login();
         check_admin();
-        $this->load->model('profile_m');
+        $this->load->model('Profile_m');
         $this->load->library('form_validation');
         $this->load->model('Cetak_m');
     }
 
     public function index()
     {
-        $data['row'] = $this->profile_m->get();
+        $data['row'] = $this->Profile_m->get();
         $this->template->load('template', 'profile/profile_data', $data);
     }
 
@@ -94,6 +94,7 @@ class Profile extends CI_Controller
         $profile->facebook       = null;
         $profile->instagram      = null;
         $profile->twitter        = null;
+        $profile->youtube        = null;
         $profile->phone          = null;
         $profile->whatsapp       = null;
         $profile->logo           = null;
