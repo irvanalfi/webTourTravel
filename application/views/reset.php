@@ -1,3 +1,4 @@
+$email = $this->input->post('email');
 <!DOCTYPE html>
 <html>
 
@@ -32,28 +33,21 @@
 <body class="hold-transition login-page" style="background-color: darkslateblue">
     <div class="login-box">
         <div class="login-logo">
-            <a style="color :white"><b>Login</b>Traviora</a>
+            <a style="color :white"><b>Reset</b>Password</a>
         </div>
         <div class="login-box-body" style="background-color: #0075DB; color: white; border-radius : 4px;">
             <p class="login-box-msg">Sign in to start your session</p>
 
             <form action="<?= site_url('auth/proses') ?>" method="post">
                 <div class="form-group has-feedback">
-                    <input type="text" name="username" class="form-control" style="border-radius : 4px;" placeholder="Name">
+                    <input type="password" name="password" class="form-control" style="border-radius : 4px;" placeholder="Password">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" name="password" class="form-control" style="border-radius : 4px;" placeholder="Password">
+                    <input type="password" name="cpassword" class="form-control" style="border-radius : 4px;" placeholder="Konfirmasi Password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                <button type="submit" name="login" class="btn btn-warning btn-block">Login</button>
-            </form>
-            <hr>
-            <div class="text-center">
-                <p style="color :white">Don't have an account?
-                    <a class="medium" href="<?php echo base_url('Registrasi') ?>"> >> Register Here <<</a> <br>
-                            <a class="medium" href="<?php echo base_url('ForgotPs') ?>"> Forgot Password?</a> </p>
-            </div>
+                <button type="submit" name="login" class="btn btn-warning btn-block">Send Reset Link</button>
             </form>
         </div>
     </div>
