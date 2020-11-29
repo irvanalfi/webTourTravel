@@ -85,7 +85,7 @@ class Profile extends CI_Controller
         $profile = new stdClass();
         $profile->profile_id      = null;
         $profile->webName       = null;
-        $profile->statusName    = null;
+        $profile->statusname    = null;
         $profile->about          = null;
         $profile->address1       = null;
         $profile->address2       = null;
@@ -98,19 +98,21 @@ class Profile extends CI_Controller
         $profile->phone          = null;
         $profile->whatsapp       = null;
         $profile->logo           = null;
-        $profile->bannerUtama   = null;
-        $profile->bannerUmum    = null;
+        $profile->bannerutama   = null;
+        $profile->bannerumum    = null;
+        $profile->webversion    = null;
 
-        $this->form_validation->set_rules('webName', 'WebName', 'required');
-        $this->form_validation->set_rules('statusName', 'StatusName', 'required');
+        $this->form_validation->set_rules('webname', 'WebName', 'required');
+        $this->form_validation->set_rules('statusname', 'StatusName', 'required');
         $this->form_validation->set_rules('about', 'About', 'required');
         $this->form_validation->set_rules('address1', 'Address1', 'required');
         $this->form_validation->set_rules('email1', 'Email1', 'required');
         $this->form_validation->set_rules('phone', 'Phone', 'required');
         $this->form_validation->set_rules('whatsapp', 'Whatsapp', 'required');
         $this->form_validation->set_rules('logo', 'Logo', 'required');
-        $this->form_validation->set_rules('bannerUtama', 'BannerUtama', 'required');
-        $this->form_validation->set_rules('bannerUmum', 'BannerUmum', 'required');
+        $this->form_validation->set_rules('bannerutama', 'BannerUtama', 'required');
+        $this->form_validation->set_rules('bannerumum', 'BannerUmum', 'required');
+        $this->form_validation->set_rules('webversion', 'WebVersion', 'required');
 
         $this->form_validation->set_message('required', 'The %s has not been filled');
 
@@ -133,21 +135,22 @@ class Profile extends CI_Controller
 
     public function edit($id)
     {
-        $this->form_validation->set_rules('webName', 'WebName', 'required');
-        $this->form_validation->set_rules('statusName', 'StatusName', 'required');
+        $this->form_validation->set_rules('webname', 'WebName', 'required');
+        $this->form_validation->set_rules('statusname', 'StatusName', 'required');
         $this->form_validation->set_rules('about', 'About', 'required');
         $this->form_validation->set_rules('address1', 'Address1', 'required');
         $this->form_validation->set_rules('email1', 'Email1', 'required');
         $this->form_validation->set_rules('phone', 'Phone', 'required');
         $this->form_validation->set_rules('whatsapp', 'Whatsapp', 'required');
         $this->form_validation->set_rules('logo', 'Logo', 'required');
-        $this->form_validation->set_rules('bannerUtama', 'BannerUtama', 'required');
-        $this->form_validation->set_rules('bannerUmum', 'BannerUmum', 'required');
+        $this->form_validation->set_rules('bannerutama', 'BannerUtama', 'required');
+        $this->form_validation->set_rules('bannerumum', 'BannerUmum', 'required');
+        $this->form_validation->set_rules('webversion', 'WebVersion', 'required');
 
         $this->form_validation->set_message('required', 'The %s has not been filled');
 
         if ($this->form_validation->run() == FALSE) {
-            $query = $this->profile_m->get($id);
+            $query = $this->Profile_m->get($id);
             if ($query->num_rows() > 0) {
                 $profile = $query->row();
                 $data = [

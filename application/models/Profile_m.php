@@ -29,8 +29,9 @@ class Profile_m extends CI_Model
         $params['phone']        = $post['phone'];
         $params['whatsapp']     = $post['whatsapp'];
         $params['logo']         = $post['logo'];
-        $params['banner_utama'] = $post['banner_utama'];
-        $params['banner_umum']  = $post['banner_umum'];
+        $params['banner_utama'] = $post['bannerutama'];
+        $params['banner_umum']  = $post['bannerumum'];
+        $params['web_version']  = $post['webversion'];
         $this->db->insert('profile_web', $params);
     }
 
@@ -50,8 +51,9 @@ class Profile_m extends CI_Model
         $params['phone']        = $post['phone'];
         $params['whatsapp']     = $post['whatsapp'];
         $params['logo']         = $post['logo'];
-        $params['banner_utama'] = $post['banner_utama'];
-        $params['banner_umum']  = $post['banner_umum'];
+        $params['banner_utama'] = $post['bannerutama'];
+        $params['banner_umum']  = $post['bannerumum'];
+        $params['web_version']  = $post['webversion'];
         $this->db->where('profile_id', $post['profile_id']);
         $this->db->update('profile_web', $params);
     }

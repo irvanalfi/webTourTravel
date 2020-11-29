@@ -1,48 +1,54 @@
 <section class="content-header">
-    <h1>Profil WEB
-        <small>Pengaturan Profil dan Atribut Web</small>
+    <h1>Profile WEB
+        <small>Pengaturan Profile dan Atribut Web</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href=""><i class="fa fa-dashboard"></i></a></li>
-        <li class="active">Profil</li>
+        <li class="active">Profile</li>
     </ol>
 </section>
 <section class="content">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Profil Web</h3>
+            <?php foreach ($row->result() as $key => $data) : ?>
+            <?php endforeach; ?>
+            <h3 class="box-title">Profile Web</h3>
             <div class="pull-right">
-                <a href="<?= site_url('profile/edit'); ?>" class="btn btn-primary">
-                    <i class="fa fa-pencil"></i> Edit Tampilan</a>
+                <a href="<?= site_url('profile/edit/' . $data->profile_id); ?>" class="btn btn-primary">
+                    <i class="fa fa-pencil"></i> Edit Profil</a>
             </div><br>
             <hr>
         </div>
-        <?php foreach ($row->result() as $key => $data) : ?>
-        <?php endforeach; ?>
         <div class="row box-body">
             <div class="col-lg-6">
                 <h5><b>Logo</b></h5>
                 <?php if ($data->logo != null) { ?>
-                    <img src="<?= base_url('assets/img/profil/' . $data->logo) ?>" style="width:250px;">
+                    <img src="<?= base_url('assets/img/profile/' . $data->logo) ?>" style="width:250px;">
                 <?php } else {
                     echo "No Image";
                 } ?>
-                <br><br>
+                <br>
+                <hr>
                 <h5><b>Banner Utama</b></h5>
                 <?php if ($data->banner_utama != null) { ?>
-                    <img src="<?= base_url('assets/img/profil/' . $data->banner_utama) ?>" style="width:450px;">
+                    <img src="<?= base_url('assets/img/profile/' . $data->banner_utama) ?>" style="width:450px;">
                 <?php } else {
                     echo "No Image";
                 } ?>
-                <br><br>
+                <br>
+                <hr>
                 <h5><b>Banner Umum</b></h5>
                 <?php if ($data->banner_umum != null) { ?>
-                    <img src="<?= base_url('assets/img/profil/' . $data->banner_umum) ?>" style="width:450px;">
+                    <img src="<?= base_url('assets/img/profile/' . $data->banner_umum) ?>" style="width:450px;">
                 <?php } else {
                     echo "No Image";
-                } ?><br><br>
+                } ?><br>
+                <hr>
                 <h5><b>About</b></h5>
                 <h5><?= $data->about; ?></h5>
+                <hr>
+                <h5><b>Web Version</b></h5>
+                <h5><?= $data->web_version; ?></h5>
             </div>
             <div class="col-lg-6">
                 <div class="row">

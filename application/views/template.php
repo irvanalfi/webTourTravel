@@ -227,8 +227,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="treeview <?= $this->uri->segment(1) == 'profile' ? 'active' : ''; ?>">
-                            <a href="<?= site_url('profile'); ?>"><i class="fa fa-object-group"></i><span>Profil Website</span></a>
+                        <li <?= $this->uri->segment(1) == 'profile' ? 'class="active"' : ''; ?>>
+                            <a href="<?= site_url('profile'); ?>"><i class="fa fa-object-group"></i><span>Profile Website</span></a>
                         </li>
                     <?php endif; ?>
             </section>
