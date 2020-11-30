@@ -21,9 +21,8 @@
         <div class="box-body table-responsive">
             <div class="row">
                 <div>
-                    <?php echo form_open_multipart('item/proses') ?>
+                    <?php echo form_open_multipart('profile/proses') ?>
                     <div class="col-md-6">
-                        <?php echo form_open_multipart('profile/proses') ?>
                         <?php if ($page == 'edit') : ?>
                             <input type="hidden" name="profile_id" value="<?= $row->profile_id; ?>">
                         <?php endif ?>
@@ -33,40 +32,12 @@
                                 if ($row->logo != null) { ?>
                                     <div style="margin-bottom:5px">
                                         <img src="<?= base_url('assets/img/profile/' . $row->logo) ?>" style="width:50%">
-                                        <input type="hidden" name="oldImage" value="<?= $row->logo ?>">
+                                        <input type="hidden" name="oldLogo" value="<?= $row->logo ?>">
                                     </div>
                             <?php
                                 }
                             } ?>
                             <input type="file" name="logo" class="form-control">
-                            <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Banner Utama</label>
-                            <?php if ($page == 'edit') {
-                                if ($row->banner_utama != null) { ?>
-                                    <div style="margin-bottom:5px">
-                                        <img src="<?= base_url('assets/img/profile/' . $row->banner_utama) ?>" style="width:50%">
-                                        <input type="hidden" name="oldImage" value="<?= $row->banner_utama ?>">
-                                    </div>
-                            <?php
-                                }
-                            } ?>
-                            <input type="file" name="bannerutama" class="form-control">
-                            <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Banner Umum</label>
-                            <?php if ($page == 'edit') {
-                                if ($row->banner_umum != null) { ?>
-                                    <div style="margin-bottom:5px">
-                                        <img src="<?= base_url('assets/img/profile/' . $row->banner_umum) ?>" style="width:50%">
-                                        <input type="hidden" name="oldImage" value="<?= $row->banner_umum ?>">
-                                    </div>
-                            <?php
-                                }
-                            } ?>
-                            <input type="file" name="bannerumum" class="form-control">
                             <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
                         </div>
                         <div class="form-group <?= form_error('about') ? 'has-error' : null; ?>">
