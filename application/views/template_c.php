@@ -64,7 +64,7 @@
                             <a class="nav-link font-weight-bold" href="<?= site_url('client/blog'); ?>">BLOG</a>
                         </li>
                     </ul>
-                    <a href="" class="nav-link text-dark" style="font-size: 15px"><i class="fas fa-shopping-cart"></i><b>(<span>12</span>)</b></a>
+                    <a href="<?= site_url('client/chart'); ?>" class="nav-link text-dark" style="font-size: 15px"><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
         </nav>
@@ -106,7 +106,7 @@
                         <h4><a href="#" class="" id="contactus" style="color: darkslategrey;">Contact us</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="" id="howtobook" style="color: darkslategrey;">How To Book</a></h4>
+                        <h4><a href="<?= site_url('client/howToBook'); ?>" class="" id="howtobook" style="color: darkslategrey;">How To Book</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
                         <h4><a href="<?= site_url('client/privacyPolicy'); ?>" class="" id="privacypolicy" style="color: darkslategrey;">Privacy Policy</a></h4>

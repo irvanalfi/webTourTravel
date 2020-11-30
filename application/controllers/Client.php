@@ -68,6 +68,18 @@ class Client extends CI_Controller
     {
         $this->template->load('template_c', 'client/terms_and_condition');
     }
+    
+    public function howToBook()
+    {
+        $this->template->load('template_c', 'client/how_to_book');
+    }
+
+    public function chart()
+    {
+        $this->template->load('template_c', 'client/chart');
+    }
+
+    
 }
 
 /* End of file Controllername.php */
