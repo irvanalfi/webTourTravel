@@ -40,12 +40,7 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Unit Id</th>
-                    <th>Barcode</th>
                     <th>Name</th>
-                    <th>Category Id</th>
-                    <th>tem Id</th>
-                    <th>Price</th>
                     <th>Stock</th>
                 </tr>
             </thead>
@@ -54,9 +49,8 @@
                 <?php foreach ($unit as $unt) : ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $unt->unit_id; ?></td>
                         <td><?= $unt->name; ?></td>
-                        <td><?= $unt->stock; ?></td>
+                        <td><?= $unt->status == 'E' ? 'Enable' : 'Disable' ?></td>
                     </tr>
                     <?php $no++; ?>
                 <?php endforeach; ?>

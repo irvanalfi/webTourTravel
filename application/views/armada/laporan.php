@@ -35,7 +35,7 @@
 
 <body>
     <center>
-        <h3>Data Supplier</h3>
+        <h3>Data Armada</h3>
         <table>
             <thead>
                 <tr>
@@ -43,18 +43,26 @@
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Address</th>
-                    <th>Description</th>
+                    <th>Email</th>
+                    <th>Bus</th>
+                    <th>Mini Bus</th>
+                    <th>Hiace</th>
+                    <th>Note</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no = 1; ?>
-                <?php foreach ($supplier as $sup) : ?>
+                <?php foreach ($armada as $ar) : ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $sup->name; ?></td>
-                        <td><?= $sup->phone; ?></td>
-                        <td><?= $sup->address; ?></td>
-                        <td><?= $sup->description; ?></td>
+                        <td><?= $ar->name; ?></td>
+                        <td><?= $ar->phone; ?></td>
+                        <td><?= $ar->address; ?></td>
+                        <td><?= $ar->email; ?></td>
+                        <td><?= $ar->bus; ?></td>
+                        <td><?= $ar->minibus; ?></td>
+                        <td><?= $ar->hiace; ?></td>
+                        <td><?= $ar->note; ?></td>
                     </tr>
                     <?php $no++; ?>
                 <?php endforeach; ?>

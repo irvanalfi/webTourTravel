@@ -40,7 +40,6 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Category Id</th>
                     <th>Name</th>
                     <th>Status</th>
                 </tr>
@@ -50,9 +49,8 @@
                 <?php foreach ($category as $cat) : ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $cat->category_id; ?></td>
                         <td><?= $cat->name; ?></td>
-                        <td><?= $cat->status; ?></td>
+                        <td><?= $cat->status == 'E' ? 'Enable' : 'Disable' ?></td>
                     </tr>
                     <?php $no++; ?>
                 <?php endforeach; ?>
