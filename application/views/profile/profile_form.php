@@ -40,6 +40,20 @@
                             <input type="file" name="logo" class="form-control">
                             <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
                         </div>
+                        <div class="form-group">
+                            <label for="">Banner Umum</label>
+                            <?php if ($page == 'edit') {
+                                if ($row->banner_umum != null) { ?>
+                                    <div style="margin-bottom:5px">
+                                        <img src="<?= base_url('assets/img/profile/' . $row->banner_umum) ?>" style="width:50%">
+                                        <input type="hidden" name="oldBUM" value="<?= $row->banner_umum ?>">
+                                    </div>
+                            <?php
+                                }
+                            } ?>
+                            <input type="file" name="bannerumum" class="form-control">
+                            <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
+                        </div>
                         <div class="form-group <?= form_error('about') ? 'has-error' : null; ?>">
                             <label for="">About *</label>
                             <textarea name="about" class="form-control"><?= $row->about; ?></textarea>

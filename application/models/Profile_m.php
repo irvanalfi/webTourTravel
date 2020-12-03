@@ -15,23 +15,32 @@ class Profile_m extends CI_Model
 
     public function edit($post)
     {
-        $params['web_name']     = $post['webname'];
-        $params['status_name']  = $post['statusname'];
-        $params['about']        = $post['about'];
-        $params['address1']     = $post['address1'];
-        $params['address2']     = $post['address2'];
-        $params['email1']       = $post['email1'];
-        $params['email2']       = $post['email2'];
-        $params['facebook']     = $post['facebook'];
-        $params['instagram']    = $post['instagram'];
-        $params['twitter']      = $post['twitter'];
-        $params['youtube']      = $post['youtube'];
-        $params['phone']        = $post['phone'];
-        $params['whatsapp']     = $post['whatsapp'];
-        $params['logo']         = $post['logo'];
-        // $params['bannerutama'] = $post['bannerutama'];
-        // $params['bannerumum']  = $post['bannerumum'];
-        $params['web_version']  = $post['webversion'];
+
+        $params = [
+            'web_name'     => $post['webname'],
+            'status_name'  => $post['statusname'],
+            'about'        => $post['about'],
+            'address1'     => $post['address1'],
+            'address2'     => $post['address2'],
+            'email1'       => $post['email1'],
+            'email2'       => $post['email2'],
+            'facebook'     => $post['facebook'],
+            'instagram'    => $post['instagram'],
+            'twitter'      => $post['twitter'],
+            'youtube'      => $post['youtube'],
+            'phone'        => $post['phone'],
+            'whatsapp'     => $post['whatsapp'],
+            'web_version'  => $post['webversion']
+        ];
+        if ($post['logo'] != null) {
+            $params['logo']     = $post['logo'];
+        }
+        // if ($post['bannerutama'] != null) {
+        //     $params['banner_utama'] = $post['bannerutama'];
+        // }
+        if ($post['bannerumum'] != null) {
+            $params['banner_umum']  = $post['bannerumum'];
+        }
         $this->db->where('profile_id', $post['profile_id']);
         $this->db->update('profile_web', $params);
     }

@@ -78,16 +78,6 @@ class User extends CI_Controller
         redirect('user');
       }
     }
-    // if (isset($_POST['add'])) {
-    //     $this->user_m->add($post);
-    // } else if (isset($_POST['edit'])) {
-    //     $this->user_m->edit($post);
-    // }
-
-    // if ($this->db->affected_rows() > 0) {
-    //     echo "<script>alert('Data Berhasil disimpan');</script>";
-    // }
-    // echo "<script>window.location='" . site_url('user') . "'</script>";
   }
 
   public function add()
