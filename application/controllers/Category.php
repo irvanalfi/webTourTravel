@@ -63,9 +63,8 @@ class Category extends CI_Controller
         }
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $id = $this->input->post('category_id');
         $this->category_m->del($id);
 
         if ($this->db->affected_rows() > 0) {

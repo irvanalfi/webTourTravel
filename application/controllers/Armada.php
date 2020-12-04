@@ -27,11 +27,10 @@ class Armada extends CI_Controller
         } else if (isset($_POST['edit'])) {
             $this->armada_m->edit($post);
         }
-
         if ($this->db->affected_rows() > 0) {
-            echo "<script>alert('Data Berhasil disimpan');</script>";
+            $this->session->set_flashdata('success', 'Data has been successfully saved!!');
         }
-        echo "<script>window.location='" . site_url('armada') . "'</script>";
+        redirect('armada');
     }
 
     public function add()

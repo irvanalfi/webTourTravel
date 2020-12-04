@@ -10,7 +10,10 @@
 
 <!-- Main content -->
 <section class="content">
-    <?php $this->view('messages'); ?>
+    <?php
+    // $this->view('messages');
+    ?>
+    <div id="flash" data-flash="<?= $this->session->flashdata('success'); ?>"></div>
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Data Categories</h3>
@@ -43,12 +46,9 @@
                                 <a href="<?= site_url('category/edit/' . $data->category_id); ?>" class="btn btn-warning btn-xs">
                                     <i class="fa fa-pencil"></i> Edit
                                 </a>
-                                <form action="<?= site_url('category/delete'); ?>" method="POST" class="pull-right">
-                                    <input type="hidden" name="category_id" value="<?= $data->category_id ?>">
-                                    <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this data?')">
-                                        <i class="fa fa-trash"></i> Delete
-                                    </button>
-                                </form>
+                                <a href="<?= site_url('category/delete/' . $data->category_id); ?>" id="btnSA-delete" class="pull-right btn btn-danger btn-xs">
+                                    <i class="fa fa-trash"></i> Delete
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

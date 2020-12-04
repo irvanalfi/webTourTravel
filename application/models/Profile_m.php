@@ -35,9 +35,9 @@ class Profile_m extends CI_Model
         if ($post['logo'] != null) {
             $params['logo']     = $post['logo'];
         }
-        // if ($post['bannerutama'] != null) {
-        //     $params['banner_utama'] = $post['bannerutama'];
-        // }
+        if ($post['bannerutama'] != null) {
+            $params['banner_utama'] = $post['bannerutama'];
+        }
         if ($post['bannerumum'] != null) {
             $params['banner_umum']  = $post['bannerumum'];
         }

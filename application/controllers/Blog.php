@@ -107,6 +107,7 @@ class Blog extends CI_Controller
       $this->template->load('template', 'blog/blog_form', $data);
     } else {
       echo "<script>alert('Data tidak ditemukan');";
+      $this->session->set_flashdata('success', 'Data Not Found!!');
       echo "window.location='" . site_url('blog') . "'</script>";
     }
   }

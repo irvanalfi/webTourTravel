@@ -10,7 +10,10 @@
 
 <!-- Main content -->
 <section class="content">
-    <?php $this->view('messages'); ?>
+    <?php
+    // $this->view('messages');
+    ?>
+    <div id="flash" data-flash="<?= $this->session->flashdata('success'); ?>"></div>
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Data Item</h3>
@@ -48,7 +51,10 @@
                                     Generate<i class="fa fa-barcode"></i>
                                 </a>
                             </td>
-                            <td style="width:140px"><?= $data->name ?></td>
+                            <td style="width:140px"><?= $data->name ?><br>
+                                <a id="item_detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#itm-detail" data-duration="<?= $data->duration ?>" data-groupsize="<?= $data->groupsize ?>" data-language="<?= $data->language ?>" data-tourtype="<?= $data->type_name ?>" data-tourunit="<?= $data->unit_name ?>" data-overview="<?= $data->overview ?>">
+                                    <i class="fa fa-eye"></i> Detail
+                                </a></td>
                             <td>
                                 <?php if ($data->image != null) { ?>
                                     <img src="<?= base_url('assets/img/item/' . $data->image) ?>" style="width:100px">
@@ -58,18 +64,13 @@
                             <td><?= $data->category_name ?></td>
                             <td><?= $data->stock ?></td>
                             <td><?= indo_currency($data->price); ?></td>
-                            <td class="text-center" width="160px">
-                                <a id="item_detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#itm-detail" data-duration="<?= $data->duration ?>" data-groupsize="<?= $data->groupsize ?>" data-language="<?= $data->language ?>" data-tourtype="<?= $data->type_name ?>" data-tourunit="<?= $data->unit_name ?>" data-overview="<?= $data->overview ?>">
-                                    <i class="fa fa-eye"></i> Detail
-                                </a>
-                                <a href="<?= site_url('item/edit/' . $data->item_id); ?>" class="btn btn-warning btn-xs">
+                            <td class="text-center" width="80px">
+                                <a href="<?= site_url('item/edit/' . $data->item_id); ?>" class="btn btn-block btn-warning btn-xs">
                                     <i class="fa fa-pencil"></i> Edit
+                                </a> <br>
+                                <a href="<?= site_url('item/delete/' . $data->item_id); ?>" id="btnSA-delete" class="pull-right btn btn-block btn-danger btn-xs">
+                                    <i class="fa fa-trash"></i> Delete
                                 </a>
-                                <form action="<?= site_url('item/delete'); ?>" method="POST" class="">
-                                    <input type="hidden" name="item_id" value="<?= $data->item_id ?>">
-                                    <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this data?')" style="margin-top:4px">
-                                        <i class="fa fa-trash"></i> Delete</button>
-                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

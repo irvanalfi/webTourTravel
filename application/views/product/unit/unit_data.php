@@ -10,7 +10,10 @@
 
 <!-- Main content -->
 <section class="content">
-    <?php $this->view('messages'); ?>
+    <?php
+    // $this->view('messages');
+    ?>
+    <div id="flash" data-flash="<?= $this->session->flashdata('success'); ?>"></div>
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Data Units</h3>
@@ -43,11 +46,9 @@
                                 <a href="<?= site_url('unit/edit/' . $data->unit_id); ?>" class="btn btn-warning btn-xs">
                                     <i class="fa fa-pencil"></i> Edit
                                 </a>
-                                <form action="<?= site_url('unit/delete'); ?>" method="POST" class="pull-right">
-                                    <input type="hidden" name="unit_id" value="<?= $data->unit_id ?>">
-                                    <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this data?')">
-                                        <i class="fa fa-trash"></i> Delete</button>
-                                </form>
+                                <a href="<?= site_url('unit/delete/' . $data->unit_id); ?>" id="btnSA-delete" class="pull-right btn btn-danger btn-xs">
+                                    <i class="fa fa-trash"></i> Delete
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

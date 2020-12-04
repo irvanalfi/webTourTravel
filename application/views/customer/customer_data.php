@@ -10,6 +10,10 @@
 
 <!-- Main content -->
 <section class="content">
+    <?php
+    // $this->view('messages');
+    ?>
+    <div id="flash" data-flash="<?= $this->session->flashdata('success'); ?>"></div>
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Data Customers</h3>

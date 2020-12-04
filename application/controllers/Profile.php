@@ -44,11 +44,24 @@ class Profile extends CI_Controller
                 }
             } else {
                 $post['logo']  = $post['oldLogo'];
-                $this->Profile_m->edit($post);
-                if ($this->db->affected_rows() > 0) {
-                    $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+            }
+
+            // banner utama
+            if (@$_FILES['bannerutama']['name'] != null) {
+                if ($this->upload->do_upload('bannerutama')) {
+                    $profile = $this->Profile_m->get($post['profile_id'])->row();
+                    if ($profile->banner_utama != null) {
+                        $target_file = './assets/img/profile/' . $profile->banner_utama;
+                        unlink($target_file);
+                    }
+                    $post['bannerutama']       =   $this->upload->data('file_name');
+                } else {
+                    $error = $this->upload->display_errors();
+                    $this->session->set_flashdata('error', $error);
+                    redirect('profile/edit');
                 }
-                redirect('profile');
+            } else {
+                $post['bannerumum']  = $post['oldBUT'];
             }
 
             // banner umum
@@ -67,14 +80,8 @@ class Profile extends CI_Controller
                 }
             } else {
                 $post['bannerumum']  = $post['oldBUM'];
-                $this->Profile_m->edit($post);
-                if ($this->db->affected_rows() > 0) {
-                    $this->session->set_flashdata('success', 'Data has been successfully saved!!');
-                }
-                redirect('profile');
             }
-            print_r(json_encode($post));
-            die();
+
             $this->Profile_m->edit($post);
             if ($this->db->affected_rows() > 0) {
                 $this->session->set_flashdata('success', 'Data has been successfully saved!!');

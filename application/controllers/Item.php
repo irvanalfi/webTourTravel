@@ -156,9 +156,8 @@ class Item extends CI_Controller
         }
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $id = $this->input->post('item_id');
         $item = $this->Item_m->get($id)->row();
         if ($item->image != null) {
             $target_file = '../assets/img/item/' . $item->image;

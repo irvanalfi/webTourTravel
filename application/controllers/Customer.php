@@ -26,11 +26,10 @@ class Customer extends CI_Controller
         } else if (isset($_POST['edit'])) {
             $this->customer_m->edit($post);
         }
-
         if ($this->db->affected_rows() > 0) {
-            echo "<script>alert('Data Berhasil disimpan');</script>";
+            $this->session->set_flashdata('success', 'Data has been successfully saved!!');
         }
-        echo "<script>window.location='" . site_url('customer') . "'</script>";
+        redirect('customer');
     }
 
     public function add()
@@ -60,7 +59,8 @@ class Customer extends CI_Controller
             $this->template->load('template', 'customer/customer_form', $data);
         } else {
             echo "<script>alert('Data tidak ditemukan');";
-            echo "window.location='" . site_url('customer') . "'</script>";
+            $this->session->set_flashdata('success', 'Data Not Found!!');
+            redirect('customer');
         }
     }
 

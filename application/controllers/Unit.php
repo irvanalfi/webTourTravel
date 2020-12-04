@@ -64,9 +64,8 @@ class Unit extends CI_Controller
         }
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $id = $this->input->post('unit_id');
         $this->unit_m->del($id);
 
         if ($this->db->affected_rows() > 0) {
