@@ -82,10 +82,10 @@ class Armada extends CI_Controller
     public function laporan_pdf()
     {
         $data['title'] = 'Report armada';
-        $data['armada'] = $this->Cetak_m->viewarmada();
+        $data['armada'] = $this->Cetak_m->viewArmada();
         $this->load->library('pdf');
 
-        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->setPaper('A4', 'landscape');
         $this->pdf->filename = "laporan_armada.pdf";
         $this->pdf->load_view('armada/laporan', $data);
     }

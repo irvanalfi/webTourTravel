@@ -175,10 +175,10 @@ class Item extends CI_Controller
     public function laporan_pdf()
     {
         $data['title']          = 'Report item';
-        $data['item']           = $this->Cetak_m->viewitem();
+        $data['item']           = $this->Cetak_m->viewItem();
         $this->load->library('pdf');
 
-        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->setPaper('A4', 'landscape');
         $this->pdf->filename    = "laporan_item.pdf";
         $this->pdf->load_view('product/item/laporan', $data);
     }

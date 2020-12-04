@@ -40,7 +40,6 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Type Id</th>
                     <th>Name</th>
                     <th>Status</th>
                 </tr>
@@ -50,9 +49,8 @@
                 <?php foreach ($type as $ty) : ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $ty->type_id; ?></td>
                         <td><?= $ty->name; ?></td>
-                        <td><?= $ty->status; ?></td>
+                        <td><?= $ty->status == 'E' ? 'Enable' : 'Disable' ?></td>
                     </tr>
                     <?php $no++; ?>
                 <?php endforeach; ?>

@@ -95,9 +95,9 @@ class Sale extends CI_Controller
 
 	public function cart_del()
 	{
-		if(isset($_POST['cancel_payment'])) {
+		if (isset($_POST['cancel_payment'])) {
 			$this->sale_m->del_cart(['user_id' => $this->session->userdata('userid')]);
-		}else {
+		} else {
 			$cart_id = $this->input->post('cart_id');
 			$this->sale_m->del_cart(['cart_id' => $cart_id]);
 		}

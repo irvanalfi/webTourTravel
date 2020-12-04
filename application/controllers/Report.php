@@ -8,7 +8,7 @@ class Report extends CI_Controller
     {
         parent::__construct();
         check_not_login();
-        $this->load->model('sale_m', 'sale');
+        $this->load->model('sale_m', 'sale', 'Cetak_m');
     }
 
 

@@ -15,7 +15,7 @@
         <div class="box-header">
             <h3 class="box-title">Data Penjualan</h3>
             <div class="pull-right">
-                <a href="<?= site_url('customer/laporan_pdf'); ?>" class="btn btn-primary">
+                <a href="<?= site_url('report/laporan_pdf'); ?>" class="btn btn-primary">
                     <i class="fa fa-print"></i> Print</a>
             </div>
         </div>
