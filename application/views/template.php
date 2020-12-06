@@ -332,7 +332,7 @@
             })
         })
     </script>
-
+    <!-- detail pada stock in dan stock out -->
     <script>
         $(document).ready(function() {
             $(document).on('click', '#set_dtl', function() {
@@ -352,8 +352,8 @@
         })
     </script>
 
+    <!-- masukkan data ke inputan cart hasil search -->
     <script>
-        // masukkan data ke inputan cart hasil search
         $(document).on('click', '#select', function() {
             $('#item_id').val($(this).data('id'));
             $('#barcode').val($(this).data('barcode'));
@@ -607,6 +607,39 @@
             $(document).on('click', '#blog_content', function() {
                 var content = $(this).data('content');
                 $('#content').text(content);
+            })
+        })
+    </script>
+
+    <!-- detail sale report data -->
+    <script>
+        $(document).on('click', '#detail', function() {
+            $('#dtinvoice').text($(this).data('invoice'));
+            $('#dtcustomer').text($(this).data('customer'));
+            $('#dtdatetime').text($(this).data('date') + ' ' + $(this).data('time'));
+            $('#dttotal').text($(this).data('total'));
+            $('#dtdiscount').text($(this).data('discount'));
+            $('#dtcash').text($(this).data('cash'));
+            $('#dtremaining').text($(this).data('remaining'));
+            $('#dtgrandtotal').text($(this).data('grandtotal'));
+            $('#dtnote').text($(this).data('note'));
+            $('#dtCashier').text($(this).data('Cashier'));
+
+            function rubah(angka) {
+                var reverse = angka.toString().split('').reverse().join(''),
+                    ribuan = reverse.match(/\d{1,3}/g);
+                ribuan = ribuan.join('.').split('').reverse().join('');
+                return ribuan;
+            }
+
+            var product = '<table class="table no-margin">'
+            product += '<tr><th>Item</th><th>Price</th><th>Qty</th><th>Discount</th><th>Total</th></tr>'
+            $.getJSON('<?= site_url('report/sale_product/') ?>' + $(this).data('saleid'), function(data) {
+                $.each(data, function(key, val) {
+                    product += '<tr><td>' + val.name + '</td><td> Rp.' + rubah(val.price) + '</td><td>' + val.qty + '</td><td>' + val.discount_item + '</td><td> Rp.' + rubah(val.total) + '</td></tr>'
+                })
+                product += '</table>'
+                $('#dtproduct').html(product)
             })
         })
     </script>

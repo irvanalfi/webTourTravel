@@ -41,7 +41,7 @@
                             <td style="width: 5%;"><?= $no++; ?>.</td>
                             <td>
                                 <?= $data->invoice ?><br>
-                                <button id="sr-detail" class="btn btn-primary btn-xs" data-target="#sr-detail" data-toggle="modal"><i class="fa fa-eye"></i>Detail</button>
+                                <button id="detail" data-target="#sr-detailcard" data-toggle="modal" class="btn btn-primary btn-xs" data-invoice="<?= $data->invoice; ?>" data-date="<?= indo_date($data->date) ?>" data-time="<?= substr($data->sale_created, 11, 5) ?>" data-customer="<?= $data->customer_id == null ? "Umum" : $data->customer_name; ?>" data-total="<?= indo_currency($data->total_price); ?>" data-discount="<?= $data->discount; ?>" data-grandtotal="<?= indo_currency($data->final_price); ?>" data-cash="<?= indo_currency($data->cash); ?>" data-remaining="<?= indo_currency($data->remaining); ?>" data-note="<?= $data->note; ?>" data-cashier="<?= ucfirst($data->user_name); ?>" data-saleid="<?= $data->sale_id; ?>"><i class="fa fa-eye"></i>Detail</button>
                             </td>
                             <td><?= indo_date($data->date) ?></td>
                             <td><?= $data->customer_id == null ? "Umum" : $data->customer_name ?></td>
@@ -66,7 +66,7 @@
     </div>
 </section>
 
-<div class="modal fade" id="sr-detail">
+<div class="modal fade" id="sr-detailcard">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -79,39 +79,38 @@
                 <table class="table table-bordered no-margin">
                     <tbody>
                         <tr>
-
                             <th style="width:20%">Invoice</th>
-                            <td style="width:30%"><span id="invoice"></span></td>
+                            <td style="width:30%"><span id="dtinvoice"></span></td>
                             <th style="width:20%">Customer</th>
-                            <td style="width:30%"><span id="customer"></span></td>
+                            <td style="width:30%"><span id="dtcustomer"></span></td>
                         </tr>
                         <tr>
                             <th>Date Time</th>
-                            <th><span id="datetime"></span></th>
+                            <th><span id="dtdatetime"></span></th>
                             <th>Cashier</th>
-                            <th><span id="cashier"></span></th>
+                            <th><span id="dtcashier"></span></th>
                         </tr>
                         <tr>
                             <th>Total</th>
-                            <th><span id="total"></span></th>
+                            <th><span id="dttotal"></span></th>
                             <th>Cash</th>
-                            <th><span id="cash"></span></th>
+                            <th><span id="dtcash"></span></th>
                         </tr>
                         <tr>
                             <th>Discount</th>
-                            <th><span id="discount"></span></th>
-                            <th>Change</th>
-                            <th><span id="change"></span></th>
+                            <th><span id="dtdiscount"></span></th>
+                            <th>Remaining</th>
+                            <th><span id="dtremaining"></span></th>
                         </tr>
                         <tr>
                             <th>Grand Total</th>
-                            <th><span id="grandtotal"></span></th>
+                            <th><span id="dtgrandtotal"></span></th>
                             <th>Note</th>
-                            <th><span id="note"></span></th>
+                            <th><span id="dtnote"></span></th>
                         </tr>
                         <tr>
                             <th>Product</th>
-                            <td colspan="3"><span id="product"></span></td>
+                            <td colspan="3"><span id="dtproduct"></span></td>
                         </tr>
                     </tbody>
                 </table>
