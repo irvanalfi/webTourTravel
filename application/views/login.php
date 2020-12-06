@@ -17,7 +17,7 @@
         }
 
         a:hover {
-            color: grey;
+            color: orange;
             text-decoration: underline;
         }
     </style>
@@ -29,7 +29,7 @@
             <a style="color :white"><b>Login</b>Traviora</a>
         </div>
         <div class="login-box-body" style="background-color: #0075DB; color: white; border-radius : 4px;">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <h5 class="login-box-msg">Sign in to start your session</h5>
 
             <form action="<?= site_url('auth/proses') ?>" method="post">
                 <div class="form-group has-feedback">
@@ -44,9 +44,9 @@
             </form>
             <hr>
             <div class="text-center">
-                <p style="color :white">Don't have an account?
-                    <a class="medium" href="<?php echo base_url('Registrasi') ?>"> >> Register Here <<</a> <br>
-                            <a class="medium" href="<?php echo base_url('ForgotPs') ?>"> Forgot Password?</a> </p>
+                <h5 style="color :white">Don't have an account?</h5>
+                <a class="medium" href="<?php echo base_url('Registrasi') ?>"> - Register Here -</a> <br><br>
+                <a class="medium" href="<?php echo base_url('ForgotPs') ?>"> Forgot Password?</a> </p>
             </div>
             </form>
         </div>
