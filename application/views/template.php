@@ -623,7 +623,7 @@
             $('#dtremaining').text($(this).data('remaining'));
             $('#dtgrandtotal').text($(this).data('grandtotal'));
             $('#dtnote').text($(this).data('note'));
-            $('#dtCashier').text($(this).data('Cashier'));
+            $('#dtcashier').text($(this).data('cashier'));
 
             function rubah(angka) {
                 var reverse = angka.toString().split('').reverse().join(''),

@@ -28,7 +28,6 @@ class Sale extends CI_Controller
 	public function process()
 	{
 		$data = $this->input->post(null, TRUE);
-
 		if (isset($_POST['add_cart'])) {
 			$item_id 	= $this->input->post('item_id');
 			$check_cart = $this->sale_m->get_cart(['t_cart.item_id' => $item_id])->num_rows();
@@ -37,7 +36,6 @@ class Sale extends CI_Controller
 			} else {
 				$this->sale_m->add_cart($data);
 			}
-
 			if ($this->db->affected_rows() > 0) {
 				$params = array("success" => true);
 			} else {
@@ -45,7 +43,6 @@ class Sale extends CI_Controller
 			}
 			echo json_encode($params);
 		}
-
 		if (isset($_POST['edit_cart'])) {
 			$this->sale_m->edit_cart($data);
 			if ($this->db->affected_rows() > 0) {
@@ -55,13 +52,11 @@ class Sale extends CI_Controller
 			}
 			echo json_encode($params);
 		}
-
 		if (isset($_POST['process_payment'])) {
 			$sale_id 	= $this->sale_m->add_sale($data);
 			$cart		= $this->sale_m->get_cart()->result();
 			$row 		= [];
 			foreach ($cart as $c => $value) {
-
 				//array_push menambahkan kedalam array row yang kosong
 				array_push(
 					$row,
@@ -76,7 +71,6 @@ class Sale extends CI_Controller
 			}
 			$this->sale_m->add_sale_detail($row);
 			$this->sale_m->del_cart(['user_id' => $this->session->userdata('userid')]);
-
 			if ($this->db->affected_rows() > 0) {
 				$params = array("success" => true, "sale_id" => $sale_id);
 			} else {
