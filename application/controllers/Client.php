@@ -85,6 +85,12 @@ class Client extends CI_Controller
         $data['row'] = $this->Profile_m->get();
         $this->template->load('template_c', 'client/about_us', $data);
     }
+    public function contact_us()
+    {
+        $this->load->model('Contact_m');
+        $data['row'] = $this->Contact_m->get();
+        $this->template->load('template_c', 'client/contact_us', $data);
+    }
 }
 
 /* End of file Controllername.php */

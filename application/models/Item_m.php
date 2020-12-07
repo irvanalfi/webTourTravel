@@ -25,6 +25,8 @@ class Item_m extends CI_Model
             'name'          => $post['item_name'],
             'address'       => $post['item_address'],
             'image'         => $post['image'],
+            'image2'         => $post['image2'],
+            'image3'         => $post['image3'],
             'duration'      => $post['item_duration'],
             'groupsize'     => $post['item_grupsize'],
             'type_id'       => $post['type'],
@@ -57,6 +59,12 @@ class Item_m extends CI_Model
         ];
         if ($post['image'] != null) {
             $params['image'] = $post['image'];
+        }
+        if ($post['image2'] != null) {
+            $params['image2'] = $post['image2'];
+        }
+        if ($post['image3'] != null) {
+            $params['image3'] = $post['image3'];
         }
         $this->db->where('item_id', $post['id']);
         $this->db->update('p_item', $params);

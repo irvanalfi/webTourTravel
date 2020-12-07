@@ -122,7 +122,7 @@
                         <h4><a href="<?= site_url('client/about_us'); ?>" class="" id="aboutus" style="color: darkslategrey;">About Us</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
-                        <h4><a href="#" class="" id="contactus" style="color: darkslategrey;">Contact us</a></h4>
+                        <h4><a href="<?= site_url('client/contact_us'); ?>" class="" id="contactus" style="color: darkslategrey;">Contact us</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
                         <h4><a href="<?= site_url('client/howToBook'); ?>" class="" id="howtobook" style="color: darkslategrey;">How To Book</a></h4>

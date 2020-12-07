@@ -64,7 +64,34 @@ class Item extends CI_Controller
                 $this->session->set_flashdata('error', "Barcode $post[barcode] already used!!");
                 redirect('item/edit/' . $post['id']);
             } else {
-                // gambar
+                // gambar 1
+                if (@$_FILES['image']['name'] != null) {
+                    if ($this->upload->do_upload('image')) {
+                        $item = $this->Item_m->get($post['id'])->row();
+                        if ($item->image != null) {
+                            $target_file = './assets/img/item/' . $item->image;
+                            unlink($target_file);
+                        }
+                        $post['image']  =   $this->upload->data('file_name');
+                        $this->Item_m->edit($post);
+                        if ($this->db->affected_rows() > 0) {
+                            $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                        }
+                        redirect('item');
+                    } else {
+                        $error = $this->upload->display_errors();
+                        $this->session->set_flashdata('error', $error);
+                        redirect('item/add');
+                    }
+                } else {
+                    $post['image']  = null;
+                    $this->Item_m->edit($post);
+                    if ($this->db->affected_rows() > 0) {
+                        $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                    }
+                    redirect('item');
+                }
+                // gambar 2 
                 if (@$_FILES['image']['name'] != null) {
                     if ($this->upload->do_upload('image')) {
                         $item = $this->Item_m->get($post['id'])->row();
@@ -102,6 +129,9 @@ class Item extends CI_Controller
         $item->barcode      = null;
         $item->name         = null;
         $item->address      = null;
+        $item->image        = null;
+        $item->image2       = null;
+        $item->image3       = null;
         $item->duration     = null;
         $item->groupsize    = null;
         $item->overview     = null;
