@@ -38,6 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Image</label>
+                            <span> ( size 800 x 600 px )</span>
                             <?php if ($page == 'edit') {
                                 if ($row->image != null) { ?>
                                     <div style="margin-bottom:5px">
@@ -47,6 +48,34 @@
                                 }
                             } ?>
                             <input type="file" name="image" class="form-control">
+                            <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Image 2</label>
+                            <span> ( size 2782 x 963 px )</span>
+                            <?php if ($page == 'edit') {
+                                if ($row->image2 != null) { ?>
+                                    <div style="margin-bottom:5px">
+                                        <img src="<?= base_url('assets/img/item/' . $row->image2) ?>" style="width:50%">
+                                    </div>
+                            <?php
+                                }
+                            } ?>
+                            <input type="file" name="image2" class="form-control">
+                            <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Image 3</label>
+                            <span> ( size optional )</span>
+                            <?php if ($page == 'edit') {
+                                if ($row->image3 != null) { ?>
+                                    <div style="margin-bottom:5px">
+                                        <img src="<?= base_url('assets/img/item/' . $row->image3) ?>" style="width:50%">
+                                    </div>
+                            <?php
+                                }
+                            } ?>
+                            <input type="file" name="image3" class="form-control">
                             <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
                         </div>
                     </div>

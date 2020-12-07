@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Nov 2020 pada 06.45
+-- Waktu pembuatan: 07 Des 2020 pada 06.43
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -47,7 +47,7 @@ CREATE TABLE `armada` (
 --
 
 INSERT INTO `armada` (`armada_id`, `name`, `address`, `phone`, `email`, `bus`, `minibus`, `hiace`, `note`, `created`, `updated`) VALUES
-(1, 'Songgon Trans', 'Seragi, Songgon, Banyuwangi', '082244922833', 'irvanhidayat0623@gmail.com', 7, 10, 5, NULL, '2020-11-25 13:15:11', NULL),
+(1, 'Songgon Trans', 'Seragi, Songgon, Banyuwangi', '082244922833', 'irvanhidayat0623@gmail.com', 7, 10, 5, 'hiya hiya', '2020-12-05 03:00:46', '2020-12-04 21:00:46'),
 (2, 'Purworharjo Trans', 'Purwoharjo, Banyuwangi', '081336914904', 'miftahulhuda08@gmail.com', 3, 6, 2, NULL, '2020-11-25 13:15:14', NULL),
 (3, 'Lorena', 'Tukangkayu Banyuwangi', '083355625353', 'deny.dand@outlook.com', 5, 7, 2, 'milik pribadi aktif stiap hari', '2020-11-25 15:34:38', '2020-11-25 09:34:38');
 
@@ -72,7 +72,7 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`blog_id`, `title`, `image`, `content`, `writer`, `created`, `updated`) VALUES
-(1, 'Blue Fire Phenomenon on Ijen Crater', 'blog-160620-8d3be1831c.jpg', 'Ijen Volcano or known as ‘Ijen Crater’ or ‘Kawah Ijen’ has elevation 2,769m (9,085 ft) which located in East Java, Indonesia. Highly recommended for mountain buffs and hikers. Ijen is a quiet but active volcano, and the landscape is dominated by the volcanic cones.', 'admintraviora', '2020-06-16 21:43:35', '2020-06-16 16:43:35'),
+(1, 'Blue Fire Phenomenon on Ijen Crater', 'blog-160620-8d3be1831c.jpg', 'Ijen Volcano or known as ‘Ijen Crater’ or ‘Kawah Ijen’ has elevation 2,769m (9,085 ft) which located in East Java, Indonesia. Highly recommended for mountain buffs and hikers. Ijen is a quiet but active volcano, and the landscape is dominated by the volcanic cones.', 'admintraviora', '2020-12-05 03:06:28', '2020-12-04 21:06:28'),
 (2, 'Corona in Bali – Is it safe to travel?', 'blog-160620-090ec5e43d.jpg', 'The World Health Organization (WHO) has declared COVID-19 a pandemic. The risk of transmission around the world is increasing, especially the spread of corona in Bali', 'admintraviora', '2020-06-16 21:44:03', '2020-06-16 16:44:03'),
 (3, 'NYEPI 2020 – What you can do in Bali', 'blog-160620-0e02852a6e.jpg', 'Bali has a big day called Nyepi Day. In 2020, preparations for the Nyepi celebration ritual begin a few weeks before the actual date with the large Ogoh-ogoh craft. If you travel around the island, maybe you will see some that are being made.', 'admintraviora', '2020-11-27 10:12:42', '2020-06-16 16:44:27'),
 (4, 'Tourist Attractions In Bali Began To Be Closed', 'blog-160620-05dd40be09.jpg', 'The Indonesian government has appealed to the public to implement social distancing along with the increasing number of positive cases of corona in Indonesia. Most companies and government agencies have also adopted work from home policies for their employees.', 'Irvan Alfi', '2020-11-27 10:12:45', '2020-06-16 16:45:41'),
@@ -125,7 +125,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `name`, `gender`, `phone`, `address`, `created`, `updated`) VALUES
-(1, 'Abdul Ajiz', 'L', '081358588519', 'Malioboro, Jogja', '2020-05-04 10:24:38', NULL),
+(1, 'Abdul Ajiz', 'L', '081358588519', 'Malioboro, Jogja', '2020-12-05 03:12:15', '2020-12-04 21:12:15'),
 (2, 'Intan Nur Ja\'a Al Faricha', 'P', '081443244233', 'Cluring, Banyuwangi', '2020-05-04 10:25:08', NULL),
 (3, 'Abdurrosyid Muhasibi', 'L', '085667443666', 'Kediri, Jawa Timur', '2020-05-04 10:25:42', NULL),
 (4, 'Septianda Reza Maulana', 'L', '082257125415', 'Perumahan Jati Asri Blok A3, Kebon Agung, Kraksaan-Probolinggo', '2020-05-04 10:27:23', NULL),
@@ -136,38 +136,6 @@ INSERT INTO `customer` (`customer_id`, `name`, `gender`, `phone`, `address`, `cr
 (9, 'Iqbaludin Alhuda', 'L', '085441991833', 'Pati, Mojokerto, Jawa Timur', '2020-05-04 10:32:04', NULL),
 (10, 'Alta Larik ', 'L', '081226775590', 'Blimbing, Malang, Jawa Timur', '2020-05-07 20:27:07', '2020-05-07 15:27:07'),
 (11, 'Mirza Zarqani', 'L', '082230913815', 'Pakis, Malang', '2020-05-07 20:28:03', NULL);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `profil`
---
-
-CREATE TABLE `profil` (
-  `profile_id` int(11) NOT NULL,
-  `web_name` varchar(255) NOT NULL,
-  `status_name` varchar(255) NOT NULL,
-  `about` longtext NOT NULL DEFAULT '',
-  `address1` varchar(255) NOT NULL,
-  `address2` varchar(255) DEFAULT NULL,
-  `email1` varchar(255) NOT NULL,
-  `email2` varchar(255) NOT NULL,
-  `facebook` varchar(255) DEFAULT NULL,
-  `instagram` varchar(255) DEFAULT NULL,
-  `twitter` varchar(255) DEFAULT NULL,
-  `phone` varchar(20) NOT NULL,
-  `whatsapp` varchar(20) NOT NULL,
-  `logo` varchar(255) NOT NULL,
-  `banner_utama` varchar(255) NOT NULL,
-  `banner_umum` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `profil`
---
-
-INSERT INTO `profil` (`profile_id`, `web_name`, `status_name`, `about`, `address1`, `address2`, `email1`, `email2`, `facebook`, `instagram`, `twitter`, `phone`, `whatsapp`, `logo`, `banner_utama`, `banner_umum`) VALUES
-(0, 'Traviora.com', 'PT. Traviora Global Wisata', 'Tour providers who have been in tourism since 2013 in Indonesian territory. We have hundreds of tours that can fill your vacation. We keep working to make tourists easier to book a tour.', 'Bukit Pratama Jl Gong Kebyar 22 Jimbaran, Kuta Selatan, Badung, Bali. Indonesia', 'Ikan Wijinongko Street 4, Tukangkayu, Banyuwangi, East Java. Indonesia', 'booking@traviora.com', 'traviora.com', NULL, NULL, NULL, '03614725875', '081353304990', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -188,7 +156,7 @@ CREATE TABLE `p_category` (
 --
 
 INSERT INTO `p_category` (`category_id`, `name`, `created`, `updated`, `status`) VALUES
-(1, 'Java Tour', '2020-11-27 08:06:01', '2020-11-27 02:06:01', 'E'),
+(1, 'Java Tour', '2020-12-05 02:52:05', '2020-12-04 20:52:05', 'E'),
 (2, 'Bali Tour', '2020-05-04 05:39:31', NULL, 'E'),
 (3, 'Lombok Tour', '2020-11-27 08:05:55', '2020-11-27 02:05:55', 'E');
 
@@ -204,6 +172,8 @@ CREATE TABLE `p_item` (
   `name` varchar(225) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
   `image` varchar(225) DEFAULT NULL,
+  `image2` varchar(225) DEFAULT NULL,
+  `image3` varchar(225) DEFAULT NULL,
   `duration` varchar(50) NOT NULL,
   `groupsize` varchar(50) NOT NULL,
   `language` varchar(50) NOT NULL,
@@ -221,28 +191,27 @@ CREATE TABLE `p_item` (
 -- Dumping data untuk tabel `p_item`
 --
 
-INSERT INTO `p_item` (`item_id`, `barcode`, `name`, `address`, `image`, `duration`, `groupsize`, `language`, `overview`, `type_id`, `category_id`, `unit_id`, `stock`, `price`, `created`, `updated`) VALUES
-(8, 'A001', 'BROMO', 'Probolinggo, Jawa Timur', 'item-070520-d21bae68bb.jpg', '2 Days', 'Unlimited', 'English', 'Bromo Mountain', 1, 1, 1, 12, 2000000, '2020-11-27 08:46:52', '2020-05-13 17:50:34'),
-(15, 'A002', 'Batu', 'Malang', 'item-070520-85759d47b3.jpg', '8 hours', 'Unlimited', 'English', 'Malang City located on the southwestern part of Indonesia, Java island. Malang has many tourist destinations, both natural and city.\r\n\r\nMuseum Angkut is a transport museum located in Batu, East Java, Indonesia and is located on the hillside of Mount Panderman, part of Mount Kawi-Butak. The museum has more than 300 collections of types of traditional to modern transportation.\r\n\r\nColorful Village was actually a slum area that is located on the riverbank of Daerah Aliran Sungai (DAS) Brantas. It was even one of the 11 most rundown villages in Indonesia. It all changed when a group of students changed it and eventually became a popular tourist destination.\r\n\r\nOmah Kayu (Wooden House) near enough from other tourist destinations in Batu. Omah Kayu is a very natural ambience, and cool. Not only that, during the day various birds chirping sound. This outstanding charm makes a lot of interested people to stay and reserve the hotel.', 2, 1, 3, 14, 1000000, '2020-11-27 08:47:11', '2020-06-16 16:15:56'),
-(19, 'A003', 'Gili ', 'West Nusa Tenggara, Indonesia', 'item-070520-3f2dc55bc9.jpg', '8 hours', 'Unlimited', 'English', 'Gili Bali', 1, 2, 5, 12, 1200000, '2020-11-27 08:47:18', '2020-05-07 18:41:30'),
-(21, 'A006', 'Sendang Gile', 'West Nusa Tenggara, Indonesia', 'item-070520-02437c1d16.jpg', '8 hours', 'Unlimited', 'English', 'Waterfall', 1, 3, 5, 13, 950000, '2020-11-27 08:48:39', '2020-05-07 19:04:06'),
-(23, 'A004', 'Bentar', 'Probolinggo', 'item-070520-1d8df7e34e.jpg', '8 hours', 'Unlimited', 'English', 'Bentar Beach', 1, 1, 12, 12, 150000, '2020-11-27 08:48:34', '2020-05-07 19:07:08'),
-(24, 'A008', 'Matos', 'Malang', 'item-070520-91d4f9302d.jpg', '3 Hours', 'Unlimited', 'English', 'Matos Mall', 1, 1, 3, 6, 450000, '2020-11-27 08:48:45', NULL),
-(25, 'A009', 'Africa of Java & Staycation', 'Baluran', 'item-160520-cd506846e3.jpg', '2 Days', 'Unlimited', 'English', 'Explore National Park and enjoy the panorama of savanna and mount Baluran', 2, 1, 2, 10, 1098000, '2020-11-27 08:48:55', NULL),
-(26, 'A010', 'Day Trip Lembongan by Sugriwa Express', 'Mangrove forest, Jungutbatu, Klungkung Regency, Bali, Indonesia', 'item-160520-8764349a32.jpg', '5 Hours', 'Unlimited', 'English', 'Explore Lembongan and all its magic. We will take you to see the Mangrove Forest.', 1, 2, 7, 15, 800000, '2020-11-27 08:49:38', '2020-05-17 16:34:36'),
-(27, 'A011', 'Amazing Malang Batu – 2Days 1Night', 'Malang, Malang City, East Java, Indonesia', 'item-160520-eaf9bcfb9d.jpg', '2 Days', 'Unlimited', 'English', 'Omah Kayu (Wooden House) near enough from other tourist destinations in Batu', 1, 1, 11, 15, 1935000, '2020-11-27 08:49:43', NULL),
-(28, 'A012', 'Beautiful Malang Batu – 3Days 2Nights', 'Malang, Malang City, East Java, Indonesia', 'item-160520-d479f33fde.jpg', '3 Days', 'Unlimited', 'English', 'Museum Angkut is a transport museum located in Batu, East Java, Indonesia', 1, 1, 11, 14, 2775000, '2020-11-27 08:49:49', NULL),
-(29, 'A013', 'Beautiful Malang Batu Bromo – 3Days 2Nights', 'Malang, Malang City, East Java, Indonesia', 'item-160520-5a816a2aa6.jpg', '3 Days', 'Unlimited', 'English', 'And Mount Bromo is a part of the Bromo Tengger Semeru National Park that covers a massive area of 800 square km. ', 1, 1, 1, 20, 3290000, '2020-11-27 08:49:55', NULL),
-(30, 'A014', 'Jogjakarta Golf Tours', 'Yogyakarta, Yogyakarta City, Special Region of Yogyakarta, Indonesia', 'item-160520-5325c264ac.jpg', '3 Days', 'Unlimited', 'English', 'Yogyakarta (some people call it Jogja, Jogjakarta, or Yogya) is a city with outstanding historical and cultural heritage. ', 1, 1, 4, 15, 4710000, '2020-11-27 08:50:00', NULL),
-(31, 'A015', 'Ramayana Ballet Performance Entrance Ticket (Performance Only)', 'Ramayana Ballet Purawisata, Jalan Brigjen Katamso, Keparakan, Yogyakarta City, Special Region of Yogyakarta, Indonesia', 'item-160520-30a8212bde.jpg', '1 hours 30 minutes', 'Unlimited', 'English', 'Mandira Baruga was formerly known as PURAWISATA, Travel Destinations that are well known and visited by millions of tourists from various foreign countries', 3, 1, 5, 10, 250000, '2020-11-27 08:50:49', '2020-05-18 00:53:53'),
-(32, 'A016', 'Cycling and Rafting with Bahama', ' Ayung River Rafting Ubud Bali, Jalan Raya Ubud, Ubud, Gianyar, Bali, Indonesia', 'item-160520-ef08b3fcde.jpg', '5 Hours', 'Unlimited', 'English', 'Bahama rafting adventure located in the Ayung River which is one of the best selected adventure companies in Bali', 1, 2, 5, 20, 550000, '2020-11-27 08:50:52', NULL),
-(33, 'A017', 'Taman Sari Buwana – Balinese Traditional Farming (Village Life & Traditional farming)', ' Taman Sari Buwana - Balinese Traditional Farming, Tunjuk, Tabanan Regency, Bali, Indonesia', 'item-160520-70b527dfeb.jpg', ' 2,5 hours - 3 hours', 'Unlimited', 'English', 'Taman Sari Buwana is a semi-social activity which is developed related to sustainable tourism concept', 1, 2, 5, 15, 540000, '2020-11-27 08:51:10', NULL),
-(34, 'A018', 'Bali Treetop Adventure Park – Treetop Activity (Foreigners Only)', ' Bali Treetop Adventure Park, Candikuning, Tabanan Regency, Bali, Indonesia', 'item-160520-744ce0b33b.jpg', ' 2 hours 30 minutes (approx.)', 'Unlimited', 'English', 'Bali Treetop Adventure Park is a fun activity set in an open air environment for group and family in Indonesia.', 1, 2, 5, 15, 345000, '2020-11-27 08:51:14', NULL),
-(35, 'A019', '3 Points Snorkeling Package with Bali Funtasea', ' Nusa Penida, Klungkung Regency, Bali, Indonesia', 'item-160520-2b0c8d0f0d.jpg', '8 Hours', 'Unlimited', 'English', 'Bali Funtasea has varieties of day cruises and land tours in Nusa Penida and Nusa Lembongan Island. ', 4, 2, 5, 15, 630000, '2020-11-27 08:51:17', NULL),
-(36, 'A020', 'Exotic Sasak Daily Tour', ' Rambitan village, Rembitan, Central Lombok Regency, West Nusa Tenggara, Indonesia', 'item-160520-7743b0ecc1.jpg', '8 Hours', 'Unlimited', 'English', 'Discover the exotic of Lombok by visiting some villages with its unique culture. Firstly, visit Banyumelek village', 8, 3, 8, 15, 900000, '2020-11-27 08:51:31', NULL),
-(37, 'A021', 'West Nusa Tenggara City Tour', ' Mataram City, West Nusa Tenggara, Indonesia', 'item-160520-2ae1fe8586.jpg', '8 Hours', 'Unlimited', 'English', 'Your trip starts with visiting the Islamic Center. Located in Mataram, the Islamic Center is a Mosque with a magnificent and artistic design.', 8, 3, 4, 10, 875000, '2020-11-27 08:51:53', NULL),
-(38, 'A022', 'Lombok Land Cruise', ' Lombok Island, West Nusa Tenggara, Indonesia', 'item-160520-2a9352dc46.jpg', 'Full Day', 'Unlimited', 'English', 'Lombok land cruise will start by picking up and meeting services at your hotel, directly drive to Malimbu Hill to see the scenic view of Lombok Coast', 1, 3, 8, 15, 1480000, '2020-11-27 08:51:58', NULL),
-(39, 'A023', 'Gili 3 Island Snorkeling', ' Gili Islands, Gili Indah, North Lombok Regency, West Nusa Tenggara, Indonesia', 'item-160520-7eb17c3a3a.jpg', '12 Hours', 'Unlimited', 'English', 'You’ll enjoy snorkeling at the best snorkeling points of Gili Trawangan, Gili Meno and Gili Air. Specifically designed to see all three Island in one day.', 4, 3, 8, 20, 1100000, '2020-11-27 08:52:10', NULL);
+INSERT INTO `p_item` (`item_id`, `barcode`, `name`, `address`, `image`, `image2`, `image3`, `duration`, `groupsize`, `language`, `overview`, `type_id`, `category_id`, `unit_id`, `stock`, `price`, `created`, `updated`) VALUES
+(8, 'A001', 'BROMO', 'Probolinggo, Jawa Timur', 'item-070520-d21bae68bb.jpg', 'item-071220-6ff3359de5.png', 'item-071220-ac9ccfe072.png', '2 Days', 'Unlimited', 'English', 'Bromo Mountain', 1, 1, 1, 12, 2000000, '2020-12-07 12:34:00', '2020-12-07 06:34:00'),
+(15, 'A002', 'Batu', 'Malang', 'item-070520-85759d47b3.jpg', NULL, NULL, '8 hours', 'Unlimited', 'English', 'Malang City located on the southwestern part of Indonesia, Java island. Malang has many tourist destinations, both natural and city.\r\n\r\nMuseum Angkut is a transport museum located in Batu, East Java, Indonesia and is located on the hillside of Mount Panderman, part of Mount Kawi-Butak. The museum has more than 300 collections of types of traditional to modern transportation.\r\n\r\nColorful Village was actually a slum area that is located on the riverbank of Daerah Aliran Sungai (DAS) Brantas. It was even one of the 11 most rundown villages in Indonesia. It all changed when a group of students changed it and eventually became a popular tourist destination.\r\n\r\nOmah Kayu (Wooden House) near enough from other tourist destinations in Batu. Omah Kayu is a very natural ambience, and cool. Not only that, during the day various birds chirping sound. This outstanding charm makes a lot of interested people to stay and reserve the hotel.', 2, 1, 3, 14, 1000000, '2020-11-27 08:47:11', '2020-06-16 16:15:56'),
+(19, 'A003', 'Gili ', 'West Nusa Tenggara, Indonesia', 'item-070520-3f2dc55bc9.jpg', NULL, NULL, '8 hours', 'Unlimited', 'English', 'Gili Bali', 1, 2, 5, 12, 1200000, '2020-11-27 08:47:18', '2020-05-07 18:41:30'),
+(21, 'A006', 'Sendang Gile', 'West Nusa Tenggara, Indonesia', 'item-070520-02437c1d16.jpg', NULL, NULL, '8 hours', 'Unlimited', 'English', 'Waterfall', 1, 3, 5, 13, 950000, '2020-11-27 08:48:39', '2020-05-07 19:04:06'),
+(24, 'A008', 'Matos', 'Malang', 'item-070520-91d4f9302d.jpg', NULL, NULL, '3 Hours', 'Unlimited', 'English', 'Matos Mall', 1, 1, 3, 6, 450000, '2020-11-27 08:48:45', NULL),
+(25, 'A009', 'Africa of Java & Staycation', 'Baluran', 'item-160520-cd506846e3.jpg', NULL, NULL, '2 Days', 'Unlimited', 'English', 'Explore National Park and enjoy the panorama of savanna and mount Baluran', 2, 1, 2, 10, 1098000, '2020-11-27 08:48:55', NULL),
+(26, 'A010', 'Day Trip Lembongan by Sugriwa Express', 'Mangrove forest, Jungutbatu, Klungkung Regency, Bali, Indonesia', 'item-160520-8764349a32.jpg', NULL, NULL, '5 Hours', 'Unlimited', 'English', 'Explore Lembongan and all its magic. We will take you to see the Mangrove Forest.', 1, 2, 7, 15, 800000, '2020-11-27 08:49:38', '2020-05-17 16:34:36'),
+(27, 'A011', 'Amazing Malang Batu – 2Days 1Night', 'Malang, Malang City, East Java, Indonesia', 'item-160520-eaf9bcfb9d.jpg', NULL, NULL, '2 Days', 'Unlimited', 'English', 'Omah Kayu (Wooden House) near enough from other tourist destinations in Batu', 1, 1, 11, 15, 1935000, '2020-11-27 08:49:43', NULL),
+(28, 'A012', 'Beautiful Malang Batu – 3Days 2Nights', 'Malang, Malang City, East Java, Indonesia', 'item-160520-d479f33fde.jpg', NULL, NULL, '3 Days', 'Unlimited', 'English', 'Museum Angkut is a transport museum located in Batu, East Java, Indonesia', 1, 1, 11, 14, 2775000, '2020-11-27 08:49:49', NULL),
+(29, 'A013', 'Beautiful Malang Batu Bromo – 3Days 2Nights', 'Malang, Malang City, East Java, Indonesia', 'item-160520-5a816a2aa6.jpg', NULL, NULL, '3 Days', 'Unlimited', 'English', 'And Mount Bromo is a part of the Bromo Tengger Semeru National Park that covers a massive area of 800 square km. ', 1, 1, 1, 20, 3290000, '2020-11-27 08:49:55', NULL),
+(30, 'A014', 'Jogjakarta Golf Tours', 'Yogyakarta, Yogyakarta City, Special Region of Yogyakarta, Indonesia', 'item-160520-5325c264ac.jpg', NULL, NULL, '3 Days', 'Unlimited', 'English', 'Yogyakarta (some people call it Jogja, Jogjakarta, or Yogya) is a city with outstanding historical and cultural heritage. ', 1, 1, 4, 15, 4710000, '2020-11-27 08:50:00', NULL),
+(31, 'A015', 'Ramayana Ballet Performance Entrance Ticket (Performance Only)', 'Ramayana Ballet Purawisata, Jalan Brigjen Katamso, Keparakan, Yogyakarta City, Special Region of Yogyakarta, Indonesia', 'item-160520-30a8212bde.jpg', NULL, NULL, '1 hours 30 minutes', 'Unlimited', 'English', 'Mandira Baruga was formerly known as PURAWISATA, Travel Destinations that are well known and visited by millions of tourists from various foreign countries', 3, 1, 5, 10, 250000, '2020-11-27 08:50:49', '2020-05-18 00:53:53'),
+(32, 'A016', 'Cycling and Rafting with Bahama', ' Ayung River Rafting Ubud Bali, Jalan Raya Ubud, Ubud, Gianyar, Bali, Indonesia', 'item-160520-ef08b3fcde.jpg', NULL, NULL, '5 Hours', 'Unlimited', 'English', 'Bahama rafting adventure located in the Ayung River which is one of the best selected adventure companies in Bali', 1, 2, 5, 20, 550000, '2020-11-27 08:50:52', NULL),
+(33, 'A017', 'Taman Sari Buwana – Balinese Traditional Farming (Village Life & Traditional farming)', ' Taman Sari Buwana - Balinese Traditional Farming, Tunjuk, Tabanan Regency, Bali, Indonesia', 'item-160520-70b527dfeb.jpg', NULL, NULL, ' 2,5 hours - 3 hours', 'Unlimited', 'English', 'Taman Sari Buwana is a semi-social activity which is developed related to sustainable tourism concept', 1, 2, 5, 15, 540000, '2020-11-27 08:51:10', NULL),
+(34, 'A018', 'Bali Treetop Adventure Park – Treetop Activity (Foreigners Only)', ' Bali Treetop Adventure Park, Candikuning, Tabanan Regency, Bali, Indonesia', 'item-160520-744ce0b33b.jpg', NULL, NULL, ' 2 hours 30 minutes (approx.)', 'Unlimited', 'English', 'Bali Treetop Adventure Park is a fun activity set in an open air environment for group and family in Indonesia.', 1, 2, 5, 15, 345000, '2020-11-27 08:51:14', NULL),
+(35, 'A019', '3 Points Snorkeling Package with Bali Funtasea', ' Nusa Penida, Klungkung Regency, Bali, Indonesia', 'item-160520-2b0c8d0f0d.jpg', NULL, NULL, '8 Hours', 'Unlimited', 'English', 'Bali Funtasea has varieties of day cruises and land tours in Nusa Penida and Nusa Lembongan Island. ', 4, 2, 5, 15, 630000, '2020-11-27 08:51:17', NULL),
+(36, 'A020', 'Exotic Sasak Daily Tour', ' Rambitan village, Rembitan, Central Lombok Regency, West Nusa Tenggara, Indonesia', 'item-160520-7743b0ecc1.jpg', NULL, NULL, '8 Hours', 'Unlimited', 'English', 'Discover the exotic of Lombok by visiting some villages with its unique culture. Firstly, visit Banyumelek village', 8, 3, 8, 15, 900000, '2020-11-27 08:51:31', NULL),
+(37, 'A021', 'West Nusa Tenggara City Tour', ' Mataram City, West Nusa Tenggara, Indonesia', 'item-160520-2ae1fe8586.jpg', NULL, NULL, '8 Hours', 'Unlimited', 'English', 'Your trip starts with visiting the Islamic Center. Located in Mataram, the Islamic Center is a Mosque with a magnificent and artistic design.', 8, 3, 4, 10, 875000, '2020-11-27 08:51:53', NULL),
+(38, 'A022', 'Lombok Land Cruise', ' Lombok Island, West Nusa Tenggara, Indonesia', 'item-160520-2a9352dc46.jpg', NULL, NULL, 'Full Day', 'Unlimited', 'English', 'Lombok land cruise will start by picking up and meeting services at your hotel, directly drive to Malimbu Hill to see the scenic view of Lombok Coast', 1, 3, 8, 15, 1480000, '2020-11-27 08:51:58', NULL),
+(39, 'A023', 'Gili 3 Island Snorkeling', ' Gili Islands, Gili Indah, North Lombok Regency, West Nusa Tenggara, Indonesia', 'item-160520-7eb17c3a3a.jpg', NULL, NULL, '12 Hours', 'Unlimited', 'English', 'You’ll enjoy snorkeling at the best snorkeling points of Gili Trawangan, Gili Meno and Gili Air. Specifically designed to see all three Island in one day.', 4, 3, 8, 20, 1100000, '2020-11-27 08:52:10', NULL);
 
 -- --------------------------------------------------------
 
@@ -263,7 +232,7 @@ CREATE TABLE `p_type` (
 --
 
 INSERT INTO `p_type` (`type_id`, `name`, `created`, `updated`, `status`) VALUES
-(1, 'Daily Tour', '2020-11-27 08:07:20', '2020-11-27 02:07:20', 'E'),
+(1, 'Daily Tour', '2020-12-05 02:54:18', '2020-12-04 20:54:18', 'E'),
 (2, 'Family Tour', '2020-05-04 05:42:42', NULL, 'E'),
 (3, 'Education', '2020-11-27 08:07:35', '2020-11-27 02:07:35', 'E'),
 (4, 'Snorkeling', '2020-11-27 08:07:44', '2020-11-27 02:07:44', 'E'),
@@ -292,7 +261,7 @@ CREATE TABLE `p_unit` (
 --
 
 INSERT INTO `p_unit` (`unit_id`, `name`, `status`, `created`, `updated`) VALUES
-(1, 'Mout Bromo Tours', 'E', '2020-05-07 00:00:00', '2020-11-25 08:26:44'),
+(1, 'Mout Bromo Tours', 'E', '2020-05-07 00:00:00', '2020-12-04 20:55:15'),
 (2, 'Banyuwangi', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
 (3, 'Malang City', 'E', '2020-05-07 00:00:00', '2020-11-27 02:58:38'),
 (4, 'Yogyakarta', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
@@ -302,8 +271,7 @@ INSERT INTO `p_unit` (`unit_id`, `name`, `status`, `created`, `updated`) VALUES
 (8, 'Lombok Island  Tour', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
 (9, 'Mount Rinjani Trekking', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
 (10, 'Gili Islands Tour', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
-(11, 'Batu', 'D', '2020-11-25 13:48:17', '2020-11-25 08:25:14'),
-(12, 'Probolinggo', 'E', '2020-11-27 08:48:14', '0000-00-00 00:00:00');
+(11, 'Batu', 'E', '2020-11-25 13:48:17', '2020-12-04 21:38:17');
 
 -- --------------------------------------------------------
 
@@ -346,6 +314,13 @@ CREATE TABLE `t_cart` (
   `total` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `t_cart`
+--
+
+INSERT INTO `t_cart` (`cart_id`, `item_id`, `price`, `qty`, `discount_item`, `total`, `user_id`) VALUES
+(1, 8, 2000000, 1, 0, 2000000, 1);
 
 -- --------------------------------------------------------
 
@@ -441,11 +416,9 @@ INSERT INTO `t_stock` (`stock_id`, `item_id`, `type`, `detail`, `supplier_id`, `
 (1, 8, 'in', 'tambah stock', NULL, 6, '2020-05-15', '2020-05-15 05:59:13', 1),
 (2, 15, 'in', 'add stock from irvan', 1, 15, '2020-05-15', '2020-05-15 05:59:32', 1),
 (3, 19, 'in', 'irvan', 3, 12, '2020-05-15', '2020-05-15 06:02:10', 1),
-(4, 23, 'in', 'tambah stock', 3, 15, '2020-05-15', '2020-05-15 06:02:39', 1),
 (5, 8, 'in', 'tambah stock', 1, 8, '2020-05-15', '2020-05-15 06:03:02', 1),
 (6, 21, 'in', 'tambah stock', 4, 15, '2020-05-15', '2020-05-15 06:03:28', 1),
-(7, 24, 'in', 'tambah stock', 2, 6, '2020-05-15', '2020-05-15 06:03:48', 1),
-(8, 23, 'out', 'pengurangan dampak covid', NULL, 3, '2020-05-15', '2020-05-15 06:04:22', 1);
+(7, 24, 'in', 'tambah stock', 2, 6, '2020-05-15', '2020-05-15 06:03:48', 1);
 
 -- --------------------------------------------------------
 
@@ -513,12 +486,6 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indeks untuk tabel `profil`
---
-ALTER TABLE `profil`
-  ADD PRIMARY KEY (`profile_id`) USING BTREE;
-
---
 -- Indeks untuk tabel `p_category`
 --
 ALTER TABLE `p_category`
@@ -571,7 +538,8 @@ ALTER TABLE `t_sale`
 --
 ALTER TABLE `t_sale_detail`
   ADD PRIMARY KEY (`detail_id`),
-  ADD KEY `item_id` (`item_id`);
+  ADD KEY `item_id` (`item_id`),
+  ADD KEY `FK_t_sale_detail_t_sale` (`sale_id`);
 
 --
 -- Indeks untuk tabel `t_stock`
@@ -620,13 +588,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT untuk tabel `p_category`
 --
 ALTER TABLE `p_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `p_item`
 --
 ALTER TABLE `p_item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT untuk tabel `p_type`
@@ -693,6 +661,7 @@ ALTER TABLE `t_cart`
 -- Ketidakleluasaan untuk tabel `t_sale_detail`
 --
 ALTER TABLE `t_sale_detail`
+  ADD CONSTRAINT `FK_t_sale_detail_t_sale` FOREIGN KEY (`sale_id`) REFERENCES `t_sale` (`sale_id`),
   ADD CONSTRAINT `t_sale_detail_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `p_item` (`item_id`);
 
 --

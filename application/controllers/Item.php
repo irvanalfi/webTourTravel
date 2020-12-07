@@ -38,11 +38,6 @@ class Item extends CI_Controller
                 if (@$_FILES['image']['name'] != null) {
                     if ($this->upload->do_upload('image')) {
                         $post['image']  =   $this->upload->data('file_name');
-                        $this->Item_m->add($post);
-                        if ($this->db->affected_rows() > 0) {
-                            $this->session->set_flashdata('success', 'Data has been successfully saved!!');
-                        }
-                        redirect('item');
                     } else {
                         $error = $this->upload->display_errors();
                         $this->session->set_flashdata('error', $error);
@@ -50,12 +45,36 @@ class Item extends CI_Controller
                     }
                 } else {
                     $post['image']  = null;
-                    $this->Item_m->add($post);
-                    if ($this->db->affected_rows() > 0) {
-                        $this->session->set_flashdata('success', 'Data has been successfully saved!!');
-                    }
-                    redirect('item');
                 }
+                // gambar 2
+                if (@$_FILES['image2']['name'] != null) {
+                    if ($this->upload->do_upload('image2')) {
+                        $post['image2']  =   $this->upload->data('file_name');
+                    } else {
+                        $error = $this->upload->display_errors();
+                        $this->session->set_flashdata('error', $error);
+                        redirect('item/add');
+                    }
+                } else {
+                    $post['image2']  = null;
+                }
+                // gambar 3
+                if (@$_FILES['image3']['name'] != null) {
+                    if ($this->upload->do_upload('image3')) {
+                        $post['image3']  =   $this->upload->data('file_name');
+                    } else {
+                        $error = $this->upload->display_errors();
+                        $this->session->set_flashdata('error', $error);
+                        redirect('item/add');
+                    }
+                } else {
+                    $post['image3']  = null;
+                }
+                $this->Item_m->add($post);
+                if ($this->db->affected_rows() > 0) {
+                    $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                }
+                redirect('item');
             }
         } else if (isset($_POST['edit'])) {
 
@@ -73,11 +92,6 @@ class Item extends CI_Controller
                             unlink($target_file);
                         }
                         $post['image']  =   $this->upload->data('file_name');
-                        $this->Item_m->edit($post);
-                        if ($this->db->affected_rows() > 0) {
-                            $this->session->set_flashdata('success', 'Data has been successfully saved!!');
-                        }
-                        redirect('item');
                     } else {
                         $error = $this->upload->display_errors();
                         $this->session->set_flashdata('error', $error);
@@ -85,39 +99,48 @@ class Item extends CI_Controller
                     }
                 } else {
                     $post['image']  = null;
-                    $this->Item_m->edit($post);
-                    if ($this->db->affected_rows() > 0) {
-                        $this->session->set_flashdata('success', 'Data has been successfully saved!!');
-                    }
-                    redirect('item');
                 }
+
                 // gambar 2 
-                if (@$_FILES['image']['name'] != null) {
-                    if ($this->upload->do_upload('image')) {
+                if (@$_FILES['image2']['name'] != null) {
+                    if ($this->upload->do_upload('image2')) {
                         $item = $this->Item_m->get($post['id'])->row();
-                        if ($item->image != null) {
-                            $target_file = './assets/img/item/' . $item->image;
+                        if ($item->image2 != null) {
+                            $target_file = './assets/img/item/' . $item->image2;
                             unlink($target_file);
                         }
-                        $post['image']  =   $this->upload->data('file_name');
-                        $this->Item_m->edit($post);
-                        if ($this->db->affected_rows() > 0) {
-                            $this->session->set_flashdata('success', 'Data has been successfully saved!!');
-                        }
-                        redirect('item');
+                        $post['image2']  =   $this->upload->data('file_name');
                     } else {
                         $error = $this->upload->display_errors();
                         $this->session->set_flashdata('error', $error);
                         redirect('item/add');
                     }
                 } else {
-                    $post['image']  = null;
-                    $this->Item_m->edit($post);
-                    if ($this->db->affected_rows() > 0) {
-                        $this->session->set_flashdata('success', 'Data has been successfully saved!!');
-                    }
-                    redirect('item');
+                    $post['image2']  = null;
                 }
+
+                // gambar 3 
+                if (@$_FILES['image3']['name'] != null) {
+                    if ($this->upload->do_upload('image3')) {
+                        $item = $this->Item_m->get($post['id'])->row();
+                        if ($item->image3 != null) {
+                            $target_file = './assets/img/item/' . $item->image3;
+                            unlink($target_file);
+                        }
+                        $post['image3']  =   $this->upload->data('file_name');
+                    } else {
+                        $error = $this->upload->display_errors();
+                        $this->session->set_flashdata('error', $error);
+                        redirect('item/add');
+                    }
+                } else {
+                    $post['image3']  = null;
+                }
+                $this->Item_m->edit($post);
+                if ($this->db->affected_rows() > 0) {
+                    $this->session->set_flashdata('success', 'Data has been successfully saved!!');
+                }
+                redirect('item');
             }
         }
     }
