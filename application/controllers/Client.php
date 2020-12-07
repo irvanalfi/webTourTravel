@@ -9,7 +9,6 @@ class Client extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Cetak_m');
-        $this->load->model('Blog_m');
         $this->load->model(['Item_m', 'category_m', 'type_m']);
         $this->load->helper('text');
     }
@@ -40,6 +39,7 @@ class Client extends CI_Controller
 
     public function blog()
     {
+        $this->load->model('Blog_m');
         $data['row'] = $this->Blog_m->get();
         $this->template->load('template_c', 'client/blog', $data);
     }
@@ -68,7 +68,7 @@ class Client extends CI_Controller
     {
         $this->template->load('template_c', 'client/terms_and_condition');
     }
-    
+
     public function howToBook()
     {
         $this->template->load('template_c', 'client/how_to_book');
@@ -79,7 +79,12 @@ class Client extends CI_Controller
         $this->template->load('template_c', 'client/chart');
     }
 
-    
+    public function about_us()
+    {
+        $this->load->model('Profile_m');
+        $data['row'] = $this->Profile_m->get();
+        $this->template->load('template_c', 'client/about_us', $data);
+    }
 }
 
 /* End of file Controllername.php */

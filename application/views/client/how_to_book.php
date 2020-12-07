@@ -1,7 +1,7 @@
 <section>
     <div class="container" style="padding-left: 0px; padding-right: 0px;">
         <div class="" style="margin-top: 135px">
-            <img class="img-fluid shadow" src="<?= base_url() ?>assets/img/elements/bannerTipis.jpg" alt="banner">
+            <img class="img-fluid shadow" src="<?= base_url() ?>assets/img/elements/bannerTipis.jpg" alt="">
         </div>
     </div>
 </section>

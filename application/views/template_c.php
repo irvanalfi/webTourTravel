@@ -25,6 +25,25 @@
             margin-top: 25px;
             margin-bottom: 25px;
         }
+
+        .jdlkcl {
+            color: #0098c7;
+            font-weight: 500;
+            font-size: 16px;
+            font-family: inherit;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .jdlbsr {
+            color: #0098c7;
+            font-weight: 500;
+            font-size: 35px;
+            font-family: inherit;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 
@@ -100,7 +119,7 @@
                 <div class="col-lg-3 pt-4">
                     <h2 class="pt-4 mb-3"><b>Related Links</b></h2>
                     <li class="mt-5" style="display: block;">
-                        <h4><a href="#" class="" id="aboutus" style="color: darkslategrey;">About Us</a></h4>
+                        <h4><a href="<?= site_url('client/about_us'); ?>" class="" id="aboutus" style="color: darkslategrey;">About Us</a></h4>
                     </li>
                     <li class="mt-3" style="display: block;">
                         <h4><a href="#" class="" id="contactus" style="color: darkslategrey;">Contact us</a></h4>
