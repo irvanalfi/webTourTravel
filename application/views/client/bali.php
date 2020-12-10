@@ -37,7 +37,7 @@
                         <?php } ?>
                         <p style="margin-top: 10px;"><i class="fa fa-map-marker" style="size: 15px; margin-right: 5px;"></i><?= $data->address; ?></p>
                         <h6 class="text-primary">
-                            <?= $data->name ?>
+                        <a href="<?= site_url('client/item_detail/' . $data->item_id); ?>"> <?= $data->name ?> </a>
                         </h6>
                         <?php
                         $fullOverview = $data->overview;
