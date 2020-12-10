@@ -92,6 +92,19 @@ class Client extends CI_Controller
         $data['row'] = $this->Contact_m->get();
         $this->template->load('template_c', 'client/contact_us', $data);
     }
+    public function item_detail($id)
+    {
+        $query = $this->Item_m->get($id);
+        if ($query->num_rows() > 0) {
+            $item = $query->row();
+            $data = [
+                'row' => $item
+            ];
+            $this->template->load('template_c', 'client/item_detail', $data);
+        } else {
+            echo "<script>alert('Data tidak ditemukan');";
+            echo "window.location='" . site_url('client/item') . "'</script>";
+        }
+    }
 }
-
 /* End of file Controllername.php */
