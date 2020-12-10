@@ -24,19 +24,6 @@
                     <?php echo form_open_multipart('item/proses') ?>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">Barcode *</label>
-                            <input type="hidden" name="id" value="<?= $row->item_id; ?>">
-                            <input type="text" name="barcode" value="<?= $row->barcode; ?>" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Item Name *</label>
-                            <input type="text" name="item_name" class="form-control" value="<?= $row->name; ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Item Address *</label>
-                            <input type="text" name="item_address" class="form-control" value="<?= $row->address; ?>">
-                        </div>
-                        <div class="form-group">
                             <label for="">Image</label>
                             <span> ( size 800 x 600 px )</span>
                             <?php if ($page == 'edit') {
@@ -77,6 +64,21 @@
                             } ?>
                             <input type="file" name="image3" class="form-control">
                             <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Barcode *</label>
+                            <input type="hidden" name="id" value="<?= $row->item_id; ?>">
+                            <input type="text" name="barcode" value="<?= $row->barcode; ?>" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Item Name *</label>
+                            <input type="text" name="item_name" class="form-control" value="<?= $row->name; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Item Address *</label>
+                            <input type="text" name="item_address" class="form-control" value="<?= $row->address; ?>">
                         </div>
                     </div>
                     <div class="form-group col-md-3">
@@ -125,15 +127,18 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Item Overview *</label>
-                            <textarea name="item_overview" class="form-control" required><?= $row->overview; ?></textarea>
+                            <textarea name="item_overview" class="form-control" id="overview1" required><?= $row->overview; ?></textarea>
                         </div>
+                        <script>
+                            CKEDITOR.replace('overview1');
+                        </script>
                         <div class="form-group">
                             <label for="">Price *</label>
                             <input type="number" name="price" value="<?= $row->price; ?>" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="">Stock *</label>
-                            <input type="number" name="stock" value="<?= $row->stock; ?>" class="form-control" required>
+                            <input type="number" name="stock" value="<?= $row->stock; ?>" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="from-group col-md-6">

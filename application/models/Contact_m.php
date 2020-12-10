@@ -15,10 +15,11 @@ class Contact_m extends CI_Model
     public function add($post)
     {
         $params = [
-            'title'         => $post['title'],
-            'image'         => $post['image'],
-            'content'       => $post['content'],
-            'writer'        => $post['writer']
+            'name'          => $post['name'],
+            'email'         => $post['email'],
+            'subject'       => $post['subject'],
+            'pesan'         => $post['pesan'],
+            'answer'        => $post['answer']
         ];
         $this->db->insert('contact', $params);
     }
@@ -26,10 +27,11 @@ class Contact_m extends CI_Model
     public function edit($post)
     {
         $params = [
-            'title'         => $post['title'],
-            'image'         => $post['image'],
-            'content'       => $post['content'],
-            'writer'        => $post['writer'],
+            'name'          => $post['name'],
+            'email'         => $post['email'],
+            'subject'       => $post['subject'],
+            'pesan'         => $post['pesan'],
+            'answer'        => $post['answer'],
             'updated '      => date('Y-m-d  H:i:s')
         ];
         $this->db->where('contact_id', $post['id']);

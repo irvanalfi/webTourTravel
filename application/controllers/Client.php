@@ -46,6 +46,7 @@ class Client extends CI_Controller
 
     public function blog_detail($id)
     {
+        $this->load->model('Blog_m');
         $query = $this->Blog_m->get($id);
         if ($query->num_rows() > 0) {
             $blog = $query->row();
