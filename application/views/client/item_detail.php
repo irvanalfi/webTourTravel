@@ -15,7 +15,7 @@
                                     <h4 class="mb-5">Jak</h4>
                                 </div>
                                 <!-- <img src="<?php echo base_url('assets/img/item/' . $row->image) ?>"> -->
-                                
+
                             </a>
                         </div>
                         <div class="carousel-item">
@@ -54,7 +54,8 @@
             <h3><?= $row->overview ?>
         </h2>
         <h2>Price</h2>
-        <h3>Rp. <?= $row->price ?></h3>
+        <h3>Rp. <?= $row->price ?></h3> <br>
+        <?php echo anchor('client/tambah_keranjang/' . $row->item_id, '<button type="button" class="btn btn-primary">Pesan</button>') ?>
 
     </div>
 

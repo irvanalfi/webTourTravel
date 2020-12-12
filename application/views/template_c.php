@@ -83,7 +83,9 @@
                             <a class="nav-link font-weight-bold" href="<?= site_url('client/blog'); ?>">BLOG</a>
                         </li>
                     </ul>
-                    <a href="<?= site_url('client/chart'); ?>" class="nav-link text-dark" style="font-size: 15px"><i class="fas fa-shopping-cart"></i></a>
+                    <?php $keranjang  = '<i class="fas fa-shopping-cart"></i>  ' . $this->cart->total_items()  . ' items' ?>
+                    <li class="nav-link text-dark" style="font-size: 15px"><?php echo anchor('client/chart', $keranjang)  ?></li>
+                    <!-- <a href="<?= site_url('client/chart'); ?>" class="nav-link text-dark" style="font-size: 15px"><i class="fas fa-shopping-cart"></i></a> -->
                 </div>
             </div>
         </nav>

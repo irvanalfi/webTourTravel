@@ -92,6 +92,7 @@ class Client extends CI_Controller
         $data['row'] = $this->Contact_m->get();
         $this->template->load('template_c', 'client/contact_us', $data);
     }
+
     public function item_detail($id)
     {
         $query = $this->Item_m->get($id);
@@ -105,6 +106,30 @@ class Client extends CI_Controller
             echo "<script>alert('Data tidak ditemukan');";
             echo "window.location='" . site_url('client/item') . "'</script>";
         }
+    }
+
+    public function tambah_keranjang($id)
+    {
+        $barang = $this->Item_m->find($id);
+        $data = array(
+            'id'      => $barang->item_id,
+            'qty'     => 1,
+            'price'   => $barang->price,
+            'name'    => $barang->name
+        );
+        $this->cart->insert($data);
+
+        redirect('client/home', 'refresh');
+    }
+    public function hapus_keranjang($id)
+    {
+        $data = array(
+            'rowid'   => $id,
+            'qty'     => 0
+        );
+
+        $this->cart->update($data);
+        redirect('client/chart');
     }
 }
 /* End of file Controllername.php */

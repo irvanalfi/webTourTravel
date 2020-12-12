@@ -24,28 +24,56 @@
         <div class="row ">
             <div class="col-md mb-5">
                 <table class="table table-bordered table-hover text-center">
-                    <thead class = "thead-dark">
+                    <thead class="thead-dark">
                         <tr class="thead">
-                            <th>Barcode</th>
+                            <th>No</th>
                             <th>Product Item</th>
-                            <th>Price</th>
                             <th>Qty</th>
-                            <th>Discount Per Item</th>
-                            <th>Total</th>
+                            <th>Price</th>
+                            <th>Subtotal</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                    </tbody>
+                    <?php
+                    $no = 1;
+                    foreach ($this->cart->contents() as $items) : ?>
+                        <tbody>
+                            <td><?php echo $no++ ?></td>
+                            <td><?php echo $items['name'] ?></td>
+                            <td><?php echo $items['qty'] ?></td>
+                            <td align="right">Rp. <?php echo number_format($items['price'], 0, ',', '.') ?></td>
+                            <td align="right">Rp. <?php echo number_format($items['subtotal'], 0, ',', '.') ?></td>
+                            <td class="nav-link text-dark" style="font-size: 15px">
+                                <a href="<?= base_url('client/hapus_keranjang/') ?><?= $items['rowid'] ?>"><i class=" fas fa-trash"></i></a> </td>
+                        </tbody>
+                    <?php endforeach; ?>
                 </table>
+                <br><br>
+                <div class="checkout-left row">
+                    <div class="col-md-4">
+                        <h4>Subtotal</h4>
+                        <?php
+                        $no = 1;
+                        foreach ($this->cart->contents() as $items) : ?>
+                            <ul>
+                                <li><?php echo $items['name'] ?>
+                                    <i>-</i>
+                                    <span>Rp. <?php echo number_format($items['price'], 0, ',', '.')  ?></span>
+                                </li>
+                                <i></i>
+                            <?php endforeach; ?>
+                            <hr>
+                            <li style="color: black"> Total
+                                <i>-</i>
+                                <span>Rp. <?php echo number_format($this->cart->total(), 0, ',', '.')  ?></span>
+                            </li>
+                            </ul><br><br><br>
+
+                            <div class="information-wrapper">
+                                <a class="submit check_out" href="<?= base_url('client/proses_bayar') ?>">CHECKOUT </a>
+                            </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
