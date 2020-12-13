@@ -20,15 +20,25 @@
     </div>
 
     <div class="box-body table-responsive">
+      <?php echo form_open_multipart('blog/proses') ?>
       <div class="row">
         <script src="<?= base_url('assets/vendor/ckeditor/ckeditor/ckeditor.js'); ?>"></script>
-        <?php echo form_open_multipart('blog/proses') ?>
         <div class="col-md-6">
           <div class="form-group">
             <label for="">Blog Title *</label>
             <input type="hidden" name="id" value="<?= $row->blog_id; ?>">
             <input type="text" name="title" class="form-control" value="<?= $row->title; ?>" required>
           </div>
+          <div class="form-group">
+            <label for="">Blog Writer *</label>
+            <input type="text" name="writer" class="form-control" value="<?= $row->writer; ?>" required>
+          </div>
+          <div class="from-group">
+            <button type="submit" name="<?= $page; ?>" class="btn btn-success"><i class="fa fa-paper-plane"></i> Save</button>
+            <button type="reset" class="btn" style="margin-left: 10px"><i class="fa fa-undo"></i> Reset</button>
+          </div>
+        </div>
+        <div class="col-md-6">
           <div class="form-group">
             <label for="">Image</label>
             <?php if ($page == 'edit') {
@@ -43,28 +53,23 @@
             <input type="file" name="image" class="form-control">
             <small>(Leave blank if not <?= $page == 'edit' ? 'change' : 'available' ?>)</small>
           </div>
-          <div class="form-group">
-            <label for="">Blog Writer *</label>
-            <input type="text" name="writer" class="form-control" value="<?= $row->writer; ?>" required>
-          </div>
-          <div class="from-group">
-            <button type="submit" name="<?= $page; ?>" class="btn btn-success"><i class="fa fa-paper-plane"></i> Save</button>
-            <button type="reset" class="btn" style="margin-left: 10px"><i class="fa fa-undo"></i> Reset</button>
-          </div>
         </div>
-        <div class="col-md-6">
+      </div>
+      <div class="row">
+        <div class="col-md-12">
           <div class="form-group">
             <label for="">Blog Content *</label>
             <textarea name="content" id="content" class="form-control" required><?= $row->content; ?></textarea>
           </div>
         </div>
-        <?php echo form_close() ?>
       </div>
+      <?php echo form_close() ?>
     </div>
   </div>
 </section>
 <script>
   CKEDITOR.replace('content', {
-    filebrowserUploadUrl: '<?= base_url('assets/vendor/ckeditor/ckeditor/upload.php') ?>'
+    filebrowserUploadUrl: '<?= base_url('assets/vendor/ckeditor/ckeditor/ck_upload.php') ?>',
+    filebrowserUploadMethod: 'form'
   });
 </script>
