@@ -7,6 +7,7 @@
     <title>Traviora</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/skins/_all-skins.min.css">
@@ -48,6 +49,8 @@
 </head>
 
 <body>
+
+    <script src="<?= base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
     <!-- navbar start -->
     <div class="fixed-top">
         <div class="p-4 header shadow">
@@ -168,12 +171,22 @@
     </footer>
     <script src="<?= base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?= base_url() ?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
     <script src="<?= base_url() ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <script src="<?= base_url() ?>assets/dist/js/adminlte.min.js"></script>
     <script src="<?= base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
     <script src="<?= base_url() ?>assets/js/bootstrap.js"></script>
     <script src="<?= base_url() ?>assets/js/all.js"></script>
+    <script>
+        $(function() {
+            $('#tanggal').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true,
+                startDate: '+2d'
+            })
+        })
+    </script>
 </body>
 
 </html>

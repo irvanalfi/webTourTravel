@@ -22,7 +22,6 @@
     <div class="box-body table-responsive">
       <?php echo form_open_multipart('blog/proses') ?>
       <div class="row">
-        <script src="<?= base_url('assets/vendor/ckeditor/ckeditor/ckeditor.js'); ?>"></script>
         <div class="col-md-6">
           <div class="form-group">
             <label for="">Blog Title *</label>

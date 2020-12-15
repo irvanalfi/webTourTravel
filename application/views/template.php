@@ -27,6 +27,8 @@
 
 <body class="hold-transition skin-blue sidebar-mini <?= $this->uri->segment(1) == 'sale' ? 'sidebar-collapse' : null ?>">
     <!-- Site wrapper -->
+
+    <script src="<?= base_url('assets/vendor/ckeditor/ckeditor/ckeditor.js'); ?>"></script>
     <div class="wrapper">
 
         <header class="main-header">
