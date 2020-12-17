@@ -21,7 +21,7 @@
         <div class="box box-info">
             <div class="box-header ui-sortable-handle" style="cursor: move;">
                 <i class="fa fa-envelope"></i>
-
+                <form action="" method="post">
                 <h3 class="box-title">Quick Email</h3>
                 <!-- tools box -->
                 <div class="pull-right box-tools">
@@ -31,7 +31,8 @@
                 <!-- /. tools -->
             </div>
             <div class="box-body">
-                <form action="#" method="post">
+            <?php echo validation_errors(); ?>
+                <form action="" method="post">
                     <div class="form-group">
                         <input type="email" class="form-control" name="emailto" placeholder="Email to:">
                     </div>
@@ -161,7 +162,8 @@
                 </form>
             </div>
             <div class="box-footer clearfix">
-                <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+                <button type="button" type="submit" class="btn btn-success btn-flat" id="sendEmail"><i class="fa fa-paper-plane"> </i>Send</button>
+                <button type="button" type="reset" class="btn btn-flat" >Reset</button>
                     <i class="fa fa-arrow-circle-right"></i></button>
             </div>
         </div>
