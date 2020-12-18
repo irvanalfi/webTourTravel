@@ -37,6 +37,12 @@ class Client extends CI_Controller
         $this->template->load('template_c', 'client/lombok', $data);
     }
 
+    public function tour_unit($id)
+    {
+        $data['row'] = $this->Item_m->getunit($id);
+        $this->template->load('template_c', 'client/item_detail_byunit', $data);
+    }
+
     public function blog()
     {
         $this->load->model('Blog_m');

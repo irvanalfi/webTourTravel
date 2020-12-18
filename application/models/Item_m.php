@@ -18,6 +18,22 @@ class Item_m extends CI_Model
         return $query;
     }
 
+    public function getunit($id = null)
+    {
+        $this->db->select('p_item.*, p_category.name as category_name, p_type.name as type_name, p_unit.name as unit_name');
+        $this->db->from('p_item');
+        $this->db->join('p_category', 'p_category.category_id = p_item.category_id');
+        $this->db->join('p_type', 'p_type.type_id = p_item.type_id');
+        $this->db->join('p_unit', 'p_unit.unit_id = p_item.unit_id');
+        // $this->db->from('p_item');
+        if ($id != null) {
+            $this->db->where('p_item.unit_id', $id);
+        }
+        $this->db->order_by('barcode', 'asc');
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function add($post)
     {
         $params = [

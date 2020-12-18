@@ -73,14 +73,47 @@
                         <li class="nav-item <?= $this->uri->segment(2) == 'home' ? 'active' : ''; ?>">
                             <a class="nav-link font-weight-bold " href="<?= site_url('client/home'); ?>">Home</a>
                         </li>
-                        <li class="nav-item <?= $this->uri->segment(2) == 'java' ? 'active' : ''; ?>">
-                            <a class="nav-link font-weight-bold" href="<?= site_url('client/java'); ?>">JAVA TOURS</a>
+                        <li class="nav-item dropdown <?= $this->uri->segment(2) == 'java' ? 'active' : ''; ?>">
+                            <a class="nav-link dropdown-toggle font-weight-bold" data-toggle="dropdown"><b>JAVA TOURS</b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item dropdown-header">
+                                    <a class="nav-link font-weight-bold" href="<?= site_url('client/java'); ?>" style="text-align: left !important; font-size: 14px;">ALL JAVA TOURS</a>
+                                </li>
+                                <li class="divider"></li>
+                                <?php
+                                $bromo  = 1;
+                                $bwi    = 2;
+                                $mlg    = 3;
+                                $jgj    = 4; ?>
+                                <li><a href="<?= site_url('client/tour_unit/' . $bromo); ?>">Mount Bromo Tours</a></li>
+                                <li><a href="<?= site_url('client/tour_unit/' . $bwi); ?>">Banyuwangi</a></li>
+                                <li><a href="<?= site_url('client/tour_unit/' . $mlg); ?>">Malang</a></li>
+                                <li><a href="<?= site_url('client/tour_unit/') . $jgj; ?>">Jogja</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item <?= $this->uri->segment(2) == 'bali' ? 'active' : ''; ?>">
-                            <a class="nav-link font-weight-bold" href="<?= site_url('client/bali'); ?>">BALI TOURS</a>
+                        <li class="nav-item dropdown <?= $this->uri->segment(2) == 'bali' ? 'active' : ''; ?>">
+                            <a class="nav-link dropdown-toggle font-weight-bold" data-toggle="dropdown"><b>BALI TOURS</b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item dropdown-header">
+                                    <a class="nav-link font-weight-bold" href="<?= site_url('client/bali'); ?>" style="text-align: left !important; font-size: 14px;">ALL BALI TOURS</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item <?= $this->uri->segment(2) == 'lombok' ? 'active' : ''; ?>">
-                            <a class="nav-link font-weight-bold" href="<?= site_url('client/lombok'); ?>">LOMBOK TOURS</a>
+                        <li class="nav-item dropdown <?= $this->uri->segment(2) == 'lombok' ? 'active' : ''; ?>">
+                            <a class="nav-link dropdown-toggle font-weight-bold" data-toggle="dropdown"><b>LOMBOK TOURS</b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item dropdown-header">
+                                    <a class="nav-link font-weight-bold" href="<?= site_url('client/lombok'); ?>" style="text-align: left !important; font-size: 14px;">ALL LOMBOK TOURS</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item <?= $this->uri->segment(2) == 'java' ? 'blog' : ''; ?>">
                             <a class="nav-link font-weight-bold" href="<?= site_url('client/blog'); ?>">BLOG</a>
