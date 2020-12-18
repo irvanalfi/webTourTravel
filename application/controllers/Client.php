@@ -9,6 +9,7 @@ class Client extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Cetak_m');
+        $this->load->model('Customer_m');
         $this->load->model(['Item_m', 'category_m', 'type_m']);
         $this->load->helper('text');
     }
@@ -136,6 +137,20 @@ class Client extends CI_Controller
 
         $this->cart->update($data);
         redirect('client/chart');
+    }
+    public function pembayaran()
+    {
+        $this->load->view('client/pembayaran');
+    }
+    public function proses_bayar()
+    {
+        $post = $this->input->post(null, TRUE);
+        $is_processed = $this->Customer_m->index($post);
+        if ($is_processed) {
+            $this->load->view('client/proses_bayar');
+        } else {
+            echo  "maaf pesanan gagal diproses";
+        }
     }
 }
 /* End of file Controllername.php */

@@ -44,12 +44,22 @@ class Contact extends CI_Controller
             'page' => 'add',
             'row' => $contact
         ];
-        $this->template->load('template', 'contact/contact_form_answer', $data);
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('emailto','Email To:','required');
+        $this->form_validation->set_rules('subject','Subject','required');
+
+        if($this->form_validation->run() == FALSE){
+            $this->template->load('template', 'contact/contact_form_answer',$data);
+        }else{
+            echo"Proses simpan data contact";
+        }
+        
     }
 
     public function edit($id)
     {
-        $query = $this->contact_m->get($id);
+        $query = $this->Contact_m->get($id);
         if ($query->num_rows() > 0) {
             $contact = $query->row();
             $data = [
@@ -64,10 +74,10 @@ class Contact extends CI_Controller
         }
     }
 
-    public function delete()
+    public function del()
     {
         $id = $this->input->post('contact_id');
-        $this->contact_m->del($id);
+        $this->Contact_m->del($id);
 
         if ($this->db->affected_rows() > 0) {
             echo "<script>alert('Data Berhasil di Hapus')</script>";
@@ -89,4 +99,5 @@ class Contact extends CI_Controller
         $this->pdf->filename = "laporan_contact.pdf";
         $this->pdf->load_view('contact/laporan', $data);
     }
+
 }

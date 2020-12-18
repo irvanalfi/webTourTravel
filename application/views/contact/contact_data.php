@@ -48,13 +48,16 @@
                             <td><?= $data->subject ?></td>
                             <td><?= $data->pesan ?></td>
                             <td><?= $data->answer == null ? 'Belum dibalas' : 'Sudah dibalas' ?></td>
+                            <form action ="<?= site_url('contact/del/')?>" method="post">
                             <td class="text-center" width="160px">
                                 <a href="<?= site_url('contact/edit/' . $data->contact_id); ?>" class="btn btn-warning btn-xs">
                                     <i class="fa fa-pencil"></i> Edit
                                 </a>
-                                <a href="<?= site_url('contact/delete/' . $data->contact_id); ?>" class="btn btn-danger btn-xs" id="btnSA-delete">
-                                    <i class="fa fa-trash"></i> Delete
+                                <input type = "hidden" name="contact_id"  value="<?=$data->contact_id?>">
+                                <button onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger btn-xs">
+                                <i class="fa fa-trash"></i> Delete
                                 </a>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

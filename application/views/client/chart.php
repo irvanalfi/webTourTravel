@@ -61,7 +61,7 @@
                     </div>
                     <div class="card-footer text-muted">
                         <p>Total : <?= indo_currency($this->cart->total()); ?></p>
-                        <a href="<?= base_url('client/proses_bayar') ?>" class="btn btn-primary pull-left">Checkout</a>
+                        <a href="<?= base_url('client/pembayaran') ?>" class="btn btn-primary pull-left">Checkout</a>
                         <a href="#" class="btn btn-warning pull-right">Cancel</a>
                     </div>
                 </div>
